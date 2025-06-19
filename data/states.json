@@ -1,0 +1,402 @@
+[
+  {
+    "code": "AL",
+    "name": "Alabama",
+    "citation": "the Alabama Open Records Act (Code of Alabama § 36-12-40 et seq.)",
+    "responseTime": "5 business days",
+    "feeStructure": "Reasonable costs for copying and administrative processing",
+    "denyalRights": true
+  },
+  {
+    "code": "AK",
+    "name": "Alaska",
+    "citation": "the Alaska Public Records Act (AS 40.25.110 et seq.)",
+    "responseTime": "10 business days",
+    "feeStructure": "Actual costs of duplication",
+    "denyalRights": true
+  },
+  {
+    "code": "AZ",
+    "name": "Arizona",
+    "citation": "the Arizona Public Records Law (A.R.S. § 39-121 et seq.)",
+    "responseTime": "promptly",
+    "feeStructure": "Reasonable fees for copying and research",
+    "denyalRights": true
+  },
+  {
+    "code": "AR",
+    "name": "Arkansas",
+    "citation": "the Arkansas Freedom of Information Act (A.C.A. § 25-19-101 et seq.)",
+    "responseTime": "3 business days",
+    "feeStructure": "Reasonable costs for copying and administrative processing",
+    "denyalRights": true
+  },
+  {
+    "code": "CA",
+    "name": "California",
+    "citation": "the California Public Records Act (Gov. Code § 6250 et seq.)",
+    "responseTime": "10 calendar days",
+    "feeStructure": "Direct costs of duplication",
+    "denyalRights": true
+  },
+  {
+    "code": "CO",
+    "name": "Colorado",
+    "citation": "the Colorado Open Records Act (C.R.S. § 24-72-200.1 et seq.)",
+    "responseTime": "3 business days",
+    "feeStructure": "Reasonable fees for research and copying",
+    "denyalRights": true
+  },
+  {
+    "code": "CT",
+    "name": "Connecticut",
+    "citation": "the Connecticut Freedom of Information Act (C.G.S. § 1-200 et seq.)",
+    "responseTime": "4 business days",
+    "feeStructure": "Reasonable fees for copying and administrative costs",
+    "denyalRights": true
+  },
+  {
+    "code": "DE",
+    "name": "Delaware",
+    "citation": "the Delaware Freedom of Information Act (29 Del. C. § 10001 et seq.)",
+    "responseTime": "15 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "FL",
+    "name": "Florida",
+    "citation": "the Florida Public Records Act (F.S. § 119.01 et seq.)",
+    "responseTime": "promptly",
+    "feeStructure": "Actual cost of duplication",
+    "denyalRights": true
+  },
+  {
+    "code": "GA",
+    "name": "Georgia",
+    "citation": "the Georgia Open Records Act (O.C.G.A. § 50-18-70 et seq.)",
+    "responseTime": "3 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "HI",
+    "name": "Hawaii",
+    "citation": "the Hawaii Uniform Information Practices Act (HRS § 92F-1 et seq.)",
+    "responseTime": "10 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "ID",
+    "name": "Idaho",
+    "citation": "the Idaho Public Records Act (Idaho Code § 74-101 et seq.)",
+    "responseTime": "3 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "IL",
+    "name": "Illinois",
+    "citation": "the Illinois Freedom of Information Act (5 ILCS 140/1 et seq.)",
+    "responseTime": "5 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "IN",
+    "name": "Indiana",
+    "citation": "the Indiana Access to Public Records Act (IC 5-14-3-1 et seq.)",
+    "responseTime": "24 hours",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "IA",
+    "name": "Iowa",
+    "citation": "the Iowa Open Records Act (Iowa Code § 22.1 et seq.)",
+    "responseTime": "promptly",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "KS",
+    "name": "Kansas",
+    "citation": "the Kansas Open Records Act (K.S.A. § 45-215 et seq.)",
+    "responseTime": "3 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "KY",
+    "name": "Kentucky",
+    "citation": "the Kentucky Open Records Act (KRS § 61.870 et seq.)",
+    "responseTime": "3 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "LA",
+    "name": "Louisiana",
+    "citation": "the Louisiana Public Records Act (R.S. 44:1 et seq.)",
+    "responseTime": "3 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "ME",
+    "name": "Maine",
+    "citation": "the Maine Freedom of Access Act (1 M.R.S. § 401 et seq.)",
+    "responseTime": "5 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "MD",
+    "name": "Maryland",
+    "citation": "the Maryland Public Information Act (Md. Code, Gen. Prov. § 4-101 et seq.)",
+    "responseTime": "30 days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "MA",
+    "name": "Massachusetts",
+    "citation": "the Massachusetts Public Records Law (M.G.L. c. 66, § 10 et seq.)",
+    "responseTime": "10 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "MI",
+    "name": "Michigan",
+    "citation": "the Michigan Freedom of Information Act (MCL 15.231 et seq.)",
+    "responseTime": "5 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "MN",
+    "name": "Minnesota",
+    "citation": "the Minnesota Government Data Practices Act (Minn. Stat. § 13.01 et seq.)",
+    "responseTime": "promptly",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "MS",
+    "name": "Mississippi",
+    "citation": "the Mississippi Public Records Act (Miss. Code Ann. § 25-61-1 et seq.)",
+    "responseTime": "7 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "MO",
+    "name": "Missouri",
+    "citation": "the Missouri Sunshine Law (R.S.Mo. § 610.010 et seq.)",
+    "responseTime": "3 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "MT",
+    "name": "Montana",
+    "citation": "the Montana Right to Know Act (MCA § 2-6-101 et seq.)",
+    "responseTime": "5 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "NE",
+    "name": "Nebraska",
+    "citation": "the Nebraska Public Records Statutes (Neb. Rev. Stat. § 84-712 et seq.)",
+    "responseTime": "4 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "NV",
+    "name": "Nevada",
+    "citation": "the Nevada Public Records Act (NRS § 239.010 et seq.)",
+    "responseTime": "5 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "NH",
+    "name": "New Hampshire",
+    "citation": "the New Hampshire Right-to-Know Law (RSA § 91-A:1 et seq.)",
+    "responseTime": "5 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "NJ",
+    "name": "New Jersey",
+    "citation": "the New Jersey Open Public Records Act (N.J.S.A. 47:1A-1 et seq.)",
+    "responseTime": "7 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "NM",
+    "name": "New Mexico",
+    "citation": "the New Mexico Inspection of Public Records Act (NMSA § 14-2-1 et seq.)",
+    "responseTime": "3 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "NY",
+    "name": "New York",
+    "citation": "the New York Freedom of Information Law (Public Officers Law § 84 et seq.)",
+    "responseTime": "5 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "NC",
+    "name": "North Carolina",
+    "citation": "the North Carolina Public Records Law (N.C. Gen. Stat. § 132-1 et seq.)",
+    "responseTime": "promptly",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "ND",
+    "name": "North Dakota",
+    "citation": "the North Dakota Open Records Statute (N.D.C.C. § 44-04-18 et seq.)",
+    "responseTime": "3 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "OH",
+    "name": "Ohio",
+    "citation": "the Ohio Public Records Act (R.C. § 149.43 et seq.)",
+    "responseTime": "promptly",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "OK",
+    "name": "Oklahoma",
+    "citation": "the Oklahoma Open Records Act (51 O.S. § 24A.1 et seq.)",
+    "responseTime": "5 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "OR",
+    "name": "Oregon",
+    "citation": "the Oregon Public Records Law (ORS § 192.410 et seq.)",
+    "responseTime": "promptly",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "PA",
+    "name": "Pennsylvania",
+    "citation": "the Pennsylvania Right-to-Know Law (65 P.S. § 67.101 et seq.)",
+    "responseTime": "5 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "RI",
+    "name": "Rhode Island",
+    "citation": "the Rhode Island Access to Public Records Act (R.I. Gen. Laws § 38-2-1 et seq.)",
+    "responseTime": "10 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "SC",
+    "name": "South Carolina",
+    "citation": "the South Carolina Freedom of Information Act (S.C. Code § 30-4-10 et seq.)",
+    "responseTime": "15 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "SD",
+    "name": "South Dakota",
+    "citation": "the South Dakota Open Records Law (SDCL § 1-27-1 et seq.)",
+    "responseTime": "5 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "TN",
+    "name": "Tennessee",
+    "citation": "the Tennessee Public Records Act (T.C.A. § 10-7-501 et seq.)",
+    "responseTime": "7 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "TX",
+    "name": "Texas",
+    "citation": "the Texas Public Information Act (Tex. Gov't Code § 552.001 et seq.)",
+    "responseTime": "10 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "UT",
+    "name": "Utah",
+    "citation": "the Utah Government Records Access and Management Act (Utah Code § 63G-2-101 et seq.)",
+    "responseTime": "10 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "VT",
+    "name": "Vermont",
+    "citation": "the Vermont Public Records Act (1 V.S.A. § 315 et seq.)",
+    "responseTime": "3 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "VA",
+    "name": "Virginia",
+    "citation": "the Virginia Freedom of Information Act (Va. Code § 2.2-3700 et seq.)",
+    "responseTime": "5 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "WA",
+    "name": "Washington",
+    "citation": "the Washington Public Records Act (RCW § 42.56.001 et seq.)",
+    "responseTime": "5 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "WV",
+    "name": "West Virginia",
+    "citation": "the West Virginia Freedom of Information Act (W. Va. Code § 29B-1-1 et seq.)",
+    "responseTime": "5 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "WI",
+    "name": "Wisconsin",
+    "citation": "the Wisconsin Open Records Law (Wis. Stat. § 19.31 et seq.)",
+    "responseTime": "promptly",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  },
+  {
+    "code": "WY",
+    "name": "Wyoming",
+    "citation": "the Wyoming Public Records Act (Wyo. Stat. § 16-4-201 et seq.)",
+    "responseTime": "3 business days",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "denyalRights": true
+  }
+]
