@@ -1,0 +1,74 @@
+[
+  {
+    "id": "police_report",
+    "name": "Police Report",
+    "subject": "Public Records Request - Police Report",
+    "description": "I am requesting copies of all police reports, incident reports, and related documentation for incident number [INCIDENT_NUMBER] that occurred on [DATE] at approximately [TIME] at [LOCATION]. This request includes but is not limited to:\n\n• Initial incident report\n• Supplemental reports\n• Witness statements\n• Photographs taken at the scene\n• Audio or video recordings\n• Evidence logs\n• Officer notes or field reports\n• Any correspondence related to this incident",
+    "expedited": false,
+    "feeWaiver": false,
+    "publicInterest": false
+  },
+  {
+    "id": "animal_welfare",
+    "name": "Animal Welfare Records",
+    "subject": "Public Records Request - Animal Control/Welfare Records",
+    "description": "I am requesting records related to animal control activities and welfare investigations for the period from [START_DATE] to [END_DATE]. This request includes:\n\n• Animal control reports and incident logs\n• Investigation reports regarding animal welfare complaints\n• Citations issued for animal-related violations\n• Correspondence with animal welfare organizations\n• Adoption and euthanasia records\n• Licensing and registration data\n• Budget and expenditure records for animal control services\n• Policies and procedures for animal control operations",
+    "expedited": false,
+    "feeWaiver": true,
+    "publicInterest": true
+  },
+  {
+    "id": "government_contracts",
+    "name": "Government Contracts",
+    "subject": "Public Records Request - Government Contracts and Procurement",
+    "description": "I am requesting records related to government contracts and procurement activities for the period from [START_DATE] to [END_DATE]. This request includes:\n\n• All contracts and agreements exceeding $[AMOUNT]\n• Bid documents and procurement records\n• Vendor correspondence and communications\n• Payment records and invoices\n• Contract modifications and amendments\n• Performance evaluations and compliance reports\n• Procurement policies and procedures\n• Conflict of interest disclosures\n• Emergency procurement justifications",
+    "expedited": false,
+    "feeWaiver": true,
+    "publicInterest": true
+  },
+  {
+    "id": "financial_records",
+    "name": "Financial Records",
+    "subject": "Public Records Request - Financial Records and Budget Documents",
+    "description": "I am requesting financial records and budget-related documents for fiscal year [FISCAL_YEAR]. This request includes:\n\n• Annual budget documents and amendments\n• Financial statements and audit reports\n• Expenditure records by department/category\n• Revenue reports and tax collection data\n• Grant applications and awards\n• Investment portfolio statements\n• Debt service schedules\n• Employee compensation records\n• Vendor payment registers",
+    "expedited": false,
+    "feeWaiver": true,
+    "publicInterest": true
+  },
+  {
+    "id": "meeting_records",
+    "name": "Meeting Records",
+    "subject": "Public Records Request - Meeting Minutes and Records",
+    "description": "I am requesting records related to public meetings and deliberations for the period from [START_DATE] to [END_DATE]. This request includes:\n\n• Meeting minutes and transcripts\n• Agendas and supporting materials\n• Audio or video recordings of meetings\n• Correspondence between officials regarding meeting topics\n• Voting records and roll call votes\n• Executive session documentation (if legally accessible)\n• Public comment submissions\n• Presentation materials and handouts",
+    "expedited": false,
+    "feeWaiver": true,
+    "publicInterest": true
+  },
+  {
+    "id": "employment_records",
+    "name": "Employment Records",
+    "subject": "Public Records Request - Employment and Personnel Records",
+    "description": "I am requesting employment-related records for the period from [START_DATE] to [END_DATE]. This request includes:\n\n• Job descriptions and classifications\n• Salary schedules and compensation data\n• Organizational charts and staffing reports\n• Hiring and promotion records\n• Training and professional development records\n• Grievance and disciplinary records\n• Performance evaluation summaries\n• Overtime and leave records\n• Employment policies and procedures",
+    "expedited": false,
+    "feeWaiver": true,
+    "publicInterest": true
+  },
+  {
+    "id": "property_records",
+    "name": "Property Records",
+    "subject": "Public Records Request - Property and Real Estate Records",
+    "description": "I am requesting records related to property and real estate transactions for the period from [START_DATE] to [END_DATE]. This request includes:\n\n• Property acquisition and disposal records\n• Appraisal and valuation reports\n• Lease agreements and rental records\n• Maintenance and repair records\n• Property tax assessments\n• Zoning and land use decisions\n• Environmental assessments\n• Construction and renovation contracts\n• Property insurance records",
+    "expedited": false,
+    "feeWaiver": true,
+    "publicInterest": true
+  },
+  {
+    "id": "permits_licenses",
+    "name": "Permits and Licenses",
+    "subject": "Public Records Request - Permits and Licensing Records",
+    "description": "I am requesting records related to permits and licenses issued for the period from [START_DATE] to [END_DATE]. This request includes:\n\n• Building permits and construction records\n• Business licenses and registrations\n• Zoning permits and variances\n• Environmental permits and compliance records\n• Inspection reports and violations\n• Permit application documents\n• Fee schedules and payment records\n• Appeals and hearing records\n• Enforcement actions and penalties",
+    "expedited": false,
+    "feeWaiver": false,
+    "publicInterest": false
+  }
+]
