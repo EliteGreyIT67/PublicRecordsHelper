@@ -1,5 +1,44 @@
 /* Custom styles for the Public Records Request Generator */
 
+/* Dark mode transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark mode specific styles */
+.dark-mode-text {
+    color: #f3f4f6;
+}
+
+.dark-mode-bg {
+    background-color: #1f2937;
+}
+
+.dark-mode-border {
+    border-color: #374151;
+}
+
+/* Enhanced focus styles for dark mode */
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+    ring-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+/* Dark mode letter content */
+.dark .letter-content {
+    color: #f3f4f6;
+    background-color: #111827;
+}
+
+/* Dark mode notification adjustments */
+.dark .notification {
+    background-color: #374151;
+    color: #f3f4f6;
+    border-color: #4b5563;
+}
+
 /* Improved form styling */
 .form-input {
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -241,5 +280,70 @@ select option {
     
     .text-lg {
         font-size: 1.125rem;
+    }
+}
+
+/* Dark mode toggle button animation */
+.dark-mode-toggle {
+    transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.05);
+}
+
+/* Smooth transitions for all interactive elements */
+button, input, select, textarea {
+    transition: all 0.3s ease;
+}
+
+/* Enhanced dark mode form styling */
+.dark input[type="checkbox"],
+.dark input[type="radio"] {
+    accent-color: #3b82f6;
+    background-color: #374151;
+    border-color: #4b5563;
+}
+
+.dark input[type="checkbox"]:checked,
+.dark input[type="radio"]:checked {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+/* Dark mode scrollbar styling */
+.dark::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dark::-webkit-scrollbar-track {
+    background: #374151;
+}
+
+.dark::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+.dark::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* Dark mode selection styling */
+.dark ::selection {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+/* Enhanced print styles for dark mode */
+@media print {
+    .dark #letterPreview {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .dark .letter-content {
+        background: white !important;
+        color: black !important;
     }
 }
