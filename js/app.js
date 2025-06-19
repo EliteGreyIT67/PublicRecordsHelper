@@ -28,10 +28,14 @@ function publicRecordsApp() {
         templates: [],
         selectedTemplate: '',
         
+        // Dark mode
+        darkMode: false,
+        
         // Initialize the application
         async init() {
             await this.loadData();
             this.setupFormValidation();
+            this.initDarkMode();
         },
         
         // Load external data
@@ -131,6 +135,27 @@ function publicRecordsApp() {
         updateStateCitation() {
             // This method is called when state selection changes
             // The citation will be automatically updated in the preview
+        },
+        
+        // Dark mode functionality
+        initDarkMode() {
+            // Check for saved theme preference or default to light mode
+            const savedTheme = localStorage.getItem('darkMode');
+            if (savedTheme) {
+                this.darkMode = savedTheme === 'true';
+            } else {
+                // Check system preference
+                this.darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            }
+        },
+        
+        toggleDarkMode() {
+            this.darkMode = !this.darkMode;
+            localStorage.setItem('darkMode', this.darkMode.toString());
+            this.showNotification(
+                this.darkMode ? 'Dark mode enabled' : 'Light mode enabled',
+                'success'
+            );
         },
         
         // Copy letter to clipboard
