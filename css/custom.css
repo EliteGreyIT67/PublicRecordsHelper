@@ -1,0 +1,245 @@
+/* Custom styles for the Public Records Request Generator */
+
+/* Improved form styling */
+.form-input {
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-input:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Letter preview styling */
+.letter-content {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: #000;
+    background: #fff;
+}
+
+.letter-content > div {
+    margin-bottom: 0.5rem;
+}
+
+.letter-content strong {
+    font-weight: 600;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+    .grid-cols-1.lg\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .px-4.sm\:px-6.lg\:px-8 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Print styles for the letter preview */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    
+    #letterPreview,
+    #letterPreview * {
+        visibility: visible;
+    }
+    
+    #letterPreview {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 1in;
+        background: white;
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .letter-content {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 12pt;
+        line-height: 1.5;
+        color: black;
+    }
+}
+
+/* Accessibility improvements */
+.focus\:ring-2:focus {
+    ring-width: 2px;
+}
+
+.focus\:ring-blue-500:focus {
+    ring-color: #3b82f6;
+}
+
+/* Button hover effects */
+.transition-colors {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Loading states */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Notification styles */
+.notification {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Form validation styles */
+.form-error {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.form-error:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Success states */
+.form-success {
+    border-color: #10b981;
+    background-color: #f0fdf4;
+}
+
+/* Improved checkbox and radio styling */
+input[type="checkbox"],
+input[type="radio"] {
+    width: 1rem;
+    height: 1rem;
+    accent-color: #3b82f6;
+}
+
+/* Better mobile form layout */
+@media (max-width: 640px) {
+    .grid.grid-cols-1.md\:grid-cols-2 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .flex.gap-2 {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .flex.gap-2 button {
+        width: 100%;
+    }
+}
+
+/* Improved typography */
+h1, h2, h3 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+p, li {
+    line-height: 1.6;
+}
+
+/* Better focus indicators for accessibility */
+*:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Improved button states */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    background-color: inherit;
+}
+
+/* Better spacing for form sections */
+.form-section {
+    margin-bottom: 2rem;
+}
+
+.form-section:last-child {
+    margin-bottom: 0;
+}
+
+/* Letter preview enhancements */
+#letterPreview {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Improved template selection */
+select option {
+    padding: 0.5rem;
+}
+
+/* Better mobile typography */
+@media (max-width: 640px) {
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+    
+    .text-xl {
+        font-size: 1.25rem;
+    }
+    
+    .text-lg {
+        font-size: 1.125rem;
+    }
+}
