@@ -25,8 +25,10 @@ function publicRecordsApp() {
         
         // Data
         states: [],
+        laws: [],
         templates: [],
         selectedTemplate: '',
+        selectedLaw: null,
         
         // Dark mode
         darkMode: false,
@@ -41,12 +43,14 @@ function publicRecordsApp() {
         // Load external data
         async loadData() {
             try {
-                const [statesResponse, templatesResponse] = await Promise.all([
+                const [statesResponse, lawsResponse, templatesResponse] = await Promise.all([
                     fetch('data/states.json'),
+                    fetch('data/laws.json'),
                     fetch('data/templates.json')
                 ]);
                 
                 this.states = await statesResponse.json();
+                this.laws = await lawsResponse.json();
                 this.templates = await templatesResponse.json();
             } catch (error) {
                 console.error('Error loading data:', error);
@@ -66,6 +70,20 @@ function publicRecordsApp() {
                 this.form.feeWaiverRequest = template.feeWaiver || false;
                 this.form.publicInterest = template.publicInterest || false;
             }
+        },
+        
+        // Handle state selection
+        onStateChange() {
+            if (!this.form.state) {
+                this.selectedLaw = null;
+                return;
+            }
+            
+            this.selectedLaw = this.laws.find(law => law.code === this.form.state);
+            this.showNotification(
+                `Legal information updated for ${this.selectedLaw?.name || 'selected state'}`,
+                'success'
+            );
         },
         
         // Get current date formatted
@@ -91,31 +109,24 @@ function publicRecordsApp() {
         
         // Get state citation
         getStateCitation() {
-            if (!this.form.state) return 'applicable state public records laws';
-            
-            const state = this.states.find(s => s.code === this.form.state);
-            return state ? state.citation : 'applicable state public records laws';
+            if (!this.selectedLaw) return 'applicable state public records laws';
+            return this.selectedLaw.fullCitation;
         },
         
         // Get legal requirements text
         getLegalRequirements() {
-            if (!this.form.state) {
+            if (!this.selectedLaw) {
                 return 'Please respond to this request within the timeframe required by applicable law.';
             }
             
-            const state = this.states.find(s => s.code === this.form.state);
-            if (!state) {
-                return 'Please respond to this request within the timeframe required by applicable law.';
+            let text = `Under ${this.selectedLaw.fullCitation}, you are required to respond to this request within ${this.selectedLaw.responseTime}. `;
+            
+            if (this.selectedLaw.feeStructure) {
+                text += `${this.selectedLaw.feeDetails} `;
             }
             
-            let text = `Under ${state.citation}, you are required to respond to this request within ${state.responseTime}. `;
-            
-            if (state.feeStructure) {
-                text += `If there are any fees associated with this request, please provide a detailed breakdown of costs before proceeding. `;
-            }
-            
-            if (state.denyalRights) {
-                text += `If any portion of this request is denied, please cite the specific legal authority for the denial and advise me of my appeal rights.`;
+            if (this.selectedLaw.denialRights) {
+                text += `${this.selectedLaw.denialProcess}`;
             }
             
             return text;
