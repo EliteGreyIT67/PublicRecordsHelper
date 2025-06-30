@@ -1,0 +1,1463 @@
+[
+  {
+    "code": "AL",
+    "name": "Alabama",
+    "lawName": "Alabama Open Records Act",
+    "citation": "Code of Alabama § 36-12-40 et seq.",
+    "fullCitation": "the Alabama Open Records Act (Code of Alabama § 36-12-40 et seq.)",
+    "responseTime": "5 business days",
+    "responseDetails": "The agency must respond within 5 business days of receipt of the request.",
+    "feeStructure": "Reasonable costs for copying and administrative processing",
+    "feeDetails": "Agencies may charge reasonable fees for copying documents and administrative processing time.",
+    "denialRights": true,
+    "denialProcess": "If any portion of this request is denied, the agency must cite the specific legal authority for the denial and advise you of your appeal rights.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be made in writing",
+      "Must specify the records being requested with reasonable specificity"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records related to pending litigation",
+      "Trade secrets and commercial information"
+    ],
+    "appealProcess": "Appeals may be made to the circuit court in the county where the records are maintained.",
+    "contactInfo": {
+      "website": "https://ago.alabama.gov/",
+      "phone": "(334) 242-7300"
+    }
+  },
+  {
+    "code": "AK",
+    "name": "Alaska",
+    "lawName": "Alaska Public Records Act",
+    "citation": "AS 40.25.110 et seq.",
+    "fullCitation": "the Alaska Public Records Act (AS 40.25.110 et seq.)",
+    "responseTime": "10 business days",
+    "responseDetails": "The agency must respond within 10 business days, but may extend for an additional 10 days with written notice.",
+    "feeStructure": "Actual costs of duplication",
+    "feeDetails": "Fees are limited to the actual cost of duplication and may not exceed $15 for the first 30 minutes of staff time.",
+    "denialRights": true,
+    "denialProcess": "Denials must include the specific statutory basis and information about appeal rights.",
+    "expeditedProcessing": true,
+    "expeditedCriteria": "Compelling need involving imminent threat to health, safety, or substantial due process rights",
+    "specialRequirements": [
+      "Requests must reasonably describe the records sought",
+      "Must provide contact information for response"
+    ],
+    "exemptions": [
+      "Personal privacy information",
+      "Confidential informants",
+      "Security information",
+      "Attorney-client privileged information"
+    ],
+    "appealProcess": "Administrative appeals to the agency head, then judicial review in superior court.",
+    "contactInfo": {
+      "website": "https://law.alaska.gov/",
+      "phone": "(907) 465-2133"
+    }
+  },
+  {
+    "code": "AZ",
+    "name": "Arizona",
+    "lawName": "Arizona Public Records Law",
+    "citation": "A.R.S. § 39-121 et seq.",
+    "fullCitation": "the Arizona Public Records Law (A.R.S. § 39-121 et seq.)",
+    "responseTime": "No specific timeframe",
+    "responseDetails": "Records must be made available promptly. If immediate access is not possible, the agency must provide an estimated date.",
+    "feeStructure": "Reasonable fees for copies",
+    "feeDetails": "Agencies may charge for actual costs of copying but not for search or review time for the first $24.39 in costs.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific statutory exemptions and inform requester of appeal rights.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be made during regular business hours",
+      "Records must be reasonably described"
+    ],
+    "exemptions": [
+      "Personnel files",
+      "Records that would compromise ongoing investigations",
+      "Attorney work product",
+      "Records protected by attorney-client privilege"
+    ],
+    "appealProcess": "Special action in superior court or administrative appeal if available.",
+    "contactInfo": {
+      "website": "https://azag.gov/",
+      "phone": "(602) 542-5025"
+    }
+  },
+  {
+    "code": "AR",
+    "name": "Arkansas",
+    "lawName": "Arkansas Freedom of Information Act",
+    "citation": "Ark. Code Ann. § 25-19-101 et seq.",
+    "fullCitation": "the Arkansas Freedom of Information Act (Ark. Code Ann. § 25-19-101 et seq.)",
+    "responseTime": "3 business days",
+    "responseDetails": "Agencies must respond within 3 business days, with possible extension if records require extensive search.",
+    "feeStructure": "Reasonable costs for copies",
+    "feeDetails": "Agencies may charge actual costs for copying and may charge for excessive requests exceeding 1 hour of staff time.",
+    "denialRights": true,
+    "denialProcess": "Written denials must cite specific exemptions and include information about appeal process.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be in writing for records not immediately accessible",
+      "Must provide sufficient detail to identify records"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Individual medical records",
+      "Scholastic records",
+      "Adoption records"
+    ],
+    "appealProcess": "Circuit court action for injunctive relief and damages.",
+    "contactInfo": {
+      "website": "https://arkansasag.gov/",
+      "phone": "(501) 682-2007"
+    }
+  },
+  {
+    "code": "CA",
+    "name": "California",
+    "lawName": "California Public Records Act",
+    "citation": "Gov. Code § 6250 et seq.",
+    "fullCitation": "the California Public Records Act (Gov. Code § 6250 et seq.)",
+    "responseTime": "10 days",
+    "responseDetails": "Agencies must respond within 10 days, with possible 14-day extension for unusual circumstances.",
+    "feeStructure": "Direct costs of duplication",
+    "feeDetails": "Agencies may charge for direct costs of duplication but not for search time unless the request requires extensive use of IT resources.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for writ of mandate.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Records must be reasonably described",
+      "Agency may require identification for certain records"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Attorney-client privileged communications",
+      "Records that would endanger safety of witnesses"
+    ],
+    "appealProcess": "Petition for writ of mandate in superior court.",
+    "contactInfo": {
+      "website": "https://oag.ca.gov/",
+      "phone": "(916) 445-9555"
+    }
+  },
+  {
+    "code": "CO",
+    "name": "Colorado",
+    "lawName": "Colorado Open Records Act",
+    "citation": "C.R.S. § 24-72-200.1 et seq.",
+    "fullCitation": "the Colorado Open Records Act (C.R.S. § 24-72-200.1 et seq.)",
+    "responseTime": "3 business days",
+    "responseDetails": "Agencies must respond within 3 business days, or immediately if records are readily available.",
+    "feeStructure": "Reasonable fees for research and copying",
+    "feeDetails": "Agencies may charge for research time after the first hour and for copying costs.",
+    "denialRights": true,
+    "denialProcess": "Written denials must cite specific statutory grounds and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must describe records with reasonable specificity",
+      "May require written request for certain records"
+    ],
+    "exemptions": [
+      "Personnel files",
+      "Medical records",
+      "Records of investigations",
+      "Attorney work product"
+    ],
+    "appealProcess": "Action for injunctive relief in district court.",
+    "contactInfo": {
+      "website": "https://coag.gov/",
+      "phone": "(720) 508-6000"
+    }
+  },
+  {
+    "code": "CT",
+    "name": "Connecticut",
+    "lawName": "Connecticut Freedom of Information Act",
+    "citation": "Conn. Gen. Stat. § 1-200 et seq.",
+    "fullCitation": "the Connecticut Freedom of Information Act (Conn. Gen. Stat. § 1-200 et seq.)",
+    "responseTime": "4 business days",
+    "responseDetails": "Agencies must respond within 4 business days, acknowledging the request and providing estimated completion date.",
+    "feeStructure": "Reasonable fees for copying",
+    "feeDetails": "Agencies may charge for actual costs of providing copies but not for search or review time.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to appeal to Freedom of Information Commission.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be sufficiently specific",
+      "Public agencies must designate a Freedom of Information Officer"
+    ],
+    "exemptions": [
+      "Personnel files",
+      "Records of strategy sessions",
+      "Test questions and answers",
+      "Trade secrets"
+    ],
+    "appealProcess": "Appeal to Connecticut Freedom of Information Commission within 30 days.",
+    "contactInfo": {
+      "website": "https://portal.ct.gov/AG",
+      "phone": "(860) 808-5318"
+    }
+  },
+  {
+    "code": "DE",
+    "name": "Delaware",
+    "lawName": "Delaware Freedom of Information Act",
+    "citation": "29 Del. C. § 10001 et seq.",
+    "fullCitation": "the Delaware Freedom of Information Act (29 Del. C. § 10001 et seq.)",
+    "responseTime": "15 business days",
+    "responseDetails": "Agencies must respond within 15 business days, with possible extension for complex requests.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying costs and labor costs for requests requiring more than 1 hour of staff time.",
+    "denialRights": true,
+    "denialProcess": "Denials must specify legal grounds and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably identify the records sought",
+      "May require request to be in writing"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Attorney-client privileged documents",
+      "Pending investigation records"
+    ],
+    "appealProcess": "Action in Superior Court for injunctive relief.",
+    "contactInfo": {
+      "website": "https://attorneygeneral.delaware.gov/",
+      "phone": "(302) 577-8400"
+    }
+  },
+  {
+    "code": "FL",
+    "name": "Florida",
+    "lawName": "Florida Public Records Act",
+    "citation": "Fla. Stat. § 119.01 et seq.",
+    "fullCitation": "the Florida Public Records Act (Fla. Stat. § 119.01 et seq.)",
+    "responseTime": "Reasonable time",
+    "responseDetails": "Records must be available for inspection promptly. Written response required within reasonable time.",
+    "feeStructure": "Actual cost of duplication",
+    "feeDetails": "Agencies may charge actual costs of duplication, including labor costs for extensive use of IT resources.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific statutory exemptions. Requester may seek mandamus action.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Records must be reasonably described",
+      "Public records are open for inspection unless specifically exempted"
+    ],
+    "exemptions": [
+      "Personal information",
+      "Security and investigative information",
+      "Attorney-client privileged communications",
+      "Trade secrets"
+    ],
+    "appealProcess": "Mandamus action in circuit court.",
+    "contactInfo": {
+      "website": "https://myfloridalegal.com/",
+      "phone": "(850) 414-3300"
+    }
+  },
+  {
+    "code": "GA",
+    "name": "Georgia",
+    "lawName": "Georgia Open Records Act",
+    "citation": "O.C.G.A. § 50-18-70 et seq.",
+    "fullCitation": "the Georgia Open Records Act (O.C.G.A. § 50-18-70 et seq.)",
+    "responseTime": "3 business days",
+    "responseDetails": "Agencies must respond within 3 business days, acknowledging receipt and providing records or explaining delays.",
+    "feeStructure": "Reasonable fees for search, retrieval, and copying",
+    "feeDetails": "Agencies may charge for search time, retrieval, copying, and redaction costs.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and may be appealed to superior court.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be in writing",
+      "Must provide sufficient detail to identify records"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would endanger public safety",
+      "Attorney work product"
+    ],
+    "appealProcess": "Petition for mandamus in superior court.",
+    "contactInfo": {
+      "website": "https://law.ga.gov/",
+      "phone": "(404) 458-3600"
+    }
+  },
+  {
+    "code": "HI",
+    "name": "Hawaii",
+    "lawName": "Hawaii Uniform Information Practices Act",
+    "citation": "HRS § 92F-1 et seq.",
+    "fullCitation": "the Hawaii Uniform Information Practices Act (HRS § 92F-1 et seq.)",
+    "responseTime": "10 business days",
+    "responseDetails": "Agencies must respond within 10 business days, acknowledging receipt and providing an estimated completion date.",
+    "feeStructure": "Reasonable fees for search and copying",
+    "feeDetails": "Agencies may charge for search time and copying costs, but must provide a cost estimate for requests exceeding $25.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to appeal to the Office of Information Practices.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be made in writing",
+      "Must provide sufficient detail to identify records"
+    ],
+    "exemptions": [
+      "Personal information",
+      "Information that would frustrate a legitimate government function",
+      "Confidential commercial information"
+    ],
+    "appealProcess": "Appeal to Office of Information Practices, then circuit court review.",
+    "contactInfo": {
+      "website": "https://ag.hawaii.gov/",
+      "phone": "(808) 586-1500"
+    }
+  },
+  {
+    "code": "ID",
+    "name": "Idaho",
+    "lawName": "Idaho Public Records Act",
+    "citation": "Idaho Code § 74-101 et seq.",
+    "fullCitation": "the Idaho Public Records Act (Idaho Code § 74-101 et seq.)",
+    "responseTime": "3 business days",
+    "responseDetails": "Agencies must respond within 3 business days, providing records or explaining why more time is needed.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying costs and labor costs for requests requiring more than 2 hours of staff time.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for judicial review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe the records sought",
+      "Public records are open unless specifically exempted"
+    ],
+    "exemptions": [
+      "Investigation records",
+      "Personal information",
+      "Attorney-client privileged communications"
+    ],
+    "appealProcess": "Petition for judicial review in district court.",
+    "contactInfo": {
+      "website": "https://gov.idaho.gov/ag/",
+      "phone": "(208) 334-2400"
+    }
+  },
+  {
+    "code": "IL",
+    "name": "Illinois",
+    "lawName": "Illinois Freedom of Information Act",
+    "citation": "5 ILCS 140/1 et seq.",
+    "fullCitation": "the Illinois Freedom of Information Act (5 ILCS 140/1 et seq.)",
+    "responseTime": "5 business days",
+    "responseDetails": "Agencies must respond within 5 business days, with possible extension to 10 days for voluminous requests.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying and labor costs, but first $50 of labor costs are waived for non-commercial requests.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek review by the Public Access Counselor.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be made in writing",
+      "Must reasonably describe the records sought",
+      "Must include requester's identity and address"
+    ],
+    "exemptions": [
+      "Personnel files",
+      "Medical records",
+      "Information that would endanger life or safety"
+    ],
+    "appealProcess": "Request review by Public Access Counselor, then circuit court review.",
+    "contactInfo": {
+      "website": "https://illinoisattorneygeneral.gov/",
+      "phone": "(217) 782-1090"
+    }
+  },
+  {
+    "code": "IN",
+    "name": "Indiana",
+    "lawName": "Indiana Access to Public Records Act",
+    "citation": "IC 5-14-3-1 et seq.",
+    "fullCitation": "the Indiana Access to Public Records Act (IC 5-14-3-1 et seq.)",
+    "responseTime": "24 hours",
+    "responseDetails": "Agencies must respond within 24 hours, acknowledging receipt and providing an estimated completion date.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying costs and labor costs, but may not charge more than $5 per page for certified copies.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to file a complaint with the Public Access Counselor.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests need not be in writing unless agency requires it",
+      "Must reasonably identify the records"
+    ],
+    "exemptions": [
+      "Personnel files",
+      "Medical records",
+      "Records that could endanger public safety"
+    ],
+    "appealProcess": "File complaint with Public Access Counselor or seek court review.",
+    "contactInfo": {
+      "website": "https://www.in.gov/attorneygeneral/",
+      "phone": "(317) 232-6201"
+    }
+  },
+  {
+    "code": "IA",
+    "name": "Iowa",
+    "lawName": "Iowa Open Records Act",
+    "citation": "Iowa Code Chapter 22",
+    "fullCitation": "the Iowa Open Records Act (Iowa Code Chapter 22)",
+    "responseTime": "Reasonable time",
+    "responseDetails": "Records must be made available during regular business hours. Written requests must receive prompt response.",
+    "feeStructure": "Reasonable fees for search and copying",
+    "feeDetails": "Agencies may charge for search time and copying costs, but must provide fee estimate for requests over $25.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Records must be reasonably described",
+      "Some records may require written request"
+    ],
+    "exemptions": [
+      "Personnel files",
+      "Medical records",
+      "Attorney work product"
+    ],
+    "appealProcess": "Seek injunctive relief in district court.",
+    "contactInfo": {
+      "website": "https://www.iowaattorneygeneral.gov/",
+      "phone": "(515) 281-5164"
+    }
+  },
+  {
+    "code": "KS",
+    "name": "Kansas",
+    "lawName": "Kansas Open Records Act",
+    "citation": "K.S.A. 45-215 et seq.",
+    "fullCitation": "the Kansas Open Records Act (K.S.A. 45-215 et seq.)",
+    "responseTime": "3 business days",
+    "responseDetails": "Agencies must respond within 3 business days, providing records or explaining delays.",
+    "feeStructure": "Reasonable fees for staff time and copying",
+    "feeDetails": "Agencies may charge for staff time and copying, but must waive fees if request is in public interest.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Some records require written request"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Attorney-client privileged information"
+    ],
+    "appealProcess": "Seek mandamus action in district court.",
+    "contactInfo": {
+      "website": "https://ag.ks.gov/",
+      "phone": "(785) 296-2215"
+    }
+  },
+  {
+    "code": "KY",
+    "name": "Kentucky",
+    "lawName": "Kentucky Open Records Act",
+    "citation": "KRS 61.870 et seq.",
+    "fullCitation": "the Kentucky Open Records Act (KRS 61.870 et seq.)",
+    "responseTime": "3 business days",
+    "responseDetails": "Agencies must respond within 3 business days, providing records or explaining why additional time is needed.",
+    "feeStructure": "Reasonable fees for copying and processing",
+    "feeDetails": "Agencies may charge for copying and processing costs, but fees cannot exceed actual costs.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to appeal to the Attorney General.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must describe records with precision and clarity",
+      "Written request may be required for certain records"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records relating to pending litigation"
+    ],
+    "appealProcess": "Appeal to Attorney General, then circuit court review.",
+    "contactInfo": {
+      "website": "https://ag.ky.gov/",
+      "phone": "(502) 696-5300"
+    }
+  },
+  {
+    "code": "LA",
+    "name": "Louisiana",
+    "lawName": "Louisiana Public Records Act",
+    "citation": "La. R.S. 44:1 et seq.",
+    "fullCitation": "the Louisiana Public Records Act (La. R.S. 44:1 et seq.)",
+    "responseTime": "3 business days",
+    "responseDetails": "Agencies must respond within 3 business days, providing records or written response explaining delays.",
+    "feeStructure": "Reasonable fees for copying and administrative costs",
+    "feeDetails": "Agencies may charge for copying and administrative costs, but must provide fee estimate for extensive requests.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably identify records",
+      "Written request may be required"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Attorney-client privileged communications"
+    ],
+    "appealProcess": "Seek mandamus action in district court.",
+    "contactInfo": {
+      "website": "https://www.ag.state.la.us/",
+      "phone": "(225) 326-6000"
+    }
+  },
+  {
+    "code": "ME",
+    "name": "Maine",
+    "lawName": "Maine Freedom of Access Act",
+    "citation": "1 M.R.S. § 401 et seq.",
+    "fullCitation": "the Maine Freedom of Access Act (1 M.R.S. § 401 et seq.)",
+    "responseTime": "Reasonable time",
+    "responseDetails": "Records must be made available within reasonable time. Complex requests may require additional time with notice.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying and labor costs, but first hour of staff time is free.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Some records may require written request"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical information",
+      "Records that would interfere with law enforcement"
+    ],
+    "appealProcess": "Seek court review in Superior Court.",
+    "contactInfo": {
+      "website": "https://www.maine.gov/ag/",
+      "phone": "(207) 626-8800"
+    }
+  },
+  {
+    "code": "MD",
+    "name": "Maryland",
+    "lawName": "Maryland Public Information Act",
+    "citation": "GP § 4-101 et seq.",
+    "fullCitation": "the Maryland Public Information Act (GP § 4-101 et seq.)",
+    "responseTime": "30 days",
+    "responseDetails": "Agencies must respond within 30 days, with possible extension for complex requests.",
+    "feeStructure": "Reasonable fees for search and copying",
+    "feeDetails": "Agencies may charge for search time exceeding 2 hours and copying costs.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to file complaint with Public Information Act Compliance Board.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be made in writing",
+      "Must reasonably describe records sought"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records relating to pending investigations"
+    ],
+    "appealProcess": "File complaint with PIA Compliance Board or seek court review.",
+    "contactInfo": {
+      "website": "https://www.marylandattorneygeneral.gov/",
+      "phone": "(410) 576-6300"
+    }
+  },
+  {
+    "code": "MA",
+    "name": "Massachusetts",
+    "lawName": "Massachusetts Public Records Law",
+    "citation": "M.G.L. c. 66 § 10 et seq.",
+    "fullCitation": "the Massachusetts Public Records Law (M.G.L. c. 66 § 10 et seq.)",
+    "responseTime": "10 business days",
+    "responseDetails": "Agencies must respond within 10 business days, with possible extension for voluminous or complex requests.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying and labor costs, but first 4 hours of search time are free for non-commercial requests.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to appeal to the Supervisor of Public Records.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be made in writing",
+      "Must reasonably describe records sought"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical information",
+      "Records that would endanger public safety"
+    ],
+    "appealProcess": "Appeal to Supervisor of Public Records, then court review.",
+    "contactInfo": {
+      "website": "https://www.mass.gov/orgs/office-of-the-attorney-general",
+      "phone": "(617) 727-2200"
+    }
+  },
+  {
+    "code": "MI",
+    "name": "Michigan",
+    "lawName": "Michigan Freedom of Information Act",
+    "citation": "MCL 15.231 et seq.",
+    "fullCitation": "the Michigan Freedom of Information Act (MCL 15.231 et seq.)",
+    "responseTime": "5 business days",
+    "responseDetails": "Agencies must respond within 5 business days, with possible extension for complex requests.",
+    "feeStructure": "Reasonable fees for search, copying, and review",
+    "feeDetails": "Agencies may charge for search, copying, and review costs, but must waive fees up to $20 for non-profit organizations.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be made in writing",
+      "Must reasonably describe records sought"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would endanger public safety"
+    ],
+    "appealProcess": "Seek circuit court review.",
+    "contactInfo": {
+      "website": "https://www.michigan.gov/ag",
+      "phone": "(517) 335-7622"
+    }
+  },
+  {
+    "code": "MN",
+    "name": "Minnesota",
+    "lawName": "Minnesota Government Data Practices Act",
+    "citation": "Minn. Stat. § 13.01 et seq.",
+    "fullCitation": "the Minnesota Government Data Practices Act (Minn. Stat. § 13.01 et seq.)",
+    "responseTime": "Reasonable time",
+    "responseDetails": "Data must be made available during regular business hours. Complex requests may require additional time.",
+    "feeStructure": "Reasonable fees for copying and administrative costs",
+    "feeDetails": "Agencies may charge for copying and administrative costs, but must provide cost estimate for requests over $25.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe data sought",
+      "Some data may require written request"
+    ],
+    "exemptions": [
+      "Personnel data",
+      "Medical data",
+      "Data that would endanger public safety"
+    ],
+    "appealProcess": "Seek district court review.",
+    "contactInfo": {
+      "website": "https://www.ag.state.mn.us/",
+      "phone": "(651) 296-3353"
+    }
+  },
+  {
+    "code": "MS",
+    "name": "Mississippi",
+    "lawName": "Mississippi Public Records Act",
+    "citation": "Miss. Code Ann. § 25-61-1 et seq.",
+    "fullCitation": "the Mississippi Public Records Act (Miss. Code Ann. § 25-61-1 et seq.)",
+    "responseTime": "14 days",
+    "responseDetails": "Agencies must respond within 14 days, providing records or explaining why additional time is needed.",
+    "feeStructure": "Reasonable fees for copying and search",
+    "feeDetails": "Agencies may charge for copying and search costs, but fees cannot exceed actual costs.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Written request may be required"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records relating to pending investigations"
+    ],
+    "appealProcess": "Seek chancery court review.",
+    "contactInfo": {
+      "website": "https://www.ago.state.ms.us/",
+      "phone": "(601) 359-3680"
+    }
+  },
+  {
+    "code": "MO",
+    "name": "Missouri",
+    "lawName": "Missouri Sunshine Law",
+    "citation": "Mo. Rev. Stat. § 610.010 et seq.",
+    "fullCitation": "the Missouri Sunshine Law (Mo. Rev. Stat. § 610.010 et seq.)",
+    "responseTime": "3 business days",
+    "responseDetails": "Agencies must respond within 3 business days, providing records or explaining delays.",
+    "feeStructure": "Reasonable fees for research and copying",
+    "feeDetails": "Agencies may charge for research time and copying costs, but first hour of research is free for non-commercial requests.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Some records may require written request"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would endanger individual safety"
+    ],
+    "appealProcess": "Seek mandamus action in circuit court.",
+    "contactInfo": {
+      "website": "https://ago.mo.gov/",
+      "phone": "(573) 751-3321"
+    }
+  },
+  {
+    "code": "MT",
+    "name": "Montana",
+    "lawName": "Montana Right to Know Act",
+    "citation": "Mont. Code Ann. § 2-6-101 et seq.",
+    "fullCitation": "the Montana Right to Know Act (Mont. Code Ann. § 2-6-101 et seq.)",
+    "responseTime": "Reasonable time",
+    "responseDetails": "Records must be made available within reasonable time during regular business hours.",
+    "feeStructure": "Reasonable fees for copying and search",
+    "feeDetails": "Agencies may charge for copying and search costs, but must provide fee estimate for extensive requests.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Some records may require written request"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would interfere with law enforcement"
+    ],
+    "appealProcess": "Seek district court review.",
+    "contactInfo": {
+      "website": "https://dojmt.gov/",
+      "phone": "(406) 444-2026"
+    }
+  },
+  {
+    "code": "NE",
+    "name": "Nebraska",
+    "lawName": "Nebraska Public Records Statutes",
+    "citation": "Neb. Rev. Stat. § 84-712 et seq.",
+    "fullCitation": "the Nebraska Public Records Statutes (Neb. Rev. Stat. § 84-712 et seq.)",
+    "responseTime": "4 business days",
+    "responseDetails": "Agencies must respond within 4 business days, providing records or explaining delays.",
+    "feeStructure": "Reasonable fees for copying and staff time",
+    "feeDetails": "Agencies may charge for copying and staff time, but first 4 hours of staff time are free.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Some records may require written request"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records relating to pending investigations"
+    ],
+    "appealProcess": "Seek district court review.",
+    "contactInfo": {
+      "website": "https://ago.nebraska.gov/",
+      "phone": "(402) 471-2682"
+    }
+  },
+  {
+    "code": "NV",
+    "name": "Nevada",
+    "lawName": "Nevada Public Records Act",
+    "citation": "NRS 239.001 et seq.",
+    "fullCitation": "the Nevada Public Records Act (NRS 239.001 et seq.)",
+    "responseTime": "5 business days",
+    "responseDetails": "Agencies must respond within 5 business days, providing records or explaining delays and estimated completion time.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying and labor costs, but must provide fee estimate for requests over $50.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Some records may require written request"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would endanger public safety"
+    ],
+    "appealProcess": "Seek mandamus action in district court.",
+    "contactInfo": {
+      "website": "https://ag.nv.gov/",
+      "phone": "(775) 684-1100"
+    }
+  },
+  {
+    "code": "NH",
+    "name": "New Hampshire",
+    "lawName": "New Hampshire Right-to-Know Law",
+    "citation": "RSA 91-A",
+    "fullCitation": "the New Hampshire Right-to-Know Law (RSA 91-A)",
+    "responseTime": "5 business days",
+    "responseDetails": "Agencies must respond within 5 business days, providing records or explaining why additional time is needed.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying and labor costs, but must provide detailed fee estimate.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for injunctive relief.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Records are presumed public unless specifically exempted"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would constitute invasion of privacy"
+    ],
+    "appealProcess": "Seek injunctive relief in superior court.",
+    "contactInfo": {
+      "website": "https://www.doj.nh.gov/",
+      "phone": "(603) 271-3658"
+    }
+  },
+  {
+    "code": "NJ",
+    "name": "New Jersey",
+    "lawName": "New Jersey Open Public Records Act",
+    "citation": "N.J.S.A. 47:1A-1 et seq.",
+    "fullCitation": "the New Jersey Open Public Records Act (N.J.S.A. 47:1A-1 et seq.)",
+    "responseTime": "7 business days",
+    "responseDetails": "Agencies must respond within 7 business days, providing records or explaining why additional time is needed.",
+    "feeStructure": "Reasonable fees for copying and special service charges",
+    "feeDetails": "Agencies may charge for copying and special service charges, but first 2 hours of labor are free.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to file complaint with Government Records Council.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be made in writing",
+      "Must reasonably describe records sought"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would endanger public safety"
+    ],
+    "appealProcess": "File complaint with Government Records Council or seek court review.",
+    "contactInfo": {
+      "website": "https://www.njoag.gov/",
+      "phone": "(609) 292-4925"
+    }
+  },
+  {
+    "code": "NM",
+    "name": "New Mexico",
+    "lawName": "New Mexico Inspection of Public Records Act",
+    "citation": "NMSA 1978 § 14-2-1 et seq.",
+    "fullCitation": "the New Mexico Inspection of Public Records Act (NMSA 1978 § 14-2-1 et seq.)",
+    "responseTime": "3 business days",
+    "responseDetails": "Agencies must respond within 3 business days, providing records or explaining delays.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying and labor costs, but first hour of labor is free.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Some records may require written request"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would endanger public safety"
+    ],
+    "appealProcess": "Seek mandamus action in district court.",
+    "contactInfo": {
+      "website": "https://www.nmag.gov/",
+      "phone": "(505) 717-3500"
+    }
+  },
+  {
+    "code": "NY",
+    "name": "New York",
+    "lawName": "New York Freedom of Information Law",
+    "citation": "Public Officers Law § 84 et seq.",
+    "fullCitation": "the New York Freedom of Information Law (Public Officers Law § 84 et seq.)",
+    "responseTime": "5 business days",
+    "responseDetails": "Agencies must respond within 5 business days, acknowledging receipt and providing estimated response time.",
+    "feeStructure": "Reasonable fees for copying and search",
+    "feeDetails": "Agencies may charge for copying and search costs, but must provide fee estimate for requests over $25.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to appeal to agency head and then seek Article 78 review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be made in writing",
+      "Must reasonably describe records sought"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would interfere with law enforcement"
+    ],
+    "appealProcess": "Administrative appeal to agency head, then Article 78 proceeding in Supreme Court.",
+    "contactInfo": {
+      "website": "https://ag.ny.gov/",
+      "phone": "(518) 776-2000"
+    }
+  },
+  {
+    "code": "NC",
+    "name": "North Carolina",
+    "lawName": "North Carolina Public Records Law",
+    "citation": "N.C.G.S. § 132-1 et seq.",
+    "fullCitation": "the North Carolina Public Records Law (N.C.G.S. § 132-1 et seq.)",
+    "responseTime": "Reasonable time",
+    "responseDetails": "Records must be made available within reasonable time during regular business hours.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying and labor costs, but must provide fee estimate for extensive requests.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Records are presumed public unless specifically exempted"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would frustrate law enforcement"
+    ],
+    "appealProcess": "Seek mandamus action in superior court.",
+    "contactInfo": {
+      "website": "https://ncdoj.gov/",
+      "phone": "(919) 716-6400"
+    }
+  },
+  {
+    "code": "ND",
+    "name": "North Dakota",
+    "lawName": "North Dakota Open Records Statute",
+    "citation": "N.D.C.C. § 44-04-18 et seq.",
+    "fullCitation": "the North Dakota Open Records Statute (N.D.C.C. § 44-04-18 et seq.)",
+    "responseTime": "Reasonable time",
+    "responseDetails": "Records must be made available within reasonable time during regular business hours.",
+    "feeStructure": "Reasonable fees for copying and search",
+    "feeDetails": "Agencies may charge for copying and search costs, but must provide fee estimate for extensive requests.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Some records may require written request"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records relating to pending investigations"
+    ],
+    "appealProcess": "Seek district court review.",
+    "contactInfo": {
+      "website": "https://attorneygeneral.nd.gov/",
+      "phone": "(701) 328-2210"
+    }
+  },
+  {
+    "code": "OH",
+    "name": "Ohio",
+    "lawName": "Ohio Public Records Act",
+    "citation": "Ohio Rev. Code § 149.43",
+    "fullCitation": "the Ohio Public Records Act (Ohio Rev. Code § 149.43)",
+    "responseTime": "Reasonable time",
+    "responseDetails": "Records must be made available within reasonable time during regular business hours.",
+    "feeStructure": "Reasonable fees for copying and mailing",
+    "feeDetails": "Agencies may charge for copying and mailing costs, but cannot charge for search or review time.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably identify records",
+      "Records are presumed public unless specifically exempted"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would endanger public safety"
+    ],
+    "appealProcess": "Seek mandamus action in court of common pleas.",
+    "contactInfo": {
+      "website": "https://www.ohioattorneygeneral.gov/",
+      "phone": "(614) 466-4320"
+    }
+  },
+  {
+    "code": "OK",
+    "name": "Oklahoma",
+    "lawName": "Oklahoma Open Records Act",
+    "citation": "51 O.S. § 24A.1 et seq.",
+    "fullCitation": "the Oklahoma Open Records Act (51 O.S. § 24A.1 et seq.)",
+    "responseTime": "Reasonable time",
+    "responseDetails": "Records must be made available within reasonable time during regular business hours.",
+    "feeStructure": "Reasonable fees for copying and certification",
+    "feeDetails": "Agencies may charge for copying and certification costs, but cannot exceed actual costs.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Some records may require written request"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would endanger public safety"
+    ],
+    "appealProcess": "Seek mandamus action in district court.",
+    "contactInfo": {
+      "website": "https://www.oag.ok.gov/",
+      "phone": "(405) 521-3921"
+    }
+  },
+  {
+    "code": "OR",
+    "name": "Oregon",
+    "lawName": "Oregon Public Records Law",
+    "citation": "ORS 192.410 et seq.",
+    "fullCitation": "the Oregon Public Records Law (ORS 192.410 et seq.)",
+    "responseTime": "Reasonable time",
+    "responseDetails": "Records must be made available within reasonable time. Complex requests may require additional time with notice.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying and labor costs, but must provide fee estimate for requests over $25.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for judicial review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Records are presumed public unless specifically exempted"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would interfere with law enforcement"
+    ],
+    "appealProcess": "Petition for judicial review in circuit court.",
+    "contactInfo": {
+      "website": "https://www.doj.state.or.us/",
+      "phone": "(503) 378-4400"
+    }
+  },
+  {
+    "code": "PA",
+    "name": "Pennsylvania",
+    "lawName": "Pennsylvania Right-to-Know Law",
+    "citation": "65 P.S. § 67.101 et seq.",
+    "fullCitation": "the Pennsylvania Right-to-Know Law (65 P.S. § 67.101 et seq.)",
+    "responseTime": "5 business days",
+    "responseDetails": "Agencies must respond within 5 business days, with possible 30-day extension for complex requests.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying and labor costs, but first hour of labor is free for non-commercial requests.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to appeal to the Office of Open Records.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be made in writing",
+      "Must reasonably describe records sought"
+    ],
+    "exemptions": [
+      "Personnel files",
+      "Medical records",
+      "Records that would compromise ongoing investigations"
+    ],
+    "appealProcess": "Appeal to Office of Open Records, then Commonwealth Court review.",
+    "contactInfo": {
+      "website": "https://www.attorneygeneral.gov/",
+      "phone": "(717) 787-3391"
+    }
+  },
+  {
+    "code": "RI",
+    "name": "Rhode Island",
+    "lawName": "Rhode Island Access to Public Records Act",
+    "citation": "R.I.G.L. § 38-2-1 et seq.",
+    "fullCitation": "the Rhode Island Access to Public Records Act (R.I.G.L. § 38-2-1 et seq.)",
+    "responseTime": "10 business days",
+    "responseDetails": "Agencies must respond within 10 business days, with possible extension for voluminous requests.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying and labor costs, but first 2 hours of labor are free.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be made in writing",
+      "Must reasonably describe records sought"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would endanger public safety"
+    ],
+    "appealProcess": "Seek superior court review.",
+    "contactInfo": {
+      "website": "https://riag.ri.gov/",
+      "phone": "(401) 274-4400"
+    }
+  },
+  {
+    "code": "SC",
+    "name": "South Carolina",
+    "lawName": "South Carolina Freedom of Information Act",
+    "citation": "S.C. Code Ann. § 30-4-10 et seq.",
+    "fullCitation": "the South Carolina Freedom of Information Act (S.C. Code Ann. § 30-4-10 et seq.)",
+    "responseTime": "15 calendar days",
+    "responseDetails": "Agencies must respond within 15 calendar days, with possible extension for complex requests.",
+    "feeStructure": "Reasonable fees for search and copying",
+    "feeDetails": "Agencies may charge for search time and copying costs, but first hour of search time is free.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be made in writing",
+      "Must reasonably describe records sought"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would frustrate law enforcement"
+    ],
+    "appealProcess": "Seek circuit court review.",
+    "contactInfo": {
+      "website": "https://www.scag.gov/",
+      "phone": "(803) 734-3970"
+    }
+  },
+  {
+    "code": "SD",
+    "name": "South Dakota",
+    "lawName": "South Dakota Sunshine Law",
+    "citation": "SDCL § 1-27-1 et seq.",
+    "fullCitation": "the South Dakota Sunshine Law (SDCL § 1-27-1 et seq.)",
+    "responseTime": "Reasonable time",
+    "responseDetails": "Records must be made available within reasonable time during regular business hours.",
+    "feeStructure": "Reasonable fees for copying and search",
+    "feeDetails": "Agencies may charge for copying and search costs, but must provide fee estimate for extensive requests.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Some records may require written request"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records relating to pending investigations"
+    ],
+    "appealProcess": "Seek circuit court review.",
+    "contactInfo": {
+      "website": "https://atg.sd.gov/",
+      "phone": "(605) 773-3215"
+    }
+  },
+  {
+    "code": "TN",
+    "name": "Tennessee",
+    "lawName": "Tennessee Public Records Act",
+    "citation": "Tenn. Code Ann. § 10-7-501 et seq.",
+    "fullCitation": "the Tennessee Public Records Act (Tenn. Code Ann. § 10-7-501 et seq.)",
+    "responseTime": "7 business days",
+    "responseDetails": "Agencies must respond within 7 business days, acknowledging receipt and providing estimated completion date.",
+    "feeStructure": "Reasonable fees for labor and copying",
+    "feeDetails": "Agencies may charge for labor and copying costs, but first hour of labor is free for requests not requiring redaction.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for writ of mandamus.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be sufficiently detailed",
+      "Must be made during regular business hours"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would compromise ongoing investigations"
+    ],
+    "appealProcess": "Petition for writ of mandamus in chancery court.",
+    "contactInfo": {
+      "website": "https://www.tn.gov/attorneygeneral.html",
+      "phone": "(615) 741-3491"
+    }
+  },
+  {
+    "code": "TX",
+    "name": "Texas",
+    "lawName": "Texas Public Information Act",
+    "citation": "Tex. Gov't Code § 552.001 et seq.",
+    "fullCitation": "the Texas Public Information Act (Tex. Gov't Code § 552.001 et seq.)",
+    "responseTime": "10 business days",
+    "responseDetails": "Agencies must respond within 10 business days, providing records or requesting Attorney General ruling on exceptions.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying and labor costs, but first 50 pages of standard copies are free.",
+    "denialRights": true,
+    "denialProcess": "Denials require Attorney General ruling on exceptions. Requester may appeal ruling to district court.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be made in writing",
+      "Must reasonably describe records sought"
+    ],
+    "exemptions": [
+      "Personnel information",
+      "Medical records",
+      "Records that would interfere with law enforcement"
+    ],
+    "appealProcess": "Request Attorney General ruling, then seek district court review if necessary.",
+    "contactInfo": {
+      "website": "https://www.texasattorneygeneral.gov/",
+      "phone": "(512) 463-2100"
+    }
+  },
+  {
+    "code": "UT",
+    "name": "Utah",
+    "lawName": "Utah Government Records Access and Management Act",
+    "citation": "Utah Code § 63G-2-101 et seq.",
+    "fullCitation": "the Utah Government Records Access and Management Act (Utah Code § 63G-2-101 et seq.)",
+    "responseTime": "10 business days",
+    "responseDetails": "Agencies must respond within 10 business days, providing records or explaining why additional time is needed.",
+    "feeStructure": "Reasonable fees for copying and research",
+    "feeDetails": "Agencies may charge for copying and research costs, but first 15 minutes of research time are free.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to appeal to the State Records Committee.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably identify records",
+      "Some records may require written request"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would compromise public safety"
+    ],
+    "appealProcess": "Appeal to State Records Committee, then district court review.",
+    "contactInfo": {
+      "website": "https://attorneygeneral.utah.gov/",
+      "phone": "(801) 538-9600"
+    }
+  },
+  {
+    "code": "VT",
+    "name": "Vermont",
+    "lawName": "Vermont Public Records Act",
+    "citation": "1 V.S.A. § 315 et seq.",
+    "fullCitation": "the Vermont Public Records Act (1 V.S.A. § 315 et seq.)",
+    "responseTime": "3 business days",
+    "responseDetails": "Agencies must respond within 3 business days, providing records or explaining why additional time is needed.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying and labor costs, but first hour of labor is free.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Records are presumed public unless specifically exempted"
+    ],
+    "exemptions": [
+      "Personnel files",
+      "Medical records",
+      "Records that would endanger public safety"
+    ],
+    "appealProcess": "Seek superior court review.",
+    "contactInfo": {
+      "website": "https://ago.vermont.gov/",
+      "phone": "(802) 828-3171"
+    }
+  },
+  {
+    "code": "VA",
+    "name": "Virginia",
+    "lawName": "Virginia Freedom of Information Act",
+    "citation": "Va. Code § 2.2-3700 et seq.",
+    "fullCitation": "the Virginia Freedom of Information Act (Va. Code § 2.2-3700 et seq.)",
+    "responseTime": "5 working days",
+    "responseDetails": "Agencies must respond within 5 working days, providing records or explaining why additional time is needed (up to 7 additional days).",
+    "feeStructure": "Reasonable charges for copying and search",
+    "feeDetails": "Agencies may charge for copying and search costs, but charges cannot exceed actual costs.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for mandamus or injunctive relief.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must be made in writing if so required by agency",
+      "Must reasonably describe records sought"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records relating to pending investigations"
+    ],
+    "appealProcess": "Petition for mandamus or injunctive relief in circuit court.",
+    "contactInfo": {
+      "website": "https://www.oag.state.va.us/",
+      "phone": "(804) 786-2071"
+    }
+  },
+  {
+    "code": "WA",
+    "name": "Washington",
+    "lawName": "Washington Public Records Act",
+    "citation": "RCW 42.56.001 et seq.",
+    "fullCitation": "the Washington Public Records Act (RCW 42.56.001 et seq.)",
+    "responseTime": "5 business days",
+    "responseDetails": "Agencies must respond within 5 business days, providing records or explaining why additional time is needed.",
+    "feeStructure": "Reasonable charges for copying and customized services",
+    "feeDetails": "Agencies may charge for copying costs and customized services, but cannot charge for search time.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Records are presumed public unless specifically exempted"
+    ],
+    "exemptions": [
+      "Personnel information",
+      "Medical records",
+      "Records that would endanger public safety"
+    ],
+    "appealProcess": "Seek superior court review for injunctive relief and damages.",
+    "contactInfo": {
+      "website": "https://www.atg.wa.gov/",
+      "phone": "(360) 753-6200"
+    }
+  },
+  {
+    "code": "WV",
+    "name": "West Virginia",
+    "lawName": "West Virginia Freedom of Information Act",
+    "citation": "W. Va. Code § 29B-1-1 et seq.",
+    "fullCitation": "the West Virginia Freedom of Information Act (W. Va. Code § 29B-1-1 et seq.)",
+    "responseTime": "5 business days",
+    "responseDetails": "Agencies must respond within 5 business days, providing records or explaining why additional time is needed.",
+    "feeStructure": "Reasonable fees for copying and search",
+    "feeDetails": "Agencies may charge for copying and search costs, but first 2 hours of search time are free.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for mandamus.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Some records may require written request"
+    ],
+    "exemptions": [
+      "Personnel files",
+      "Medical records",
+      "Records that would endanger public safety"
+    ],
+    "appealProcess": "Petition for mandamus in circuit court.",
+    "contactInfo": {
+      "website": "https://ago.wv.gov/",
+      "phone": "(304) 558-2021"
+    }
+  },
+  {
+    "code": "WI",
+    "name": "Wisconsin",
+    "lawName": "Wisconsin Open Records Law",
+    "citation": "Wis. Stat. § 19.31 et seq.",
+    "fullCitation": "the Wisconsin Open Records Law (Wis. Stat. § 19.31 et seq.)",
+    "responseTime": "Reasonable time",
+    "responseDetails": "Records must be made available as soon as practicable and without delay.",
+    "feeStructure": "Reasonable fees for copying and labor",
+    "feeDetails": "Agencies may charge for copying and labor costs, but must provide fee estimate for requests over $50.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Records are presumed open unless specifically exempted"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records that would endanger public safety"
+    ],
+    "appealProcess": "Seek mandamus action in circuit court.",
+    "contactInfo": {
+      "website": "https://www.doj.state.wi.us/",
+      "phone": "(608) 266-1221"
+    }
+  },
+  {
+    "code": "WY",
+    "name": "Wyoming",
+    "lawName": "Wyoming Public Records Act",
+    "citation": "Wyo. Stat. § 16-4-201 et seq.",
+    "fullCitation": "the Wyoming Public Records Act (Wyo. Stat. § 16-4-201 et seq.)",
+    "responseTime": "3 business days",
+    "responseDetails": "Agencies must respond within 3 business days, providing records or explaining why additional time is needed.",
+    "feeStructure": "Reasonable fees for copying and search",
+    "feeDetails": "Agencies may charge for copying and search costs, but must provide fee estimate for extensive requests.",
+    "denialRights": true,
+    "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review.",
+    "expeditedProcessing": false,
+    "expeditedCriteria": null,
+    "specialRequirements": [
+      "Requests must reasonably describe records",
+      "Some records may require written request"
+    ],
+    "exemptions": [
+      "Personnel records",
+      "Medical records",
+      "Records relating to pending investigations"
+    ],
+    "appealProcess": "Seek district court review.",
+    "contactInfo": {
+      "website": "https://ag.wyo.gov/",
+      "phone": "(307) 777-7841"
+    }
+  }
+]
