@@ -29,6 +29,26 @@ function publicRecordsApp() {
         templates: [],
         selectedTemplate: '',
         selectedLaw: null,
+        customTemplates: [],
+        
+        // Template Wizard
+        showTemplateWizard: false,
+        showTemplateManager: false,
+        wizardStep: 1,
+        customTemplate: {
+            id: '',
+            name: '',
+            category: 'general',
+            description: '',
+            subject: '',
+            recordsDescription: '',
+            preferredFormat: '',
+            agencyType: '',
+            expeditedProcessing: false,
+            feeWaiverRequest: false,
+            publicInterest: false,
+            additionalNotes: ''
+        },
         
         // Dark mode
         darkMode: false,
@@ -36,8 +56,16 @@ function publicRecordsApp() {
         // Initialize the application
         async init() {
             await this.loadData();
+            this.loadCustomTemplates();
             this.setupFormValidation();
             this.initDarkMode();
+            
+            // Debug: Verify template wizard variables are initialized
+            console.log('Template wizard initialized:', {
+                showTemplateWizard: this.showTemplateWizard,
+                wizardStep: this.wizardStep,
+                customTemplate: this.customTemplate
+            });
         },
         
         // Load external data
@@ -62,13 +90,34 @@ function publicRecordsApp() {
         applyTemplate() {
             if (!this.selectedTemplate) return;
             
-            const template = this.templates.find(t => t.id === this.selectedTemplate);
-            if (template) {
-                this.form.subject = template.subject;
-                this.form.recordsDescription = template.description;
-                this.form.expeditedProcessing = template.expedited || false;
-                this.form.feeWaiverRequest = template.feeWaiver || false;
-                this.form.publicInterest = template.publicInterest || false;
+            // Check if it's a custom template
+            if (this.selectedTemplate.startsWith('custom_')) {
+                const customId = this.selectedTemplate.replace('custom_', '');
+                const template = this.customTemplates.find(t => t.id === customId);
+                if (template) {
+                    this.form.subject = template.subject;
+                    this.form.recordsDescription = template.recordsDescription;
+                    this.form.preferredFormat = template.preferredFormat || this.form.preferredFormat;
+                    this.form.expeditedProcessing = template.expeditedProcessing || false;
+                    this.form.feeWaiverRequest = template.feeWaiverRequest || false;
+                    this.form.publicInterest = template.publicInterest || false;
+                    this.form.additionalNotes = template.additionalNotes || '';
+                    if (template.agencyType) {
+                        this.form.agencyName = template.agencyType;
+                    }
+                    this.showNotification(`Applied custom template: ${template.name}`, 'success');
+                }
+            } else {
+                // Built-in template
+                const template = this.templates.find(t => t.id === this.selectedTemplate);
+                if (template) {
+                    this.form.subject = template.subject;
+                    this.form.recordsDescription = template.description;
+                    this.form.expeditedProcessing = template.expedited || false;
+                    this.form.feeWaiverRequest = template.feeWaiver || false;
+                    this.form.publicInterest = template.publicInterest || false;
+                    this.showNotification(`Applied template: ${template.name}`, 'success');
+                }
             }
         },
         
@@ -385,6 +434,137 @@ function publicRecordsApp() {
                     notification.parentNode.removeChild(notification);
                 }
             }, 5000);
+        },
+
+        // Template Wizard Functions
+        loadCustomTemplates() {
+            const saved = localStorage.getItem('customTemplates');
+            if (saved) {
+                try {
+                    this.customTemplates = JSON.parse(saved);
+                } catch (error) {
+                    console.error('Error loading custom templates:', error);
+                    this.customTemplates = [];
+                }
+            }
+        },
+
+        saveCustomTemplates() {
+            localStorage.setItem('customTemplates', JSON.stringify(this.customTemplates));
+        },
+
+        closeTemplateWizard() {
+            this.showTemplateWizard = false;
+            this.wizardStep = 1;
+            this.resetCustomTemplate();
+        },
+
+        openTemplateWizard() {
+            this.resetCustomTemplate();
+            this.wizardStep = 1;
+            this.showTemplateWizard = true;
+        },
+
+        resetCustomTemplate() {
+            this.customTemplate = {
+                id: '',
+                name: '',
+                category: 'general',
+                description: '',
+                subject: '',
+                recordsDescription: '',
+                preferredFormat: '',
+                agencyType: '',
+                expeditedProcessing: false,
+                feeWaiverRequest: false,
+                publicInterest: false,
+                additionalNotes: ''
+            };
+        },
+
+        saveCustomTemplate() {
+            // Validation
+            if (!this.customTemplate.name.trim()) {
+                this.showError('Please enter a template name.');
+                return;
+            }
+            if (!this.customTemplate.subject.trim()) {
+                this.showError('Please enter a subject template.');
+                return;
+            }
+            if (!this.customTemplate.recordsDescription.trim()) {
+                this.showError('Please enter a records description template.');
+                return;
+            }
+
+            // Check for duplicate names
+            const existingTemplate = this.customTemplates.find(t => 
+                t.name.toLowerCase() === this.customTemplate.name.trim().toLowerCase()
+            );
+            if (existingTemplate) {
+                if (!confirm('A template with this name already exists. Do you want to overwrite it?')) {
+                    return;
+                }
+                // Remove existing template
+                this.customTemplates = this.customTemplates.filter(t => t.id !== existingTemplate.id);
+            }
+
+            // Generate ID
+            const templateId = Date.now().toString() + Math.random().toString(36).substr(2, 9);
+            
+            // Create template object
+            const newTemplate = {
+                ...this.customTemplate,
+                id: templateId,
+                name: this.customTemplate.name.trim(),
+                createdAt: new Date().toISOString(),
+                lastUsed: null
+            };
+
+            // Add to custom templates
+            this.customTemplates.push(newTemplate);
+            this.saveCustomTemplates();
+
+            // Close wizard and show success
+            this.closeTemplateWizard();
+            this.showSuccess(`Custom template "${newTemplate.name}" saved successfully!`);
+        },
+
+        deleteCustomTemplate(templateId) {
+            if (confirm('Are you sure you want to delete this custom template? This action cannot be undone.')) {
+                this.customTemplates = this.customTemplates.filter(t => t.id !== templateId);
+                this.saveCustomTemplates();
+                this.showSuccess('Custom template deleted successfully!');
+                
+                // Clear selection if this template was selected
+                if (this.selectedTemplate === `custom_${templateId}`) {
+                    this.selectedTemplate = '';
+                }
+            }
+        },
+
+        editCustomTemplate(templateId) {
+            const template = this.customTemplates.find(t => t.id === templateId);
+            if (template) {
+                this.customTemplate = { ...template };
+                this.showTemplateWizard = true;
+                this.wizardStep = 1;
+            }
+        },
+
+        duplicateCustomTemplate(templateId) {
+            const template = this.customTemplates.find(t => t.id === templateId);
+            if (template) {
+                this.customTemplate = { 
+                    ...template, 
+                    id: '',
+                    name: `${template.name} (Copy)`,
+                    createdAt: '',
+                    lastUsed: null
+                };
+                this.showTemplateWizard = true;
+                this.wizardStep = 1;
+            }
         }
     };
 }
