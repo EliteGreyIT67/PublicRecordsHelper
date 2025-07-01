@@ -85,6 +85,14 @@ The application uses a simple static hosting approach:
 
 ## Recent Changes
 
+- **June 30, 2025**: Personalized Request Template Customization Wizard
+  - ✓ Created comprehensive template customization wizard with 3-step process
+  - ✓ Added ability to create, save, edit, duplicate, and delete custom templates
+  - ✓ Implemented localStorage-based template persistence across sessions
+  - ✓ Built template management interface with organized display and quick actions
+  - ✓ Added support for template placeholders and content customization
+  - ✓ Enhanced template selection dropdown to show built-in and custom templates separately
+
 - **June 30, 2025**: Enhanced legal citations system
   - ✓ Created comprehensive laws.json file with detailed legal information for all 50 states
   - ✓ Added prominent state selection dropdown at top of form with visual styling
