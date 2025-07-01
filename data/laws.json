@@ -5,8 +5,8 @@
     "lawName": "Alabama Open Records Act",
     "citation": "Code of Alabama § 36-12-40 et seq.",
     "fullCitation": "the Alabama Open Records Act (Code of Alabama § 36-12-40 et seq.)",
-    "responseTime": "5 business days",
-    "responseDetails": "The agency must respond within 5 business days of receipt of the request.",
+    "responseTime": "2-5 business days for acknowledgment; 15-35 business days for response",
+    "responseDetails": "For a 'standard request', an agency must provide an acknowledgment within 2 business days and a substantive response within 15 business days, with a possible extension of 15 business days. For a 'time-intensive request', the acknowledgment is due within 5 business days and a substantive response within 35 business days, with possible extensions by agreement.",
     "feeStructure": "Reasonable costs for copying and administrative processing",
     "feeDetails": "Agencies may charge reasonable fees for copying documents and administrative processing time.",
     "denialRights": true,
@@ -21,7 +21,8 @@
       "Personnel records",
       "Medical records",
       "Records related to pending litigation",
-      "Trade secrets and commercial information"
+      "Trade secrets and commercial information",
+      "Critical infrastructure information"
     ],
     "appealProcess": "Appeals may be made to the circuit court in the county where the records are maintained.",
     "contactInfo": {
@@ -51,7 +52,8 @@
       "Personal privacy information",
       "Confidential informants",
       "Security information",
-      "Attorney-client privileged information"
+      "Attorney-client privileged information",
+      "Certain real estate and criminal justice information"
     ],
     "appealProcess": "Administrative appeals to the agency head, then judicial review in superior court.",
     "contactInfo": {
@@ -81,7 +83,8 @@
       "Personnel files",
       "Records that would compromise ongoing investigations",
       "Attorney work product",
-      "Records protected by attorney-client privilege"
+      "Records protected by attorney-client privilege",
+      "Certain criminal history records"
     ],
     "appealProcess": "Special action in superior court or administrative appeal if available.",
     "contactInfo": {
@@ -258,10 +261,12 @@
       "Public records are open for inspection unless specifically exempted"
     ],
     "exemptions": [
-      "Personal information",
+      "Personal information of certain public employees and their families",
       "Security and investigative information",
       "Attorney-client privileged communications",
-      "Trade secrets"
+      "Trade secrets",
+      "Records related to suicide",
+      "Complaints against law enforcement"
     ],
     "appealProcess": "Mandamus action in circuit court.",
     "contactInfo": {
@@ -334,10 +339,10 @@
     "lawName": "Idaho Public Records Act",
     "citation": "Idaho Code § 74-101 et seq.",
     "fullCitation": "the Idaho Public Records Act (Idaho Code § 74-101 et seq.)",
-    "responseTime": "3 business days",
-    "responseDetails": "Agencies must respond within 3 business days, providing records or explaining why more time is needed.",
-    "feeStructure": "Reasonable fees for copying and labor",
-    "feeDetails": "Agencies may charge for copying costs and labor costs for requests requiring more than 2 hours of staff time.",
+    "responseTime": "3-10 business days",
+    "responseDetails": "Agencies must respond to resident requests within 3 business days, providing records or explaining why more time is needed. For non-resident requests, the response time is extended to 10 business days.",
+    "feeStructure": "Reasonable fees for copying and labor, with different rules for residents and non-residents",
+    "feeDetails": "For residents, agencies may charge for copying costs and labor costs for requests requiring more than 2 hours of staff time. For non-residents, agencies may charge for all costs associated with fulfilling the request.",
     "denialRights": true,
     "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for judicial review.",
     "expeditedProcessing": false,
@@ -522,7 +527,7 @@
       "Written request may be required"
     ],
     "exemptions": [
-      "Personnel records",
+      "The personal home address, personal and cell phone number, and personal email address of all public employees (effective June 4, 2024)",
       "Medical records",
       "Attorney-client privileged communications"
     ],
@@ -597,7 +602,7 @@
     "citation": "M.G.L. c. 66 § 10 et seq.",
     "fullCitation": "the Massachusetts Public Records Law (M.G.L. c. 66 § 10 et seq.)",
     "responseTime": "10 business days",
-    "responseDetails": "Agencies must respond within 10 business days, with possible extension for voluminous or complex requests.",
+    "responseDetails": "Agencies must respond within 10 business days, with possible extension for voluminous or complex requests. A 2024 court ruling affirmed that a request must be specific enough for a professional employee to identify the records with reasonable effort.",
     "feeStructure": "Reasonable fees for copying and labor",
     "feeDetails": "Agencies may charge for copying and labor costs, but first 4 hours of search time are free for non-commercial requests.",
     "denialRights": true,
@@ -669,7 +674,8 @@
     "exemptions": [
       "Personnel data",
       "Medical data",
-      "Data that would endanger public safety"
+      "Data that would endanger public safety",
+      "Personal information of judicial officers (effective August 1, 2024)"
     ],
     "appealProcess": "Seek district court review.",
     "contactInfo": {
@@ -683,8 +689,8 @@
     "lawName": "Mississippi Public Records Act",
     "citation": "Miss. Code Ann. § 25-61-1 et seq.",
     "fullCitation": "the Mississippi Public Records Act (Miss. Code Ann. § 25-61-1 et seq.)",
-    "responseTime": "14 days",
-    "responseDetails": "Agencies must respond within 14 days, providing records or explaining why additional time is needed.",
+    "responseTime": "7-14 working days",
+    "responseDetails": "Agencies must produce or deny production of a record within 7 working days of the request. If more time is needed, the agency must provide a written explanation, and the production date shall not be later than 14 working days from the original request.",
     "feeStructure": "Reasonable fees for copying and search",
     "feeDetails": "Agencies may charge for copying and search costs, but fees cannot exceed actual costs.",
     "denialRights": true,
@@ -698,7 +704,8 @@
     "exemptions": [
       "Personnel records",
       "Medical records",
-      "Records relating to pending investigations"
+      "Records relating to pending investigations",
+      "Terms of civil litigation settlements involving a public body may not be made confidential (effective July 1, 2024)"
     ],
     "appealProcess": "Seek chancery court review.",
     "contactInfo": {
@@ -858,11 +865,11 @@
     "citation": "N.J.S.A. 47:1A-1 et seq.",
     "fullCitation": "the New Jersey Open Public Records Act (N.J.S.A. 47:1A-1 et seq.)",
     "responseTime": "7 business days",
-    "responseDetails": "Agencies must respond within 7 business days, providing records or explaining why additional time is needed.",
+    "responseDetails": "Agencies must respond within 7 business days, providing records or explaining why additional time is needed. Significant reforms were enacted in 2024.",
     "feeStructure": "Reasonable fees for copying and special service charges",
-    "feeDetails": "Agencies may charge for copying and special service charges, but first 2 hours of labor are free.",
+    "feeDetails": "Agencies may charge for copying and special service charges.",
     "denialRights": true,
-    "denialProcess": "Denials must cite specific exemptions and inform requester of right to file complaint with Government Records Council.",
+    "denialProcess": "Denials must cite specific exemptions. The 2024 reforms make it more difficult to recover attorneys' fees in challenges and allow agencies to sue requesters.",
     "expeditedProcessing": false,
     "expeditedCriteria": null,
     "specialRequirements": [
@@ -872,9 +879,10 @@
     "exemptions": [
       "Personnel records",
       "Medical records",
-      "Records that would endanger public safety"
+      "Records that would endanger public safety",
+      "New exemptions and changes enacted in 2024"
     ],
-    "appealProcess": "File complaint with Government Records Council or seek court review.",
+    "appealProcess": "File complaint with Government Records Council or seek court review. The 2024 reforms introduced a presumption that the agency's denial is correct.",
     "contactInfo": {
       "website": "https://www.njoag.gov/",
       "phone": "(609) 292-4925"
@@ -1365,7 +1373,8 @@
     "exemptions": [
       "Personnel information",
       "Medical records",
-      "Records that would endanger public safety"
+      "Records that would endanger public safety",
+      "Data related to the Paid Family and Medical Leave program (effective 2024)"
     ],
     "appealProcess": "Seek superior court review for injunctive relief and damages.",
     "contactInfo": {
