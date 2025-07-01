@@ -61,15 +61,72 @@
 
                 <!-- Template Selection -->
                 <div class="mb-6">
-                    <label class="block text-sm font-medium mb-2 transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">
-                        <i class="fas fa-file-alt mr-2"></i>Quick Templates
-                    </label>
+                    <div class="flex items-center justify-between mb-2">
+                        <label class="block text-sm font-medium transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">
+                            <i class="fas fa-file-alt mr-2"></i>Quick Templates
+                        </label>
+                        <button @click="openTemplateWizard()" class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm transition-colors">
+                            <i class="fas fa-magic mr-1"></i>Create Custom Template
+                        </button>
+                    </div>
                     <select x-model="selectedTemplate" @change="applyTemplate()" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-300" :class="darkMode ? 'bg-gray-700 border-gray-600 text-white' : 'bg-white border-gray-300 text-gray-900'">
                         <option value="">Select a template...</option>
-                        <template x-for="template in templates" :key="template.id">
-                            <option :value="template.id" x-text="template.name"></option>
+                        <optgroup label="Built-in Templates">
+                            <template x-for="template in templates" :key="template.id">
+                                <option :value="template.id" x-text="template.name"></option>
+                            </template>
+                        </optgroup>
+                        <template x-if="customTemplates.length > 0">
+                            <optgroup label="My Custom Templates">
+                                <template x-for="template in customTemplates" :key="template.id">
+                                    <option :value="'custom_' + template.id" x-text="template.name + ' (Custom)'"></option>
+                                </template>
+                            </optgroup>
                         </template>
                     </select>
+                    <template x-if="customTemplates.length > 0">
+                        <div class="mt-3 p-3 rounded-lg transition-colors duration-300" :class="darkMode ? 'bg-gray-700 border border-gray-600' : 'bg-purple-50 border border-purple-200'">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="text-sm font-medium transition-colors duration-300" :class="darkMode ? 'text-purple-300' : 'text-purple-800'">
+                                    <i class="fas fa-folder mr-1"></i>My Custom Templates (<span x-text="customTemplates.length"></span>)
+                                </h4>
+                                <button @click="showTemplateManager = !showTemplateManager" class="text-xs transition-colors duration-300" :class="darkMode ? 'text-purple-300 hover:text-purple-100' : 'text-purple-600 hover:text-purple-800'">
+                                    <span x-show="!showTemplateManager">Show</span>
+                                    <span x-show="showTemplateManager">Hide</span>
+                                    <i class="fas ml-1" :class="showTemplateManager ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                </button>
+                            </div>
+                            <div x-show="showTemplateManager" x-cloak class="space-y-2 max-h-48 overflow-y-auto">
+                                <template x-for="template in customTemplates" :key="template.id">
+                                    <div class="flex items-center justify-between p-2 rounded transition-colors duration-300" :class="darkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'">
+                                        <div class="flex-1">
+                                            <div class="text-sm font-medium transition-colors duration-300" :class="darkMode ? 'text-white' : 'text-gray-900'" x-text="template.name"></div>
+                                            <div class="text-xs transition-colors duration-300" :class="darkMode ? 'text-gray-400' : 'text-gray-600'">
+                                                <span x-text="template.category" class="capitalize"></span>
+                                                <template x-if="template.description">
+                                                    <span> • <span x-text="template.description.substring(0, 50) + (template.description.length > 50 ? '...' : '')"></span></span>
+                                                </template>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-1 ml-2">
+                                            <button @click="selectedTemplate = 'custom_' + template.id; applyTemplate()" class="p-1 rounded text-xs transition-colors duration-300" :class="darkMode ? 'text-green-400 hover:bg-green-400 hover:text-gray-900' : 'text-green-600 hover:bg-green-100'" title="Use Template">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                            <button @click="editCustomTemplate(template.id)" class="p-1 rounded text-xs transition-colors duration-300" :class="darkMode ? 'text-blue-400 hover:bg-blue-400 hover:text-gray-900' : 'text-blue-600 hover:bg-blue-100'" title="Edit Template">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button @click="duplicateCustomTemplate(template.id)" class="p-1 rounded text-xs transition-colors duration-300" :class="darkMode ? 'text-yellow-400 hover:bg-yellow-400 hover:text-gray-900' : 'text-yellow-600 hover:bg-yellow-100'" title="Duplicate Template">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                            <button @click="deleteCustomTemplate(template.id)" class="p-1 rounded text-xs transition-colors duration-300" :class="darkMode ? 'text-red-400 hover:bg-red-400 hover:text-gray-900' : 'text-red-600 hover:bg-red-100'" title="Delete Template">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
                 </div>
 
                 <!-- Personal Information -->
@@ -182,6 +239,180 @@
                     <div class="mt-4">
                         <label class="block text-sm font-medium mb-1 transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Additional Notes</label>
                         <textarea x-model="form.additionalNotes" placeholder="Any additional context or special instructions..." rows="3" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-300" :class="darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template Customization Wizard Modal -->
+            <div x-show="showTemplateWizard" x-cloak class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+                <div class="rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transition-colors duration-300" :class="darkMode ? 'bg-gray-800' : 'bg-white'">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-2xl font-bold transition-colors duration-300" :class="darkMode ? 'text-white' : 'text-gray-900'">
+                                <i class="fas fa-magic mr-2 text-purple-600"></i>Template Customization Wizard
+                            </h2>
+                            <button @click="closeTemplateWizard()" class="transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-gray-700 p-2 rounded-full" :class="darkMode ? 'text-gray-300' : 'text-gray-600'">
+                                <i class="fas fa-times text-xl"></i>
+                            </button>
+                        </div>
+
+                        <!-- Wizard Steps -->
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors" :class="wizardStep >= 1 ? 'bg-purple-600 text-white' : (darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-200 text-gray-600')">1</div>
+                                        <span class="ml-2 text-sm font-medium transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Basic Info</span>
+                                    </div>
+                                    <div class="w-8 h-0.5 transition-colors" :class="wizardStep >= 2 ? 'bg-purple-600' : (darkMode ? 'bg-gray-700' : 'bg-gray-200')"></div>
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors" :class="wizardStep >= 2 ? 'bg-purple-600 text-white' : (darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-200 text-gray-600')">2</div>
+                                        <span class="ml-2 text-sm font-medium transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Content</span>
+                                    </div>
+                                    <div class="w-8 h-0.5 transition-colors" :class="wizardStep >= 3 ? 'bg-purple-600' : (darkMode ? 'bg-gray-700' : 'bg-gray-200')"></div>
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors" :class="wizardStep >= 3 ? 'bg-purple-600 text-white' : (darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-200 text-gray-600')">3</div>
+                                        <span class="ml-2 text-sm font-medium transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Preview & Save</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 1: Basic Information -->
+                        <div x-show="wizardStep === 1" class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-semibold mb-4 transition-colors duration-300" :class="darkMode ? 'text-white' : 'text-gray-900'">Template Basic Information</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1 transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Template Name *</label>
+                                        <input type="text" x-model="customTemplate.name" placeholder="My Custom Template" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors duration-300" :class="darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1 transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Category</label>
+                                        <select x-model="customTemplate.category" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors duration-300" :class="darkMode ? 'bg-gray-700 border-gray-600 text-white' : 'bg-white border-gray-300 text-gray-900'">
+                                            <option value="general">General Records</option>
+                                            <option value="police">Police Records</option>
+                                            <option value="financial">Financial Records</option>
+                                            <option value="personnel">Personnel Records</option>
+                                            <option value="legal">Legal Documents</option>
+                                            <option value="environmental">Environmental Records</option>
+                                            <option value="healthcare">Healthcare Records</option>
+                                            <option value="education">Education Records</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <label class="block text-sm font-medium mb-1 transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Template Description</label>
+                                    <textarea x-model="customTemplate.description" placeholder="Describe what this template is for and when to use it..." rows="3" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors duration-300" :class="darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Content Configuration -->
+                        <div x-show="wizardStep === 2" class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-semibold mb-4 transition-colors duration-300" :class="darkMode ? 'text-white' : 'text-gray-900'">Template Content</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1 transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Subject Line Template *</label>
+                                        <input type="text" x-model="customTemplate.subject" placeholder="Public Records Request - [DESCRIPTION]" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors duration-300" :class="darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'" required>
+                                        <p class="text-xs mt-1 transition-colors duration-300" :class="darkMode ? 'text-gray-400' : 'text-gray-600'">Use [DESCRIPTION] as a placeholder for specific details</p>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1 transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Records Description Template *</label>
+                                        <textarea x-model="customTemplate.recordsDescription" placeholder="I am requesting access to [SPECIFIC RECORDS] related to [TOPIC/INCIDENT] from [DATE RANGE]..." rows="4" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors duration-300" :class="darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'" required></textarea>
+                                        <p class="text-xs mt-1 transition-colors duration-300" :class="darkMode ? 'text-gray-400' : 'text-gray-600'">Use placeholders like [SPECIFIC RECORDS], [TOPIC/INCIDENT], [DATE RANGE] for customization</p>
+                                    </div>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-sm font-medium mb-1 transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Default Preferred Format</label>
+                                            <select x-model="customTemplate.preferredFormat" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors duration-300" :class="darkMode ? 'bg-gray-700 border-gray-600 text-white' : 'bg-white border-gray-300 text-gray-900'">
+                                                <option value="">No preference</option>
+                                                <option value="electronic">Electronic (PDF/Email)</option>
+                                                <option value="paper">Paper Copies</option>
+                                                <option value="inspection">Inspection Only</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium mb-1 transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Typical Agency Type</label>
+                                            <input type="text" x-model="customTemplate.agencyType" placeholder="Police Department, City Hall, etc." class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors duration-300" :class="darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2 transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Default Options</label>
+                                        <div class="space-y-2">
+                                            <label class="flex items-center">
+                                                <input type="checkbox" x-model="customTemplate.expeditedProcessing" class="mr-2">
+                                                <span class="text-sm transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-900'">Request expedited processing by default</span>
+                                            </label>
+                                            <label class="flex items-center">
+                                                <input type="checkbox" x-model="customTemplate.feeWaiverRequest" class="mr-2">
+                                                <span class="text-sm transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-900'">Request fee waiver by default</span>
+                                            </label>
+                                            <label class="flex items-center">
+                                                <input type="checkbox" x-model="customTemplate.publicInterest" class="mr-2">
+                                                <span class="text-sm transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-900'">Claim public interest by default</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-1 transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Additional Notes Template</label>
+                                        <textarea x-model="customTemplate.additionalNotes" placeholder="Standard additional notes or context for this type of request..." rows="3" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors duration-300" :class="darkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Preview and Save -->
+                        <div x-show="wizardStep === 3" class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-semibold mb-4 transition-colors duration-300" :class="darkMode ? 'text-white' : 'text-gray-900'">Template Preview</h3>
+                                <div class="rounded-lg p-4 transition-colors duration-300" :class="darkMode ? 'bg-gray-700 border border-gray-600' : 'bg-gray-50 border border-gray-200'">
+                                    <div class="mb-4">
+                                        <h4 class="font-medium mb-2 transition-colors duration-300" :class="darkMode ? 'text-white' : 'text-gray-900'">Template Summary</h4>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                                            <div>
+                                                <span class="font-medium transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Name:</span>
+                                                <span x-text="customTemplate.name || 'Untitled Template'" class="ml-2 transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-900'"></span>
+                                            </div>
+                                            <div>
+                                                <span class="font-medium transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Category:</span>
+                                                <span x-text="customTemplate.category || 'general'" class="ml-2 capitalize transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-900'"></span>
+                                            </div>
+                                            <div class="md:col-span-2">
+                                                <span class="font-medium transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-700'">Subject:</span>
+                                                <span x-text="customTemplate.subject || 'No subject template'" class="ml-2 transition-colors duration-300" :class="darkMode ? 'text-gray-300' : 'text-gray-900'"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="border-t pt-4 transition-colors duration-300" :class="darkMode ? 'border-gray-600' : 'border-gray-200'">
+                                        <h4 class="font-medium mb-2 transition-colors duration-300" :class="darkMode ? 'text-white' : 'text-gray-900'">Records Description Preview</h4>
+                                        <div class="text-sm font-mono p-3 rounded transition-colors duration-300" :class="darkMode ? 'bg-gray-800 text-gray-300' : 'bg-white text-gray-700'" x-text="customTemplate.recordsDescription || 'No description template'"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div class="flex justify-between pt-6 border-t transition-colors duration-300" :class="darkMode ? 'border-gray-700' : 'border-gray-200'">
+                            <div>
+                                <button x-show="wizardStep > 1" @click="wizardStep--" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md transition-colors">
+                                    <i class="fas fa-arrow-left mr-2"></i>Previous
+                                </button>
+                            </div>
+                            <div class="flex gap-2">
+                                <button @click="closeTemplateWizard()" class="transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-gray-700 px-4 py-2 rounded-md" :class="darkMode ? 'text-gray-300' : 'text-gray-600'">
+                                    Cancel
+                                </button>
+                                <button x-show="wizardStep < 3" @click="wizardStep++" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md transition-colors">
+                                    Next<i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                                <button x-show="wizardStep === 3" @click="saveCustomTemplate()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors" :disabled="!customTemplate.name || !customTemplate.subject || !customTemplate.recordsDescription">
+                                    <i class="fas fa-save mr-2"></i>Save Template
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
