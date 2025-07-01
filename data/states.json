@@ -2,401 +2,502 @@
   {
     "code": "AL",
     "name": "Alabama",
-    "citation": "the Alabama Open Records Act (Code of Alabama § 36-12-40 et seq.)",
-    "responseTime": "5 business days",
-    "feeStructure": "Reasonable costs for copying and administrative processing",
-    "denyalRights": true
+    "citation": "Code of Alabama § 36-12-40 et seq. (Alabama Open Records Act)",
+    "responseTime": "A 'reasonable time.' If the record is in active use or storage, the custodian has up to 5 business days to respond.",
+    "feeStructure": "Reasonable costs for copying, staff time, and any necessary technology costs. An estimate must be provided if costs exceed $50.",
+    "appeal_process": "A person denied access can file a lawsuit in the circuit court of the county where the records are maintained.",
+    "exemptions_summary": "Records where disclosure would be detrimental to the public interest, law enforcement investigative reports, and records made confidential by other state or federal laws.",
+    "request_format": "No specific format required. Requests can be made orally or in writing, but written requests are recommended."
   },
   {
     "code": "AK",
     "name": "Alaska",
-    "citation": "the Alaska Public Records Act (AS 40.25.110 et seq.)",
-    "responseTime": "10 business days",
-    "feeStructure": "Actual costs of duplication",
-    "denyalRights": true
+    "citation": "AS 40.25.110 et seq. (Alaska Public Records Act)",
+    "responseTime": "10 business days. Can be extended for an additional 10 business days under 'unusual circumstances.'",
+    "feeStructure": "Actual costs of duplication. A fee may be charged for staff time required to produce the record if it exceeds five person-hours.",
+    "appeal_process": "Denials can be appealed to the superior court.",
+    "exemptions_summary": "Personnel records, medical records, records of attorney-client privilege, and certain law enforcement records. There is a public interest balancing test.",
+    "request_format": "Written request is required."
   },
   {
     "code": "AZ",
     "name": "Arizona",
-    "citation": "the Arizona Public Records Law (A.R.S. § 39-121 et seq.)",
-    "responseTime": "promptly",
-    "feeStructure": "Reasonable fees for copying and research",
-    "denyalRights": true
+    "citation": "A.R.S. § 39-121 et seq. (Arizona Public Records Law)",
+    "responseTime": "'Promptly.' The courts have interpreted this to mean without unreasonable delay.",
+    "feeStructure": "Non-commercial requests: reasonable fees for copying. Commercial requests: can also include costs for research, and a portion of the cost to maintain the records system.",
+    "appeal_process": "A person can file a special action in the superior court to compel disclosure.",
+    "exemptions_summary": "Records that are confidential by law, records where privacy interests outweigh the public's right to know, and records vital to state security.",
+    "request_format": "No specific format required, but written requests are recommended."
   },
   {
     "code": "AR",
     "name": "Arkansas",
-    "citation": "the Arkansas Freedom of Information Act (A.C.A. § 25-19-101 et seq.)",
-    "responseTime": "3 business days",
-    "feeStructure": "Reasonable costs for copying and administrative processing",
-    "denyalRights": true
+    "citation": "A.C.A. § 25-19-101 et seq. (Arkansas Freedom of Information Act)",
+    "responseTime": "3 business days. If the records are in active use or storage, the custodian must certify this and set a date and time when the records will be available.",
+    "feeStructure": "Actual costs of reproduction, including supplies and mailing. No charge for staff time to locate or prepare records.",
+    "appeal_process": "Appeals are made to the circuit court of the county where the records are located.",
+    "exemptions_summary": "Income tax records, medical records, certain personnel records, and undisclosed law enforcement investigations.",
+    "request_format": "No specific format required. Can be made in person, by phone, or in writing."
   },
   {
     "code": "CA",
     "name": "California",
-    "citation": "the California Public Records Act (Gov. Code § 6250 et seq.)",
-    "responseTime": "10 calendar days",
-    "feeStructure": "Direct costs of duplication",
-    "denyalRights": true
+    "citation": "Gov. Code § 7920.000 et seq. (California Public Records Act)",
+    "responseTime": "10 calendar days. Can be extended by 14 days under 'unusual circumstances' with written notice.",
+    "feeStructure": "Direct costs of duplication. No charge for inspection or for the time it takes to search for, collect, or redact records.",
+    "appeal_process": "File a lawsuit in the superior court to enforce the law.",
+    "exemptions_summary": "Numerous exemptions, including personnel files, pending litigation records, and preliminary drafts. A 'catch-all' exemption allows withholding if the public interest in nondisclosure clearly outweighs the public interest in disclosure.",
+    "request_format": "No specific format, but written requests are strongly advised."
   },
   {
     "code": "CO",
     "name": "Colorado",
-    "citation": "the Colorado Open Records Act (C.R.S. § 24-72-200.1 et seq.)",
-    "responseTime": "3 business days",
-    "feeStructure": "Reasonable fees for research and copying",
-    "denyalRights": true
+    "citation": "C.R.S. § 24-72-200.1 et seq. (Colorado Open Records Act - CORA)",
+    "responseTime": "3 business days. Can be extended by 7 business days if extenuating circumstances exist.",
+    "feeStructure": "Reasonable fees for copying. The first hour of research is free. After that, a reasonable fee can be charged.",
+    "appeal_process": "File a lawsuit in the district court.",
+    "exemptions_summary": "Medical and personnel files, trade secrets, and records of sexual harassment complaints. A 'substantial injury to the public interest' balancing test applies to some records.",
+    "request_format": "Written request is required."
   },
   {
     "code": "CT",
     "name": "Connecticut",
-    "citation": "the Connecticut Freedom of Information Act (C.G.S. § 1-200 et seq.)",
-    "responseTime": "4 business days",
-    "feeStructure": "Reasonable fees for copying and administrative costs",
-    "denyalRights": true
+    "citation": "C.G.S. § 1-200 et seq. (Connecticut Freedom of Information Act)",
+    "responseTime": "4 business days to acknowledge the request. Records must be provided 'promptly' thereafter.",
+    "feeStructure": "Fees for copying are set by statute (e.g., $0.50 per page). No fee for inspection or electronic records sent by email.",
+    "appeal_process": "Appeals are made to the state's Freedom of Information Commission.",
+    "exemptions_summary": "Preliminary drafts, personnel or medical files, and certain law enforcement records if disclosure would be prejudicial to a pending case.",
+    "request_format": "No specific format required, but written requests are standard."
   },
   {
     "code": "DE",
     "name": "Delaware",
-    "citation": "the Delaware Freedom of Information Act (29 Del. C. § 10001 et seq.)",
-    "responseTime": "15 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "29 Del. C. § 10001 et seq. (Delaware Freedom of Information Act)",
+    "responseTime": "15 business days. The agency must provide a reason for any delay.",
+    "feeStructure": "Reasonable fees for copying and administrative costs (staff time for retrieval and redaction).",
+    "appeal_process": "A petition can be filed with the Attorney General, who will issue an opinion. A person can also sue in the Superior Court.",
+    "exemptions_summary": "Personnel files, investigatory files, trade secrets, and any record deemed confidential by other laws.",
+    "request_format": "Written request is required."
   },
   {
     "code": "FL",
     "name": "Florida",
-    "citation": "the Florida Public Records Act (F.S. § 119.01 et seq.)",
-    "responseTime": "promptly",
-    "feeStructure": "Actual cost of duplication",
-    "denyalRights": true
+    "citation": "F.S. Chapter 119 (Florida Public Records Act)",
+    "responseTime": "'Promptly and in good faith.' A 'reasonable time' is allowed to retrieve and redact records.",
+    "feeStructure": "Actual cost of duplication. A 'special service charge' may apply if the request requires extensive use of technology or personnel.",
+    "appeal_process": "File a civil action in the circuit court to compel compliance.",
+    "exemptions_summary": "Florida has a very broad public records law, but there are over 1,000 specific statutory exemptions, including active criminal intelligence information and certain personal information.",
+    "request_format": "No specific format required; can be oral or written."
   },
   {
     "code": "GA",
     "name": "Georgia",
-    "citation": "the Georgia Open Records Act (O.C.G.A. § 50-18-70 et seq.)",
-    "responseTime": "3 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "O.C.G.A. § 50-18-70 et seq. (Georgia Open Records Act)",
+    "responseTime": "3 business days. If some records cannot be produced within 3 days, the agency must provide a description and a timeline for when they will be available.",
+    "feeStructure": "Reasonable fees for copying (statutory limit of $0.10 per page) and administrative costs for search, retrieval, and redaction (prorated for the lowest-paid full-time employee who can do the work). First 15 minutes are free.",
+    "appeal_process": "File a civil suit in the superior court. The Attorney General can also issue opinions.",
+    "exemptions_summary": "Records related to pending investigations, real estate appraisals, and certain personal information. A balancing test exists for some records.",
+    "request_format": "No specific format required, but written requests are recommended."
   },
   {
     "code": "HI",
     "name": "Hawaii",
-    "citation": "the Hawaii Uniform Information Practices Act (HRS § 92F-1 et seq.)",
-    "responseTime": "10 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "HRS § 92F-1 et seq. (Uniform Information Practices Act)",
+    "responseTime": "10 business days. Can be extended for another 10 business days for good cause.",
+    "feeStructure": "Reasonable fees for search, review, and segregation of records, plus copying costs. Fees can be waived if the request is in the public interest.",
+    "appeal_process": "Appeal to the Office of Information Practices (OIP), which can issue an advisory opinion. A lawsuit can also be filed in circuit court.",
+    "exemptions_summary": "Government records that would constitute a clearly unwarranted invasion of personal privacy, and preliminary drafts or notes.",
+    "request_format": "Written request is generally required."
   },
   {
     "code": "ID",
     "name": "Idaho",
-    "citation": "the Idaho Public Records Act (Idaho Code § 74-101 et seq.)",
-    "responseTime": "3 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "Idaho Code § 74-101 et seq. (Idaho Public Records Act)",
+    "responseTime": "3 business days. Can be extended to 10 business days with written notice.",
+    "feeStructure": "No fee for the first 100 pages of paper records or the first two hours of labor. After that, reasonable fees for copying and labor can be charged.",
+    "appeal_process": "File a petition with the magistrate court.",
+    "exemptions_summary": "Personnel records, active law enforcement investigations, and records exempt by other statutes.",
+    "request_format": "Written request required."
   },
   {
     "code": "IL",
     "name": "Illinois",
-    "citation": "the Illinois Freedom of Information Act (5 ILCS 140/1 et seq.)",
-    "responseTime": "5 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "5 ILCS 140/1 et seq. (Illinois Freedom of Information Act)",
+    "responseTime": "5 business days. Can be extended for another 5 business days for specific reasons.",
+    "feeStructure": "No fee for the first 50 pages of black and white, letter or legal sized copies. After that, fees are limited to the actual cost of reproduction.",
+    "appeal_process": "Appeal to the Public Access Counselor (PAC) at the Attorney General's office, or file a lawsuit in circuit court.",
+    "exemptions_summary": "Private information, law enforcement records that would interfere with proceedings, and preliminary drafts.",
+    "request_format": "Written request is required."
   },
   {
     "code": "IN",
     "name": "Indiana",
-    "citation": "the Indiana Access to Public Records Act (IC 5-14-3-1 et seq.)",
-    "responseTime": "24 hours",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "IC 5-14-3-1 et seq. (Indiana Access to Public Records Act)",
+    "responseTime": "Agencies must respond within 24 hours for requests made in person or by telephone, and within 7 days for requests made by mail or fax.",
+    "feeStructure": "Fees for copying are set by statute. Agencies may not charge for search or review.",
+    "appeal_process": "File a complaint with the Public Access Counselor, or file a lawsuit in the circuit or superior court.",
+    "exemptions_summary": "Investigatory records of law enforcement, personnel files of public employees, and confidential commercial information.",
+    "request_format": "No specific format required, but must identify the records with 'reasonable particularity'."
   },
   {
     "code": "IA",
     "name": "Iowa",
-    "citation": "the Iowa Open Records Act (Iowa Code § 22.1 et seq.)",
-    "responseTime": "promptly",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "Iowa Code Chapter 22 (Iowa Open Records Act)",
+    "responseTime": "'Without delay.' Generally interpreted as within 10 to 20 business days.",
+    "feeStructure": "Reasonable expenses for the actual costs of providing the service, including copying and staff time if it exceeds 30 minutes.",
+    "appeal_process": "File a complaint with the Iowa Public Information Board or file a lawsuit in district court.",
+    "exemptions_summary": "Personal information in personnel records, student records, hospital records, and peace officers' investigative reports.",
+    "request_format": "No specific format required."
   },
   {
     "code": "KS",
     "name": "Kansas",
-    "citation": "the Kansas Open Records Act (K.S.A. § 45-215 et seq.)",
-    "responseTime": "3 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "K.S.A. 45-215 et seq. (Kansas Open Records Act - KORA)",
+    "responseTime": "3 business days.",
+    "feeStructure": "Reasonable fees for staff time spent producing the records and for copying.",
+    "appeal_process": "File a lawsuit in district court.",
+    "exemptions_summary": "Personnel records, medical treatment records, and records privileged under the rules of evidence.",
+    "request_format": "Written request is required."
   },
   {
     "code": "KY",
     "name": "Kentucky",
-    "citation": "the Kentucky Open Records Act (KRS § 61.870 et seq.)",
-    "responseTime": "3 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "KRS 61.870 et seq. (Kentucky Open Records Act)",
+    "responseTime": "5 business days (excluding weekends and holidays).",
+    "feeStructure": "Reasonable fee for copying, not to exceed the actual cost of reproduction. No charge for staff time.",
+    "appeal_process": "Appeal to the Kentucky Attorney General. The AG's decision can then be appealed to the circuit court.",
+    "exemptions_summary": "Records containing personal information where disclosure would be a clearly unwarranted invasion of privacy, and preliminary drafts and notes.",
+    "request_format": "Written request required. Must be a resident of the Commonwealth."
   },
   {
     "code": "LA",
     "name": "Louisiana",
-    "citation": "the Louisiana Public Records Act (R.S. 44:1 et seq.)",
-    "responseTime": "3 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "La. R.S. 44:1 et seq. (Louisiana Public Records Act)",
+    "responseTime": "5 business days.",
+    "feeStructure": "Reasonable fees for copying. An estimate must be provided in advance if fees are expected.",
+    "appeal_process": "File a suit for a writ of mandamus in the district court.",
+    "exemptions_summary": "Records pertaining to pending criminal litigation, and records containing software or security information.",
+    "request_format": "No specific format required."
   },
   {
     "code": "ME",
     "name": "Maine",
-    "citation": "the Maine Freedom of Access Act (1 M.R.S. § 401 et seq.)",
-    "responseTime": "5 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "1 M.R.S. § 401 et seq. (Maine Freedom of Access Act)",
+    "responseTime": "5 business days to acknowledge receipt and provide an estimated time and cost.",
+    "feeStructure": "Direct costs of copying. After the first hour of staff time, can charge for search and retrieval at a rate of up to $25/hour.",
+    "appeal_process": "File an appeal in Superior Court.",
+    "exemptions_summary": "Records designated confidential by statute, and records that would constitute an unwarranted invasion of personal privacy.",
+    "request_format": "No specific format required."
   },
   {
     "code": "MD",
     "name": "Maryland",
-    "citation": "the Maryland Public Information Act (Md. Code, Gen. Prov. § 4-101 et seq.)",
-    "responseTime": "30 days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "Md. Code, Gen. Prov. § 4-101 et seq. (Maryland Public Information Act - PIA)",
+    "responseTime": "A 'reasonable period,' not to exceed 30 days. Must provide a definite time frame if more than 10 business days are needed.",
+    "feeStructure": "Reasonable fees for the actual costs of search, preparation, and reproduction. The first 2 hours of staff time are free.",
+    "appeal_process": "Seek review by the Public Information Act Compliance Board or file a lawsuit in circuit court.",
+    "exemptions_summary": "Personnel records, retirement records, student records, and investigatory records.",
+    "request_format": "Written request is required."
   },
   {
     "code": "MA",
     "name": "Massachusetts",
-    "citation": "the Massachusetts Public Records Law (M.G.L. c. 66, § 10 et seq.)",
-    "responseTime": "10 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "M.G.L. c. 66, § 10 (Massachusetts Public Records Law)",
+    "responseTime": "10 business days.",
+    "feeStructure": "Fees for copying (5 cents per page for black and white) and for staff time to search and segregate records (capped at $25/hour after the first two hours for municipalities).",
+    "appeal_process": "Appeal to the Supervisor of Public Records, who can order the release of records. Decisions can be appealed in superior court.",
+    "exemptions_summary": "The 'privacy' exemption is common, protecting records where disclosure would be an unwarranted invasion of privacy. Also exempts policy-making documents.",
+    "request_format": "No specific format required."
   },
   {
     "code": "MI",
     "name": "Michigan",
-    "citation": "the Michigan Freedom of Information Act (MCL 15.231 et seq.)",
-    "responseTime": "5 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "MCL 15.231 et seq. (Michigan Freedom of Information Act)",
+    "responseTime": "5 business days. Can be extended for 10 additional business days.",
+    "feeStructure": "Fees for labor costs (search, examination, redaction), copying, and mailing. A fee waiver is available for those in the public interest.",
+    "appeal_process": "Appeal to the head of the public body. If denied again, a civil action can be filed in circuit court.",
+    "exemptions_summary": "Information of a personal nature where public disclosure would be a clearly unwarranted invasion of an individual's privacy.",
+    "request_format": "Written request is required."
   },
   {
     "code": "MN",
     "name": "Minnesota",
-    "citation": "the Minnesota Government Data Practices Act (Minn. Stat. § 13.01 et seq.)",
-    "responseTime": "promptly",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "Minn. Stat. Chapter 13 (Minnesota Government Data Practices Act)",
+    "responseTime": "'Reasonable amount of time.'",
+    "feeStructure": "Actual costs of searching for and retrieving data, including the cost of employee time, and for making and transmitting copies.",
+    "appeal_process": "Bring a civil action in district court.",
+    "exemptions_summary": "Data classified as not public by statute, federal law, or a temporary classification. Includes personnel data and active investigative data.",
+    "request_format": "No specific format required."
   },
   {
     "code": "MS",
     "name": "Mississippi",
-    "citation": "the Mississippi Public Records Act (Miss. Code Ann. § 25-61-1 et seq.)",
-    "responseTime": "7 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "Miss. Code Ann. § 25-61-1 et seq. (Mississippi Public Records Act)",
+    "responseTime": "7 business days.",
+    "feeStructure": "Fees reasonably calculated to reimburse the agency for the actual cost of searching, reviewing, duplicating, and mailing.",
+    "appeal_process": "Petition the chancery court for a hearing.",
+    "exemptions_summary": "Individual tax records, personnel files, and certain law enforcement records.",
+    "request_format": "Written request recommended."
   },
   {
     "code": "MO",
     "name": "Missouri",
-    "citation": "the Missouri Sunshine Law (R.S.Mo. § 610.010 et seq.)",
-    "responseTime": "3 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "R.S.Mo. § 610.010 et seq. (Missouri Sunshine Law)",
+    "responseTime": "No later than the end of the 3rd business day.",
+    "feeStructure": "Fees for copying and for the time taken by clerical staff to locate and copy the records.",
+    "appeal_process": "File a lawsuit in the circuit court.",
+    "exemptions_summary": "Individually identifiable personnel records, and records related to the leasing, purchase or sale of real estate until the transaction is complete.",
+    "request_format": "No specific format required."
   },
   {
     "code": "MT",
     "name": "Montana",
-    "citation": "the Montana Right to Know Act (MCA § 2-6-101 et seq.)",
-    "responseTime": "5 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "Montana Constitution, Art. II, Sec. 9; MCA § 2-6-1001 et seq.",
+    "responseTime": "No specific time limit, but must be 'timely.'",
+    "feeStructure": "A fee may be charged that is 'reasonably related to the cost of producing the record.'",
+    "appeal_process": "File a lawsuit in district court.",
+    "exemptions_summary": "The right to know is balanced against an individual's right to privacy. If the demand of individual privacy clearly exceeds the merits of public disclosure, the record is exempt.",
+    "request_format": "No specific format required."
   },
   {
     "code": "NE",
     "name": "Nebraska",
-    "citation": "the Nebraska Public Records Statutes (Neb. Rev. Stat. § 84-712 et seq.)",
-    "responseTime": "4 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "Neb. Rev. Stat. § 84-712 et seq. (Nebraska Public Records Statutes)",
+    "responseTime": "4 business days.",
+    "feeStructure": "Actual cost of copying. A reasonable charge may be assessed for labor if it exceeds four hours.",
+    "appeal_process": "File a lawsuit in district court or a complaint with the Attorney General.",
+    "exemptions_summary": "Personal records, law enforcement investigatory records, and trade secrets.",
+    "request_format": "No specific format required."
   },
   {
     "code": "NV",
     "name": "Nevada",
-    "citation": "the Nevada Public Records Act (NRS § 239.010 et seq.)",
-    "responseTime": "5 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "NRS Chapter 239 (Nevada Public Records Act)",
+    "responseTime": "5 business days.",
+    "feeStructure": "Fees for copying. If a request requires more than 2 hours of staff time, a fee based on the employee's salary may be charged.",
+    "appeal_process": "File a petition in district court.",
+    "exemptions_summary": "Records declared confidential by law. A balancing test is used to weigh privacy or security interests against the public's right to know.",
+    "request_format": "Written request recommended."
   },
   {
     "code": "NH",
     "name": "New Hampshire",
-    "citation": "the New Hampshire Right-to-Know Law (RSA § 91-A:1 et seq.)",
-    "responseTime": "5 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "RSA Chapter 91-A (New Hampshire Right-to-Know Law)",
+    "responseTime": "5 business days.",
+    "feeStructure": "Actual cost of reproduction. No charge for inspection.",
+    "appeal_process": "File a petition in superior court or a complaint with the Right to Know Ombudsman.",
+    "exemptions_summary": "Records whose disclosure would constitute an invasion of privacy, and records pertaining to internal personnel practices.",
+    "request_format": "No specific format required."
   },
   {
     "code": "NJ",
     "name": "New Jersey",
-    "citation": "the New Jersey Open Public Records Act (N.J.S.A. 47:1A-1 et seq.)",
-    "responseTime": "7 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "N.J.S.A. 47:1A-1 et seq. (Open Public Records Act - OPRA)",
+    "responseTime": "7 business days.",
+    "feeStructure": "Fees for copying are set by statute (e.g., $0.05 per page for letter size). A 'special service charge' may apply for extraordinary requests.",
+    "appeal_process": "File a complaint with the Government Records Council (GRC) or file a lawsuit in Superior Court.",
+    "exemptions_summary": "Inter-agency or intra-agency advisory material, information which would give an advantage to competitors or bidders, and personal identifying information.",
+    "request_format": "Must be in writing and submitted on the agency's official OPRA request form."
   },
   {
     "code": "NM",
     "name": "New Mexico",
-    "citation": "the New Mexico Inspection of Public Records Act (NMSA § 14-2-1 et seq.)",
-    "responseTime": "3 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "NMSA 1978, Chapter 14, Article 2 (Inspection of Public Records Act - IPRA)",
+    "responseTime": "3 business days to acknowledge and respond. Records must be produced within 15 calendar days.",
+    "feeStructure": "Reasonable fees for copying. No charge for inspection.",
+    "appeal_process": "File a lawsuit in district court or file a complaint with the Attorney General's office.",
+    "exemptions_summary": "Matters of opinion in personnel files, letters of reference, and law enforcement records that reveal confidential sources or methods.",
+    "request_format": "Written request is required."
   },
   {
     "code": "NY",
     "name": "New York",
-    "citation": "the New York Freedom of Information Law (Public Officers Law § 84 et seq.)",
-    "responseTime": "5 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "Public Officers Law, Article 6 (Freedom of Information Law - FOIL)",
+    "responseTime": "5 business days to acknowledge receipt. Must state approximate date when the request will be granted or denied.",
+    "feeStructure": "Fees for copying (up to $0.25 per page) or the actual cost of reproduction. Two hours of staff time to prepare electronic records is free.",
+    "appeal_process": "Appeal in writing to the head of the agency within 30 days. After that, an Article 78 proceeding can be brought in state supreme court.",
+    "exemptions_summary": "Records that if disclosed would constitute an unwarranted invasion of personal privacy, and inter-agency or intra-agency materials that are not statistical or factual tabulations.",
+    "request_format": "Written request is required."
   },
   {
     "code": "NC",
     "name": "North Carolina",
-    "citation": "the North Carolina Public Records Law (N.C. Gen. Stat. § 132-1 et seq.)",
-    "responseTime": "promptly",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "N.C. Gen. Stat. Chapter 132 (North Carolina Public Records Law)",
+    "responseTime": "'As promptly as possible.'",
+    "feeStructure": "Actual cost of duplication. A special service charge can be applied for extensive use of information technology or clerical assistance.",
+    "appeal_process": "File a civil action in superior court.",
+    "exemptions_summary": "Criminal investigation records, confidential communications from attorneys, and sensitive public security information.",
+    "request_format": "No specific format required."
   },
   {
     "code": "ND",
     "name": "North Dakota",
-    "citation": "the North Dakota Open Records Statute (N.D.C.C. § 44-04-18 et seq.)",
-    "responseTime": "3 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "N.D.C.C. § 44-04-18 (North Dakota Open Records Statute)",
+    "responseTime": "'Reasonable amount of time.'",
+    "feeStructure": "A charge for the 'actual cost' of providing the copies.",
+    "appeal_process": "File a lawsuit in district court or request an opinion from the Attorney General.",
+    "exemptions_summary": "Records that are specifically exempt by state or federal law. A balancing test is used for other records, weighing privacy against the public's right to know.",
+    "request_format": "No specific format required."
   },
   {
     "code": "OH",
     "name": "Ohio",
-    "citation": "the Ohio Public Records Act (R.C. § 149.43 et seq.)",
-    "responseTime": "promptly",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "R.C. 149.43 (Ohio Public Records Act)",
+    "responseTime": "'Promptly.'",
+    "feeStructure": "Actual cost of the copies.",
+    "appeal_process": "File a mandamus action in the court of common pleas, court of appeals, or the supreme court.",
+    "exemptions_summary": "Medical records, trial preparation records, and confidential law enforcement investigatory records.",
+    "request_format": "No specific format required, but the request must be specific enough for the agency to identify the records."
   },
   {
     "code": "OK",
     "name": "Oklahoma",
-    "citation": "the Oklahoma Open Records Act (51 O.S. § 24A.1 et seq.)",
-    "responseTime": "5 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "51 O.S. § 24A.1 et seq. (Oklahoma Open Records Act)",
+    "responseTime": "'Prompt, reasonable access.'",
+    "feeStructure": "Fees for copying and for recovering the direct cost of record search and copying if the request is for a commercial purpose or would cause excessive disruption.",
+    "appeal_process": "File a lawsuit in district court.",
+    "exemptions_summary": "Personnel records related to internal discipline, and law enforcement records if it would compromise an ongoing investigation.",
+    "request_format": "No specific format required."
   },
   {
     "code": "OR",
     "name": "Oregon",
-    "citation": "the Oregon Public Records Law (ORS § 192.410 et seq.)",
-    "responseTime": "promptly",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "ORS 192.311 to 192.478 (Oregon Public Records Law)",
+    "responseTime": "5 business days to acknowledge receipt. Must complete the response as soon as practicable and without unreasonable delay.",
+    "feeStructure": "Fees reasonably calculated to reimburse the agency for its actual cost in making records available.",
+    "appeal_process": "Petition the District Attorney or the Attorney General for review. Their order can be appealed in circuit court.",
+    "exemptions_summary": "Records of a personal nature if disclosure would be an unreasonable invasion of privacy, and investigatory information compiled for criminal law purposes.",
+    "request_format": "No specific format required."
   },
   {
     "code": "PA",
     "name": "Pennsylvania",
-    "citation": "the Pennsylvania Right-to-Know Law (65 P.S. § 67.101 et seq.)",
-    "responseTime": "5 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "65 P.S. § 67.101 et seq. (Pennsylvania Right-to-Know Law)",
+    "responseTime": "5 business days.",
+    "feeStructure": "Fees for copying, postage, and other specific costs are set by the Office of Open Records.",
+    "appeal_process": "Appeal to the Pennsylvania Office of Open Records within 15 business days of a denial.",
+    "exemptions_summary": "Records that would reveal the institution's deliberative process, and records that would threaten public safety or a building's physical security.",
+    "request_format": "Must be in writing and submitted to the agency's Open Records Officer."
   },
   {
     "code": "RI",
     "name": "Rhode Island",
-    "citation": "the Rhode Island Access to Public Records Act (R.I. Gen. Laws § 38-2-1 et seq.)",
-    "responseTime": "10 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "R.I. Gen. Laws § 38-2-1 et seq. (Access to Public Records Act - APRA)",
+    "responseTime": "10 business days. Can be extended for 20 additional business days for good cause.",
+    "feeStructure": "First hour of search and retrieval is free. After that, up to $15/hour. Copying fees are limited to 15 cents per page.",
+    "appeal_process": "File a complaint with the chief administrative officer of the public body, then to the Department of Attorney General, or file a suit in superior court.",
+    "exemptions_summary": "Trade secrets, collective bargaining records, and records that would constitute a clearly unwarranted invasion of personal privacy.",
+    "request_format": "No specific format required."
   },
   {
     "code": "SC",
     "name": "South Carolina",
-    "citation": "the South Carolina Freedom of Information Act (S.C. Code § 30-4-10 et seq.)",
-    "responseTime": "15 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "S.C. Code § 30-4-10 et seq. (South Carolina Freedom of Information Act)",
+    "responseTime": "10 business days for records less than 24 months old; 20 business days for older records.",
+    "feeStructure": "Reasonable fees for the search, retrieval, and redaction of records. A fee schedule must be publicly available.",
+    "appeal_process": "File a lawsuit in the circuit court.",
+    "exemptions_summary": "Records that would be an unreasonable invasion of personal privacy, and law enforcement records that would harm an ongoing investigation.",
+    "request_format": "Written request is required."
   },
   {
     "code": "SD",
     "name": "South Dakota",
-    "citation": "the South Dakota Open Records Law (SDCL § 1-27-1 et seq.)",
-    "responseTime": "5 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "SDCL Chapter 1-27 (South Dakota Open Records Law)",
+    "responseTime": "'Promptly.' If a delay is necessary, the custodian must provide a written explanation within 10 business days.",
+    "feeStructure": "Fees for copying and any necessary mailing costs. Fees may not exceed the actual cost of reproduction.",
+    "appeal_process": "File a lawsuit in circuit court or request assistance from the Open Meetings Commission.",
+    "exemptions_summary": "Personnel information other than date of employment and salary, and student records.",
+    "request_format": "No specific format required."
   },
   {
     "code": "TN",
     "name": "Tennessee",
-    "citation": "the Tennessee Public Records Act (T.C.A. § 10-7-501 et seq.)",
-    "responseTime": "7 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "T.C.A. § 10-7-503 et seq. (Tennessee Public Records Act)",
+    "responseTime": "7 business days.",
+    "feeStructure": "A schedule of reasonable charges must be established by the Office of Open Records Counsel. Labor is not charged for inspection.",
+    "appeal_process": "File a petition in chancery or circuit court.",
+    "exemptions_summary": "Medical records of patients in state institutions, and certain law enforcement investigation records.",
+    "request_format": "Written request required for copies. Must be a citizen of Tennessee."
   },
   {
     "code": "TX",
     "name": "Texas",
-    "citation": "the Texas Public Information Act (Tex. Gov't Code § 552.001 et seq.)",
-    "responseTime": "10 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "Tex. Gov't Code Chapter 552 (Texas Public Information Act)",
+    "responseTime": "'Promptly,' which the law presumes is within 10 business days. If more time is needed, the agency must notify the requester and set a date.",
+    "feeStructure": "Charges for copying and labor are set by the Attorney General's office.",
+    "appeal_process": "File a complaint with the Attorney General's Open Records Division or file a lawsuit for a writ of mandamus.",
+    "exemptions_summary": "Information considered confidential by law (constitutional, statutory, or judicial decision), and information related to pending litigation.",
+    "request_format": "Written request is required."
   },
   {
     "code": "UT",
     "name": "Utah",
-    "citation": "the Utah Government Records Access and Management Act (Utah Code § 63G-2-101 et seq.)",
-    "responseTime": "10 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "Utah Code § 63G-2-101 et seq. (Government Records Access and Management Act - GRAMA)",
+    "responseTime": "10 business days. Can be expedited to 5 business days for a fee.",
+    "feeStructure": "Reasonable fees for the actual cost of copying and compiling the records.",
+    "appeal_process": "Appeal to the chief executive of the governmental entity, then to the State Records Committee or district court.",
+    "exemptions_summary": "Records that are private, controlled, or protected under the statute. Uses a balancing test to weigh privacy interests against the public interest in access.",
+    "request_format": "Written request is required."
   },
   {
     "code": "VT",
     "name": "Vermont",
-    "citation": "the Vermont Public Records Act (1 V.S.A. § 315 et seq.)",
-    "responseTime": "3 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "1 V.S.A. § 315 et seq. (Vermont Public Records Act)",
+    "responseTime": "3 business days. Can be extended up to 10 business days.",
+    "feeStructure": "Actual cost of copying. Staff time may be charged for producing a record in a non-standard format.",
+    "appeal_process": "Appeal to the head of the agency. If denied, a lawsuit can be filed in superior court.",
+    "exemptions_summary": "Records dealing with the detection and investigation of crime, and personal documents relating to an individual.",
+    "request_format": "No specific format required."
   },
   {
     "code": "VA",
     "name": "Virginia",
-    "citation": "the Virginia Freedom of Information Act (Va. Code § 2.2-3700 et seq.)",
-    "responseTime": "5 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "Va. Code § 2.2-3700 et seq. (Virginia Freedom of Information Act)",
+    "responseTime": "5 business days. Can be extended for 7 additional business days.",
+    "feeStructure": "Reasonable charges for the actual costs incurred in accessing, duplicating, supplying, or searching for the requested records.",
+    "appeal_process": "File a petition for mandamus or injunction in the general district or circuit court.",
+    "exemptions_summary": "Personnel records, written advice of legal counsel, and records relating to the negotiation and award of a contract prior to a contract being awarded.",
+    "request_format": "No specific format required. Must be a citizen of the Commonwealth or a media representative."
   },
   {
     "code": "WA",
     "name": "Washington",
-    "citation": "the Washington Public Records Act (RCW § 42.56.001 et seq.)",
-    "responseTime": "5 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "RCW 42.56 (Washington Public Records Act)",
+    "responseTime": "5 business days to respond by either providing the record, denying the request, or providing a reasonable estimate of the time needed.",
+    "feeStructure": "A fee of 15 cents per page for photocopies, or the actual cost of producing electronic copies. No fee for inspection.",
+    "appeal_process": "Seek judicial review in the superior court of the county where the record is maintained.",
+    "exemptions_summary": "Personal information of individuals if disclosure would violate their right to privacy, and specific intelligence information for law enforcement.",
+    "request_format": "No specific format required."
   },
   {
     "code": "WV",
     "name": "West Virginia",
-    "citation": "the West Virginia Freedom of Information Act (W. Va. Code § 29B-1-1 et seq.)",
-    "responseTime": "5 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "W. Va. Code § 29B-1-1 et seq. (West Virginia Freedom of Information Act)",
+    "responseTime": "5 business days.",
+    "feeStructure": "A fee schedule reasonably related to the actual cost of reproduction.",
+    "appeal_process": "File for injunctive or declaratory relief in the circuit court.",
+    "exemptions_summary": "Trade secrets, information of a personal nature that would be an unreasonable invasion of privacy, and certain law enforcement records.",
+    "request_format": "Written request is required."
   },
   {
     "code": "WI",
     "name": "Wisconsin",
-    "citation": "the Wisconsin Open Records Law (Wis. Stat. § 19.31 et seq.)",
-    "responseTime": "promptly",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "Wis. Stat. §§ 19.31-19.39 (Wisconsin Open Records Law)",
+    "responseTime": "'As soon as practicable and without delay.'",
+    "feeStructure": "Actual, necessary, and direct cost of reproduction. Location costs may be imposed if they exceed $50.",
+    "appeal_process": "Bring an action for mandamus in circuit court or request an opinion from the Attorney General.",
+    "exemptions_summary": "Uses a balancing test. Access is denied only if the harm to the public interest from disclosure outweighs the strong public interest in openness.",
+    "request_format": "No specific format required."
   },
   {
     "code": "WY",
     "name": "Wyoming",
-    "citation": "the Wyoming Public Records Act (Wyo. Stat. § 16-4-201 et seq.)",
-    "responseTime": "3 business days",
-    "feeStructure": "Reasonable fees for copying and processing",
-    "denyalRights": true
+    "citation": "Wyo. Stat. § 16-4-201 et seq. (Wyoming Public Records Act)",
+    "responseTime": "'Reasonable time.' The custodian must provide the records 'as soon as is practical.'",
+    "feeStructure": "Reasonable fee for making copies and for the cost of programming and computer services needed to produce the record.",
+    "appeal_process": "File a petition in district court.",
+    "exemptions_summary": "Investigatory records, personnel files, and records that would result in a clearly unwarranted invasion of personal privacy.",
+    "request_format": "Written request is required."
   }
 ]
+
