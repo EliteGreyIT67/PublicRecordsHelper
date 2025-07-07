@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" x-data="publicRecordsApp" x-init="init()" :class="{ 'dark': darkMode }">
+<html lang="en" x-data="publicRecordsApp" x-init="init()">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,50 +13,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         [x-cloak] { display: none !important; }
-        body { font-family: 'Inter', sans-serif; transition: background-color 0.3s, color 0.3s; }
-        .form-legend { @apply text-xl font-bold mb-4 text-gray-800 dark:text-white flex items-center; }
-        .form-label { @apply block text-sm font-medium mb-1 text-gray-600 dark:text-gray-300; }
-        .form-input, .form-select, .form-textarea { @apply w-full px-4 py-2 border rounded-lg bg-gray-50 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-all duration-200 shadow-sm; }
+        body { font-family: 'Inter', sans-serif; }
+        .form-legend { @apply text-xl font-bold mb-4 text-gray-800 flex items-center; }
+        .form-label { @apply block text-sm font-medium mb-1 text-gray-600; }
+        .form-input, .form-select, .form-textarea { @apply w-full px-4 py-2 border rounded-lg bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-400 transition-all duration-200 shadow-sm; }
         .form-input:focus, .form-select:focus, .form-textarea:focus { @apply ring-2 ring-blue-500 border-transparent shadow-lg; }
-        .action-button { @apply px-5 py-2.5 rounded-lg text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2; }
-        .dark-mode-toggle { @apply bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300; }
-        .dark-mode-toggle:hover { transform: scale(1.1) rotate(20deg); }
+        .action-button { @apply px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2; }
         .letter-content { font-family: 'Tinos', 'Times New Roman', serif; line-height: 1.7; }
-        .dark::-webkit-scrollbar { width: 12px; }
-        .dark::-webkit-scrollbar-track { background: #1f2937; }
-        .dark::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 6px; border: 2px solid #1f2937; }
-        .dark::-webkit-scrollbar-thumb:hover { background: #6b7280; }
-        html.dark { scrollbar-color: #4b5563 #1f2937; scrollbar-width: auto; }
         .notification { animation: slideInRight 0.5s ease-out forwards, fadeOut 0.5s ease-in forwards 4.5s; }
         @keyframes slideInRight { from { opacity: 0; transform: translateX(100%); } to { opacity: 1; transform: translateX(0); } }
         @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
     </style>
 </head>
-<body x-cloak class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+<body x-cloak class="bg-gray-100 text-gray-900">
     <!-- Header -->
-    <header class="bg-white dark:bg-gray-800 shadow-lg border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40">
+    <header class="bg-white shadow-lg border-b border-gray-200 sticky top-0 z-40">
         <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <div class="flex items-center gap-4">
-                    <i class="fas fa-file-invoice text-3xl text-blue-600 dark:text-blue-400"></i>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-file-invoice text-2xl sm:text-3xl text-blue-600"></i>
                     <div>
-                        <h1 class="text-2xl font-bold" x-text="t('appTitle')"></h1>
-                        <p class="text-sm text-gray-500 dark:text-gray-400" x-text="t('appSubtitle')"></p>
+                        <h1 class="text-lg sm:text-2xl font-bold" x-text="t('appTitle')"></h1>
+                        <p class="hidden sm:block text-sm text-gray-500" x-text="t('appSubtitle')"></p>
                     </div>
                 </div>
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 sm:gap-4">
                     <div class="relative">
-                        <select x-model="currentLang" @change="setLang($event.target.value)" class="form-select !w-auto !py-2.5 !pl-10 !pr-5 text-sm appearance-none">
-                            <option value="en">English</option>
-                            <option value="es">Español</option>
+                        <select x-model="currentLang" @change="setLang($event.target.value)" class="form-select !w-auto !py-2 !px-3 sm:!py-2.5 sm:!pl-10 sm:!pr-5 text-sm appearance-none">
+                            <option value="en">EN</option>
+                            <option value="es">ES</option>
                         </select>
-                        <i class="fas fa-globe absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <i class="hidden sm:block fas fa-globe absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"></i>
                     </div>
-                    <button @click="toggleDarkMode()" class="dark-mode-toggle" :aria-label="t('toggleDarkMode')">
-                        <i class="fas text-xl" :class="darkMode ? 'fa-sun' : 'fa-moon'"></i>
-                    </button>
                     <button @click="confirmStartOver()" class="action-button bg-red-600 hover:bg-red-700 focus:ring-red-500">
-                        <i class="fas fa-sync-alt mr-2"></i><span x-text="t('startOver')"></span>
+                        <i class="fas fa-sync-alt sm:mr-2"></i><span class="hidden sm:inline" x-text="t('startOver')"></span>
                     </button>
                 </div>
             </div>
@@ -64,11 +54,11 @@
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <main class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <!-- Form Section -->
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 space-y-10">
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white border-b-2 pb-5 border-gray-200 dark:border-gray-700" x-text="t('requestDetails')"></h2>
+            <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 space-y-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 border-b-2 pb-4 sm:pb-5 border-gray-200" x-text="t('requestDetails')"></h2>
                 
                 <fieldset>
                     <legend class="form-legend"><i class="fas fa-landmark mr-3 text-blue-500"></i><span x-text="t('jurisdiction')"></span></legend>
@@ -81,9 +71,9 @@
 
                 <fieldset>
                     <legend class="form-legend"><i class="fas fa-file-lines mr-3 text-purple-500"></i><span x-text="t('requestTemplate')"></span></legend>
-                    <div class="flex items-center justify-between mb-3">
-                        <label for="template-select" class="form-label" x-text="t('quickStartTemplates')"></label>
-                        <button @click="openTemplateWizard()" class="action-button bg-purple-600 hover:bg-purple-700 text-sm focus:ring-purple-500">
+                    <div class="flex flex-col sm:flex-row items-center justify-between mb-3 gap-3">
+                        <label for="template-select" class="form-label w-full sm:w-auto" x-text="t('quickStartTemplates')"></label>
+                        <button @click="openTemplateWizard()" class="w-full sm:w-auto action-button bg-purple-600 hover:bg-purple-700 text-sm focus:ring-purple-500">
                             <i class="fas fa-wand-magic-sparkles mr-2"></i><span x-text="t('createCustom')"></span>
                         </button>
                     </div>
@@ -100,7 +90,7 @@
                     </select>
                 </fieldset>
                 
-                <fieldset class="pt-8 border-t-2 border-gray-200 dark:border-gray-700">
+                <fieldset class="pt-6 sm:pt-8 border-t-2 border-gray-200">
                     <legend class="form-legend"><i class="fas fa-user-edit mr-3 text-green-500"></i><span x-text="t('yourInformation')"></span></legend>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div><label for="requesterName" class="form-label" x-text="t('fullName')"></label><input id="requesterName" type="text" x-model="form.requesterName" :placeholder="t('fullNamePlaceholder')" class="form-input" required></div>
@@ -113,19 +103,19 @@
             </div>
 
             <!-- Preview Section -->
-            <div class="sticky top-28 h-fit">
-                <div class="rounded-2xl shadow-xl p-8 bg-white dark:bg-gray-800">
+            <div class="lg:sticky top-28 h-fit">
+                <div class="rounded-2xl shadow-xl p-6 sm:p-8 bg-white">
                     <div class="flex items-center justify-between mb-6">
-                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white" x-text="t('previewExport')"></h2>
-                        <div class="flex gap-3">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900" x-text="t('previewExport')"></h2>
+                        <div class="flex gap-2 sm:gap-3">
                             <button @click="copyToClipboard()" :title="t('copyAsText')" class="action-button bg-blue-600 hover:bg-blue-700 focus:ring-blue-500"><i class="fas fa-copy"></i></button>
                             <button @click="exportAsText()" :title="t('downloadAsTXT')" class="action-button bg-green-600 hover:bg-green-700 focus:ring-green-500"><i class="fas fa-file-alt"></i></button>
                             <button @click="exportAsPDF()" :title="t('exportAsPDF')" class="action-button bg-red-600 hover:bg-red-700 focus:ring-red-500"><i class="fas fa-file-pdf"></i></button>
                         </div>
                     </div>
                     
-                    <div id="letterPreviewContainer" class="border-2 rounded-lg h-[75vh] overflow-y-auto bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700">
-                        <div id="letterPreview" class="p-8 text-gray-800 dark:text-gray-200">
+                    <div id="letterPreviewContainer" class="border-2 rounded-lg h-[60vh] lg:h-[75vh] overflow-y-auto bg-gray-50 border-gray-200">
+                        <div id="letterPreview" class="p-6 sm:p-8 text-gray-800">
                             <div class="letter-content" x-html="generateLetterHTML()">
                                 <!-- Letter content is dynamically generated here -->
                             </div>
@@ -140,17 +130,17 @@
     <div aria-live="assertive" class="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start z-50">
         <div class="w-full flex flex-col items-center space-y-4 sm:items-end">
             <template x-for="notification in notifications" :key="notification.id">
-                <div x-show="notification.visible" x-transition:enter="transform ease-out duration-300 transition" x-transition:enter-start="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2" x-transition:enter-end="translate-y-0 opacity-100 sm:translate-x-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="max-w-sm w-full bg-white dark:bg-gray-700 shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
+                <div x-show="notification.visible" x-transition:enter="transform ease-out duration-300 transition" x-transition:enter-start="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2" x-transition:enter-end="translate-y-0 opacity-100 sm:translate-x-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div class="p-4">
                         <div class="flex items-start">
                             <div class="flex-shrink-0">
                                 <i class="fas" :class="{ 'fa-check-circle text-green-400': notification.type === 'success', 'fa-exclamation-circle text-red-400': notification.type === 'error', 'fa-info-circle text-blue-400': notification.type === 'info' }"></i>
                             </div>
                             <div class="ml-3 w-0 flex-1 pt-0.5">
-                                <p class="text-sm font-medium text-gray-900 dark:text-white" x-text="notification.message"></p>
+                                <p class="text-sm font-medium text-gray-900" x-text="notification.message"></p>
                             </div>
                             <div class="ml-4 flex-shrink-0 flex">
-                                <button @click="notification.visible = false" class="bg-white dark:bg-gray-700 rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <button @click="notification.visible = false" class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                     <span class="sr-only">Close</span>
                                     <i class="fas fa-times"></i>
                                 </button>
@@ -167,23 +157,23 @@
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div x-show="confirmModal.open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
             <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-            <div x-show="confirmModal.open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" class="inline-block align-bottom bg-white dark:bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                <div class="bg-white dark:bg-gray-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <div x-show="confirmModal.open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div class="sm:flex sm:items-start">
-                        <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 dark:bg-red-900/50 sm:mx-0 sm:h-10 sm:w-10">
-                            <i class="fas fa-exclamation-triangle text-red-600 dark:text-red-400"></i>
+                        <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <i class="fas fa-exclamation-triangle text-red-600"></i>
                         </div>
                         <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white" id="modal-title" x-text="confirmModal.title"></h3>
+                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title" x-text="confirmModal.title"></h3>
                             <div class="mt-2">
-                                <p class="text-sm text-gray-500 dark:text-gray-400" x-text="confirmModal.body"></p>
+                                <p class="text-sm text-gray-500" x-text="confirmModal.body"></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray-50 dark:bg-gray-700 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                     <button @click="confirmModal.onConfirm(); confirmModal.open = false" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 text-base font-medium text-white sm:ml-3 sm:w-auto sm:text-sm" :class="confirmModal.confirmClass" x-text="confirmModal.confirmText"></button>
-                    <button @click="confirmModal.open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 dark:border-gray-500 shadow-sm px-4 py-2 bg-white dark:bg-gray-800 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
+                    <button @click="confirmModal.open = false" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
                 </div>
             </div>
         </div>
@@ -194,7 +184,6 @@
             Alpine.data('publicRecordsApp', () => ({
                 // --- STATE PROPERTIES --- //
                 form: {},
-                darkMode: false,
                 laws: [],
                 templates: [],
                 customTemplates: [],
@@ -214,7 +203,6 @@
                     this.resetCustomTemplate();
                     this.loadData();
                     this.initLanguage();
-                    this.initDarkMode();
                     this.loadCustomTemplatesFromStorage();
                     this.$watch('form', () => this.updatePreview(), { deep: true });
                     this.updatePreview();
@@ -241,56 +229,56 @@
                         es: {"appTitle":"Generador de Solicitudes de Registros Públicos","appSubtitle":"Cree solicitudes profesionales con citas legales específicas del estado.","requestDetails":"Detalles de la Solicitud","jurisdiction":"Jurisdicción","selectState":"Seleccione su Estado (Requerido)","chooseState":"Elija su estado...","requestTemplate":"Plantilla de Solicitud","quickStartTemplates":"Plantillas Rápidas","createCustom":"Crear Personalizada","selectTemplate":"Seleccione una plantilla...","builtInTemplates":"Plantillas Incorporadas","myCustomTemplates":"Mis Plantillas Personalizadas","yourInformation":"Su Información","fullName":"Nombre Completo *","fullNamePlaceholder":"Juan Pérez","emailAddress":"Correo Electrónico *","emailAddressPlaceholder":"juan@ejemplo.com","phoneNumber":"Número de Teléfono","phoneNumberPlaceholder":"(555) 123-4567","organization":"Organización (si aplica)","organizationPlaceholder":"Organización de Noticias","mailingAddress":"Dirección Postal","mailingAddressPlaceholder":"123 Calle Principal, Ciudad, Estado 12345","previewExport":"Vista Previa y Exportar","copyAsText":"Copiar como Texto","downloadAsTXT":"Descargar como TXT","exportAsPDF":"Exportar como PDF","startOver":"Empezar de Nuevo","toggleDarkMode":"Alternar Modo Oscuro","police_report":"Informe de Policía","animal_welfare":"Registros de Bienestar Animal","government_contracts":"Contratos Gubernamentales","financial_records":"Registros Financieros","meeting_records":"Actas de Reuniones","employment_records":"Registros de Empleo","property_records":"Registros de Propiedad","permits_licenses":"Permisos y Licencias"}
                     };
                     this.laws = [
-                      { "code": "AL", "name": "Alabama", "lawName": "Alabama Open Records Act", "citation": "Code of Alabama § 36-12-40 et seq.", "fullCitation": "the Alabama Open Records Act (Code of Alabama § 36-12-40 et seq.)", "responseTime": "2-5 business days for acknowledgment; 15-35 business days for response", "denialProcess": "If any portion of this request is denied, the agency must cite the specific legal authority for the denial and advise you of your appeal rights." },
-                      { "code": "AK", "name": "Alaska", "lawName": "Alaska Public Records Act", "citation": "AS 40.25.110 et seq.", "fullCitation": "the Alaska Public Records Act (AS 40.25.110 et seq.)", "responseTime": "10 business days", "denialProcess": "Denials must include the specific statutory basis and information about appeal rights." },
-                      { "code": "AZ", "name": "Arizona", "lawName": "Arizona Public Records Law", "citation": "A.R.S. § 39-121 et seq.", "fullCitation": "the Arizona Public Records Law (A.R.S. § 39-121 et seq.)", "responseTime": "No specific timeframe", "denialProcess": "Denials must cite specific statutory exemptions and inform requester of appeal rights." },
-                      { "code": "AR", "name": "Arkansas", "lawName": "Arkansas Freedom of Information Act", "citation": "Ark. Code Ann. § 25-19-101 et seq.", "fullCitation": "the Arkansas Freedom of Information Act (Ark. Code Ann. § 25-19-101 et seq.)", "responseTime": "3 business days", "denialProcess": "Written denials must cite specific exemptions and include information about appeal process." },
-                      { "code": "CA", "name": "California", "lawName": "California Public Records Act", "citation": "Gov. Code § 6250 et seq.", "fullCitation": "the California Public Records Act (Gov. Code § 6250 et seq.)", "responseTime": "10 days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for writ of mandate." },
-                      { "code": "CO", "name": "Colorado", "lawName": "Colorado Open Records Act", "citation": "C.R.S. § 24-72-200.1 et seq.", "fullCitation": "the Colorado Open Records Act (C.R.S. § 24-72-200.1 et seq.)", "responseTime": "3 business days", "denialProcess": "Written denials must cite specific statutory grounds and inform requester of right to seek court review." },
-                      { "code": "CT", "name": "Connecticut", "lawName": "Connecticut Freedom of Information Act", "citation": "Conn. Gen. Stat. § 1-200 et seq.", "fullCitation": "the Connecticut Freedom of Information Act (Conn. Gen. Stat. § 1-200 et seq.)", "responseTime": "4 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to appeal to Freedom of Information Commission." },
-                      { "code": "DE", "name": "Delaware", "lawName": "Delaware Freedom of Information Act", "citation": "29 Del. C. § 10001 et seq.", "fullCitation": "the Delaware Freedom of Information Act (29 Del. C. § 10001 et seq.)", "responseTime": "15 business days", "denialProcess": "Denials must specify legal grounds and inform requester of right to seek court review." },
-                      { "code": "FL", "name": "Florida", "lawName": "Florida Public Records Act", "citation": "Fla. Stat. § 119.01 et seq.", "fullCitation": "the Florida Public Records Act (Fla. Stat. § 119.01 et seq.)", "responseTime": "Reasonable time", "denialProcess": "Denials must cite specific statutory exemptions. Requester may seek mandamus action." },
-                      { "code": "GA", "name": "Georgia", "lawName": "Georgia Open Records Act", "citation": "O.C.G.A. § 50-18-70 et seq.", "fullCitation": "the Georgia Open Records Act (O.C.G.A. § 50-18-70 et seq.)", "responseTime": "3 business days", "denialProcess": "Denials must cite specific exemptions and may be appealed to superior court." },
-                      { "code": "HI", "name": "Hawaii", "lawName": "Hawaii Uniform Information Practices Act", "citation": "HRS § 92F-1 et seq.", "fullCitation": "the Hawaii Uniform Information Practices Act (HRS § 92F-1 et seq.)", "responseTime": "10 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to appeal to the Office of Information Practices." },
-                      { "code": "ID", "name": "Idaho", "lawName": "Idaho Public Records Act", "citation": "Idaho Code § 74-101 et seq.", "fullCitation": "the Idaho Public Records Act (Idaho Code § 74-101 et seq.)", "responseTime": "3-10 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for judicial review." },
-                      { "code": "IL", "name": "Illinois", "lawName": "Illinois Freedom of Information Act", "citation": "5 ILCS 140/1 et seq.", "fullCitation": "the Illinois Freedom of Information Act (5 ILCS 140/1 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek review by the Public Access Counselor." },
-                      { "code": "IN", "name": "Indiana", "lawName": "Indiana Access to Public Records Act", "citation": "IC 5-14-3-1 et seq.", "fullCitation": "the Indiana Access to Public Records Act (IC 5-14-3-1 et seq.)", "responseTime": "24 hours", "denialProcess": "Denials must cite specific exemptions and inform requester of right to file a complaint with the Public Access Counselor." },
-                      { "code": "IA", "name": "Iowa", "lawName": "Iowa Open Records Act", "citation": "Iowa Code Chapter 22", "fullCitation": "the Iowa Open Records Act (Iowa Code Chapter 22)", "responseTime": "Reasonable time", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "KS", "name": "Kansas", "lawName": "Kansas Open Records Act", "citation": "K.S.A. 45-215 et seq.", "fullCitation": "the Kansas Open Records Act (K.S.A. 45-215 et seq.)", "responseTime": "3 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "KY", "name": "Kentucky", "lawName": "Kentucky Open Records Act", "citation": "KRS 61.870 et seq.", "fullCitation": "the Kentucky Open Records Act (KRS 61.870 et seq.)", "responseTime": "3 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to appeal to the Attorney General." },
-                      { "code": "LA", "name": "Louisiana", "lawName": "Louisiana Public Records Act", "citation": "La. R.S. 44:1 et seq.", "fullCitation": "the Louisiana Public Records Act (La. R.S. 44:1 et seq.)", "responseTime": "3 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "ME", "name": "Maine", "lawName": "Maine Freedom of Access Act", "citation": "1 M.R.S. § 401 et seq.", "fullCitation": "the Maine Freedom of Access Act (1 M.R.S. § 401 et seq.)", "responseTime": "Reasonable time", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "MD", "name": "Maryland", "lawName": "Maryland Public Information Act", "citation": "GP § 4-101 et seq.", "fullCitation": "the Maryland Public Information Act (GP § 4-101 et seq.)", "responseTime": "30 days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to file complaint with Public Information Act Compliance Board." },
-                      { "code": "MA", "name": "Massachusetts", "lawName": "Massachusetts Public Records Law", "citation": "M.G.L. c. 66 § 10 et seq.", "fullCitation": "the Massachusetts Public Records Law (M.G.L. c. 66 § 10 et seq.)", "responseTime": "10 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to appeal to the Supervisor of Public Records." },
-                      { "code": "MI", "name": "Michigan", "lawName": "Michigan Freedom of Information Act", "citation": "MCL 15.231 et seq.", "fullCitation": "the Michigan Freedom of Information Act (MCL 15.231 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "MN", "name": "Minnesota", "lawName": "Minnesota Government Data Practices Act", "citation": "Minn. Stat. § 13.01 et seq.", "fullCitation": "the Minnesota Government Data Practices Act (Minn. Stat. § 13.01 et seq.)", "responseTime": "Reasonable time", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "MS", "name": "Mississippi", "lawName": "Mississippi Public Records Act", "citation": "Miss. Code Ann. § 25-61-1 et seq.", "fullCitation": "the Mississippi Public Records Act (Miss. Code Ann. § 25-61-1 et seq.)", "responseTime": "7-14 working days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "MO", "name": "Missouri", "lawName": "Missouri Sunshine Law", "citation": "Mo. Rev. Stat. § 610.010 et seq.", "fullCitation": "the Missouri Sunshine Law (Mo. Rev. Stat. § 610.010 et seq.)", "responseTime": "3 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "MT", "name": "Montana", "lawName": "Montana Right to Know Act", "citation": "Mont. Code Ann. § 2-6-101 et seq.", "fullCitation": "the Montana Right to Know Act (Mont. Code Ann. § 2-6-101 et seq.)", "responseTime": "Reasonable time", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "NE", "name": "Nebraska", "lawName": "Nebraska Public Records Statutes", "citation": "Neb. Rev. Stat. § 84-712 et seq.", "fullCitation": "the Nebraska Public Records Statutes (Neb. Rev. Stat. § 84-712 et seq.)", "responseTime": "4 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "NV", "name": "Nevada", "lawName": "Nevada Public Records Act", "citation": "NRS 239.001 et seq.", "fullCitation": "the Nevada Public Records Act (NRS 239.001 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "NH", "name": "New Hampshire", "lawName": "New Hampshire Right-to-Know Law", "citation": "RSA 91-A", "fullCitation": "the New Hampshire Right-to-Know Law (RSA 91-A)", "responseTime": "5 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for injunctive relief." },
-                      { "code": "NJ", "name": "New Jersey", "lawName": "New Jersey Open Public Records Act", "citation": "N.J.S.A. 47:1A-1 et seq.", "fullCitation": "the New Jersey Open Public Records Act (N.J.S.A. 47:1A-1 et seq.)", "responseTime": "7 business days", "denialProcess": "Denials must cite specific exemptions. The 2024 reforms make it more difficult to recover attorneys' fees in challenges and allow agencies to sue requesters." },
-                      { "code": "NM", "name": "New Mexico", "lawName": "New Mexico Inspection of Public Records Act", "citation": "NMSA 1978 § 14-2-1 et seq.", "fullCitation": "the New Mexico Inspection of Public Records Act (NMSA 1978 § 14-2-1 et seq.)", "responseTime": "3 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "NY", "name": "New York", "lawName": "New York Freedom of Information Law", "citation": "Public Officers Law § 84 et seq.", "fullCitation": "the New York Freedom of Information Law (Public Officers Law § 84 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to appeal to agency head and then seek Article 78 review." },
-                      { "code": "NC", "name": "North Carolina", "lawName": "North Carolina Public Records Law", "citation": "N.C.G.S. § 132-1 et seq.", "fullCitation": "the North Carolina Public Records Law (N.C.G.S. § 132-1 et seq.)", "responseTime": "Reasonable time", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "ND", "name": "North Dakota", "lawName": "North Dakota Open Records Statute", "citation": "N.D.C.C. § 44-04-18 et seq.", "fullCitation": "the North Dakota Open Records Statute (N.D.C.C. § 44-04-18 et seq.)", "responseTime": "Reasonable time", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "OH", "name": "Ohio", "lawName": "Ohio Public Records Act", "citation": "Ohio Rev. Code § 149.43", "fullCitation": "the Ohio Public Records Act (Ohio Rev. Code § 149.43)", "responseTime": "Reasonable time", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "OK", "name": "Oklahoma", "lawName": "Oklahoma Open Records Act", "citation": "51 O.S. § 24A.1 et seq.", "fullCitation": "the Oklahoma Open Records Act (51 O.S. § 24A.1 et seq.)", "responseTime": "Reasonable time", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "OR", "name": "Oregon", "lawName": "Oregon Public Records Law", "citation": "ORS 192.410 et seq.", "fullCitation": "the Oregon Public Records Law (ORS 192.410 et seq.)", "responseTime": "Reasonable time", "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for judicial review." },
-                      { "code": "PA", "name": "Pennsylvania", "lawName": "Pennsylvania Right-to-Know Law", "citation": "65 P.S. § 67.101 et seq.", "fullCitation": "the Pennsylvania Right-to-Know Law (65 P.S. § 67.101 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to appeal to the Office of Open Records." },
-                      { "code": "RI", "name": "Rhode Island", "lawName": "Rhode Island Access to Public Records Act", "citation": "R.I.G.L. § 38-2-1 et seq.", "fullCitation": "the Rhode Island Access to Public Records Act (R.I.G.L. § 38-2-1 et seq.)", "responseTime": "10 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "SC", "name": "South Carolina", "lawName": "South Carolina Freedom of Information Act", "citation": "S.C. Code Ann. § 30-4-10 et seq.", "fullCitation": "the South Carolina Freedom of Information Act (S.C. Code Ann. § 30-4-10 et seq.)", "responseTime": "15 calendar days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "SD", "name": "South Dakota", "lawName": "South Dakota Sunshine Law", "citation": "SDCL § 1-27-1 et seq.", "fullCitation": "the South Dakota Sunshine Law (SDCL § 1-27-1 et seq.)", "responseTime": "Reasonable time", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "TN", "name": "Tennessee", "lawName": "Tennessee Public Records Act", "citation": "Tenn. Code Ann. § 10-7-501 et seq.", "fullCitation": "the Tennessee Public Records Act (Tenn. Code Ann. § 10-7-501 et seq.)", "responseTime": "7 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for writ of mandamus." },
-                      { "code": "TX", "name": "Texas", "lawName": "Texas Public Information Act", "citation": "Tex. Gov't Code § 552.001 et seq.", "fullCitation": "the Texas Public Information Act (Tex. Gov't Code § 552.001 et seq.)", "responseTime": "10 business days", "denialProcess": "Denials require Attorney General ruling on exceptions. Requester may appeal ruling to district court." },
-                      { "code": "UT", "name": "Utah", "lawName": "Utah Government Records Access and Management Act", "citation": "Utah Code § 63G-2-101 et seq.", "fullCitation": "the Utah Government Records Access and Management Act (Utah Code § 63G-2-101 et seq.)", "responseTime": "10 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to appeal to the State Records Committee." },
-                      { "code": "VT", "name": "Vermont", "lawName": "Vermont Public Records Act", "citation": "1 V.S.A. § 315 et seq.", "fullCitation": "the Vermont Public Records Act (1 V.S.A. § 315 et seq.)", "responseTime": "3 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "VA", "name": "Virginia", "lawName": "Virginia Freedom of Information Act", "citation": "Va. Code § 2.2-3700 et seq.", "fullCitation": "the Virginia Freedom of Information Act (Va. Code § 2.2-3700 et seq.)", "responseTime": "5 working days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for mandamus or injunctive relief." },
-                      { "code": "WA", "name": "Washington", "lawName": "Washington Public Records Act", "citation": "RCW 42.56.001 et seq.", "fullCitation": "the Washington Public Records Act (RCW 42.56.001 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "WV", "name": "West Virginia", "lawName": "West Virginia Freedom of Information Act", "citation": "W. Va. Code § 29B-1-1 et seq.", "fullCitation": "the West Virginia Freedom of Information Act (W. Va. Code § 29B-1-1 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to petition for mandamus." },
-                      { "code": "WI", "name": "Wisconsin", "lawName": "Wisconsin Open Records Law", "citation": "Wis. Stat. § 19.31 et seq.", "fullCitation": "the Wisconsin Open Records Law (Wis. Stat. § 19.31 et seq.)", "responseTime": "Reasonable time", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." },
-                      { "code": "WY", "name": "Wyoming", "lawName": "Wyoming Public Records Act", "citation": "Wyo. Stat. § 16-4-201 et seq.", "fullCitation": "the Wyoming Public Records Act (Wyo. Stat. § 16-4-201 et seq.)", "responseTime": "3 business days", "denialProcess": "Denials must cite specific exemptions and inform requester of right to seek court review." }
+                        { "code": "AL", "name": "Alabama", "lawName": "Alabama Open Records Act", "citation": "Code of Alabama § 36-12-40 et seq.", "fullCitation": "the Alabama Open Records Act (Code of Alabama § 36-12-40 et seq.)", "responseTime": "a 'reasonable time'", "denialProcess": "If denied, the agency must provide the reason. You may file a lawsuit in the circuit court." },
+                        { "code": "AK", "name": "Alaska", "lawName": "Alaska Public Records Act", "citation": "AS 40.25.110 et seq.", "fullCitation": "the Alaska Public Records Act (AS 40.25.110 et seq.)", "responseTime": "10 business days", "denialProcess": "Denials must be in writing and include the legal basis. You may appeal to the agency head, then to the superior court." },
+                        { "code": "AZ", "name": "Arizona", "lawName": "Arizona Public Records Law", "citation": "A.R.S. § 39-121 et seq.", "fullCitation": "the Arizona Public Records Law (A.R.S. § 39-121 et seq.)", "responseTime": "'promptly'", "denialProcess": "Denials must cite the specific statute supporting exemption. You may file a special action in the superior court." },
+                        { "code": "AR", "name": "Arkansas", "lawName": "Arkansas Freedom of Information Act", "citation": "Ark. Code Ann. § 25-19-101 et seq.", "fullCitation": "the Arkansas Freedom of Information Act (Ark. Code Ann. § 25-19-101 et seq.)", "responseTime": "3 business days", "denialProcess": "If access is denied, the custodian must provide a reason. You can appeal to the circuit court." },
+                        { "code": "CA", "name": "California", "lawName": "California Public Records Act", "citation": "Gov. Code § 7920.000 et seq.", "fullCitation": "the California Public Records Act (Gov. Code § 7920.000 et seq.)", "responseTime": "10 days", "denialProcess": "Denials must be in writing and cite a specific exemption. You can seek a court order from the superior court." },
+                        { "code": "CO", "name": "Colorado", "lawName": "Colorado Open Records Act", "citation": "C.R.S. § 24-72-200.1 et seq.", "fullCitation": "the Colorado Open Records Act (C.R.S. § 24-72-200.1 et seq.)", "responseTime": "3 business days (can be extended by 7 business days)", "denialProcess": "Denials must be in writing. You can file a lawsuit in the district court." },
+                        { "code": "CT", "name": "Connecticut", "lawName": "Connecticut Freedom of Information Act", "citation": "Conn. Gen. Stat. § 1-200 et seq.", "fullCitation": "the Connecticut Freedom of Information Act (Conn. Gen. Stat. § 1-200 et seq.)", "responseTime": "4 business days", "denialProcess": "Denials must be provided promptly. You can appeal to the state's Freedom of Information Commission." },
+                        { "code": "DE", "name": "Delaware", "lawName": "Delaware Freedom of Information Act", "citation": "29 Del. C. § 10001 et seq.", "fullCitation": "the Delaware Freedom of Information Act (29 Del. C. § 10001 et seq.)", "responseTime": "15 business days", "denialProcess": "Denials must be in writing with reasons. You can appeal to the Attorney General or file suit in the Superior Court." },
+                        { "code": "FL", "name": "Florida", "lawName": "Florida Public Records Act", "citation": "F.S. Chapter 119", "fullCitation": "the Florida Public Records Act (F.S. Chapter 119)", "responseTime": "a 'reasonable' amount of time", "denialProcess": "If denied, the agency must state the basis for the exemption in writing. You can file a civil action in circuit court." },
+                        { "code": "GA", "name": "Georgia", "lawName": "Georgia Open Records Act", "citation": "O.C.G.A. § 50-18-70 et seq.", "fullCitation": "the Georgia Open Records Act (O.C.G.A. § 50-18-70 et seq.)", "responseTime": "3 business days", "denialProcess": "Denials must cite the specific code section. You can sue in superior court." },
+                        { "code": "HI", "name": "Hawaii", "lawName": "Uniform Information Practices Act", "citation": "HRS § 92F-1 et seq.", "fullCitation": "the Uniform Information Practices Act (HRS § 92F-1 et seq.)", "responseTime": "10 business days", "denialProcess": "Denials must be in writing. You can appeal to the Office of Information Practices or file a lawsuit." },
+                        { "code": "ID", "name": "Idaho", "lawName": "Idaho Public Records Act", "citation": "Idaho Code § 74-101 et seq.", "fullCitation": "the Idaho Public Records Act (Idaho Code § 74-101 et seq.)", "responseTime": "3 business days (can be extended to 10)", "denialProcess": "Denials must be in writing. You can file a petition with the magistrate court." },
+                        { "code": "IL", "name": "Illinois", "lawName": "Illinois Freedom of Information Act", "citation": "5 ILCS 140/1 et seq.", "fullCitation": "the Illinois Freedom of Information Act (5 ILCS 140/1 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must be in writing. You can appeal to the Public Access Counselor (PAC) or file a lawsuit." },
+                        { "code": "IN", "name": "Indiana", "lawName": "Access to Public Records Act", "citation": "IC 5-14-3-1 et seq.", "fullCitation": "the Access to Public Records Act (IC 5-14-3-1 et seq.)", "responseTime": "within 24 hours (hand/email) or 7 days (mail/fax)", "denialProcess": "Denials must be in writing. You can file a complaint with the Public Access Counselor or file a lawsuit." },
+                        { "code": "IA", "name": "Iowa", "lawName": "Iowa Open Records Act", "citation": "Iowa Code Chapter 22", "fullCitation": "the Iowa Open Records Act (Iowa Code Chapter 22)", "responseTime": "'without delay' (typically within 20 business days)", "denialProcess": "Denials must provide a reason. You can file a complaint with the Iowa Public Information Board or sue in district court." },
+                        { "code": "KS", "name": "Kansas", "lawName": "Kansas Open Records Act", "citation": "K.S.A. 45-215 et seq.", "fullCitation": "the Kansas Open Records Act (K.S.A. 45-215 et seq.)", "responseTime": "3 business days", "denialProcess": "Denials must be in writing with the specific legal basis. You can file a lawsuit in district court." },
+                        { "code": "KY", "name": "Kentucky", "lawName": "Kentucky Open Records Act", "citation": "KRS 61.870 et seq.", "fullCitation": "the Kentucky Open Records Act (KRS 61.870 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must be in writing and cite the exemption. You can appeal to the Attorney General, then to circuit court." },
+                        { "code": "LA", "name": "Louisiana", "lawName": "Louisiana Public Records Act", "citation": "La. R.S. 44:1 et seq.", "fullCitation": "the Louisiana Public Records Act (La. R.S. 44:1 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must be in writing. You can file a suit for a writ of mandamus in district court. Note: A 2024 law exempts personal contact info of public employees." },
+                        { "code": "ME", "name": "Maine", "lawName": "Freedom of Access Act", "citation": "1 M.R.S. § 401 et seq.", "fullCitation": "the Freedom of Access Act (1 M.R.S. § 401 et seq.)", "responseTime": "5 business days to acknowledge receipt", "denialProcess": "Denials must be in writing. You can file an appeal in Superior Court." },
+                        { "code": "MD", "name": "Maryland", "lawName": "Public Information Act", "citation": "Md. Code, Gen. Prov. § 4-101 et seq.", "fullCitation": "the Public Information Act (Md. Code, Gen. Prov. § 4-101 et seq.)", "responseTime": "10 business days (extendable up to 30 days)", "denialProcess": "Denials must be in writing. You can seek review by the Public Information Act Compliance Board or file a lawsuit." },
+                        { "code": "MA", "name": "Massachusetts", "lawName": "Public Records Law", "citation": "M.G.L. c. 66, § 10", "fullCitation": "the Public Records Law (M.G.L. c. 66, § 10)", "responseTime": "10 business days", "denialProcess": "Denials must be in writing. You can appeal to the Supervisor of Public Records, and then to superior court." },
+                        { "code": "MI", "name": "Michigan", "lawName": "Michigan Freedom of Information Act", "citation": "MCL 15.231 et seq.", "fullCitation": "the Michigan Freedom of Information Act (MCL 15.231 et seq.)", "responseTime": "5 business days (can be extended by 10 days)", "denialProcess": "Denials must be in writing. You can appeal to the agency head, then file a civil action in circuit court." },
+                        { "code": "MN", "name": "Minnesota", "lawName": "Government Data Practices Act", "citation": "Minn. Stat. Chapter 13", "fullCitation": "the Minnesota Government Data Practices Act (Minn. Stat. Chapter 13)", "responseTime": "a 'reasonable' amount of time", "denialProcess": "You can bring a civil action in district court." },
+                        { "code": "MS", "name": "Mississippi", "lawName": "Mississippi Public Records Act", "citation": "Miss. Code Ann. § 25-61-1 et seq.", "fullCitation": "the Mississippi Public Records Act (Miss. Code Ann. § 25-61-1 et seq.)", "responseTime": "7 working days (can be extended to 14)", "denialProcess": "Denials must be in writing. You can petition the chancery court for a hearing." },
+                        { "code": "MO", "name": "Missouri", "lawName": "Missouri Sunshine Law", "citation": "R.S.Mo. § 610.010 et seq.", "fullCitation": "the Missouri Sunshine Law (R.S.Mo. § 610.010 et seq.)", "responseTime": "3 business days", "denialProcess": "Denials must be in writing. You can file a lawsuit in the circuit court." },
+                        { "code": "MT", "name": "Montana", "lawName": "Right to Know", "citation": "Montana Constitution, Art. II, Sec. 9; MCA § 2-6-1001 et seq.", "fullCitation": "the Right to Know provision (Montana Constitution, Art. II, Sec. 9; MCA § 2-6-1001 et seq.)", "responseTime": "a 'timely' manner", "denialProcess": "You can file a lawsuit in district court." },
+                        { "code": "NE", "name": "Nebraska", "lawName": "Nebraska Public Records Statutes", "citation": "Neb. Rev. Stat. § 84-712 et seq.", "fullCitation": "the Nebraska Public Records Statutes (Neb. Rev. Stat. § 84-712 et seq.)", "responseTime": "4 business days", "denialProcess": "Denials must be in writing. You can file a lawsuit in district court or a complaint with the Attorney General." },
+                        { "code": "NV", "name": "Nevada", "lawName": "Nevada Public Records Act", "citation": "NRS Chapter 239", "fullCitation": "the Nevada Public Records Act (NRS Chapter 239)", "responseTime": "5 business days", "denialProcess": "Denials must be in writing. You can file a petition in district court." },
+                        { "code": "NH", "name": "New Hampshire", "lawName": "Right-to-Know Law", "citation": "RSA Chapter 91-A", "fullCitation": "the Right-to-Know Law (RSA Chapter 91-A)", "responseTime": "5 business days", "denialProcess": "Denials must be in writing. You can file a petition in superior court or a complaint with the Right to Know Ombudsman." },
+                        { "code": "NJ", "name": "New Jersey", "lawName": "Open Public Records Act", "citation": "N.J.S.A. 47:1A-1 et seq.", "fullCitation": "the Open Public Records Act (N.J.S.A. 47:1A-1 et seq.)", "responseTime": "7 business days", "denialProcess": "Denials must be in writing. You can file a complaint with the Government Records Council (GRC) or file a lawsuit. Note: 2024 reforms may affect this process." },
+                        { "code": "NM", "name": "New Mexico", "lawName": "Inspection of Public Records Act", "citation": "NMSA 1978, § 14-2-1 et seq.", "fullCitation": "the Inspection of Public Records Act (NMSA 1978, § 14-2-1 et seq.)", "responseTime": "3 days to permit inspection; 15 days to provide copies", "denialProcess": "Denials must be in writing. You can file a lawsuit in district court or complain to the Attorney General." },
+                        { "code": "NY", "name": "New York", "lawName": "Freedom of Information Law", "citation": "Public Officers Law, Article 6", "fullCitation": "the Freedom of Information Law (Public Officers Law, Article 6)", "responseTime": "5 business days to acknowledge", "denialProcess": "You can appeal in writing to the agency head, then bring an Article 78 proceeding in state supreme court." },
+                        { "code": "NC", "name": "North Carolina", "lawName": "North Carolina Public Records Law", "citation": "N.C. Gen. Stat. Chapter 132", "fullCitation": "the North Carolina Public Records Law (N.C. Gen. Stat. Chapter 132)", "responseTime": "'as promptly as possible'", "denialProcess": "You can file a civil action in superior court." },
+                        { "code": "ND", "name": "North Dakota", "lawName": "North Dakota Open Records Statute", "citation": "N.D.C.C. § 44-04-18 et seq.", "fullCitation": "the North Dakota Open Records Statute (N.D.C.C. § 44-04-18 et seq.)", "responseTime": "a 'reasonable' amount of time", "denialProcess": "You can file a lawsuit in district court or request an opinion from the Attorney General." },
+                        { "code": "OH", "name": "Ohio", "lawName": "Ohio Public Records Act", "citation": "R.C. 149.43", "fullCitation": "the Ohio Public Records Act (R.C. 149.43)", "responseTime": "'promptly'", "denialProcess": "You can file a mandamus action in the court of common pleas, court of appeals, or the supreme court." },
+                        { "code": "OK", "name": "Oklahoma", "lawName": "Oklahoma Open Records Act", "citation": "51 O.S. § 24A.1 et seq.", "fullCitation": "the Oklahoma Open Records Act (51 O.S. § 24A.1 et seq.)", "responseTime": "'prompt, reasonable access'", "denialProcess": "You can file a lawsuit in district court." },
+                        { "code": "OR", "name": "Oregon", "lawName": "Oregon Public Records Law", "citation": "ORS 192.311 to 192.478", "fullCitation": "the Oregon Public Records Law (ORS 192.311 to 192.478)", "responseTime": "5 business days to acknowledge; 10 more to fulfill", "denialProcess": "You can petition the District Attorney or Attorney General for review, which can be appealed in circuit court." },
+                        { "code": "PA", "name": "Pennsylvania", "lawName": "Right-to-Know Law", "citation": "65 P.S. § 67.101 et seq.", "fullCitation": "the Pennsylvania Right-to-Know Law (65 P.S. § 67.101 et seq.)", "responseTime": "5 business days", "denialProcess": "You can appeal to the Pennsylvania Office of Open Records within 15 business days of a denial." },
+                        { "code": "RI", "name": "Rhode Island", "lawName": "Access to Public Records Act", "citation": "R.I. Gen. Laws § 38-2-1 et seq.", "fullCitation": "the Access to Public Records Act (R.I. Gen. Laws § 38-2-1 et seq.)", "responseTime": "10 business days (can be extended by 20)", "denialProcess": "You can complain to the agency head, then the Attorney General, or file suit in superior court." },
+                        { "code": "SC", "name": "South Carolina", "lawName": "Freedom of Information Act", "citation": "S.C. Code § 30-4-10 et seq.", "fullCitation": "the South Carolina Freedom of Information Act (S.C. Code § 30-4-10 et seq.)", "responseTime": "10 business days (records < 2 yrs old); 20 days (older)", "denialProcess": "Denials must be in writing. You can file a lawsuit in the circuit court." },
+                        { "code": "SD", "name": "South Dakota", "lawName": "South Dakota Open Records Law", "citation": "SDCL Chapter 1-27", "fullCitation": "the South Dakota Open Records Law (SDCL Chapter 1-27)", "responseTime": "'promptly'", "denialProcess": "You can file a lawsuit in circuit court or request assistance from the Open Meetings Commission." },
+                        { "code": "TN", "name": "Tennessee", "lawName": "Tennessee Public Records Act", "citation": "T.C.A. § 10-7-503 et seq.", "fullCitation": "the Tennessee Public Records Act (T.C.A. § 10-7-503 et seq.)", "responseTime": "7 business days", "denialProcess": "Denials must be in writing. You can file a petition in chancery or circuit court." },
+                        { "code": "TX", "name": "Texas", "lawName": "Texas Public Information Act", "citation": "Tex. Gov't Code Chapter 552", "fullCitation": "the Texas Public Information Act (Tex. Gov't Code Chapter 552)", "responseTime": "'promptly' (presumed 10 business days)", "denialProcess": "You can file a complaint with the Attorney General's Open Records Division or file a lawsuit." },
+                        { "code": "UT", "name": "Utah", "lawName": "Government Records Access and Management Act", "citation": "Utah Code § 63G-2", "fullCitation": "the Government Records Access and Management Act (GRAMA) (Utah Code § 63G-2)", "responseTime": "10 business days", "denialProcess": "You can appeal to the agency's chief executive, then to the State Records Committee or district court." },
+                        { "code": "VT", "name": "Vermont", "lawName": "Vermont Public Records Act", "citation": "1 V.S.A. § 315 et seq.", "fullCitation": "the Vermont Public Records Act (1 V.S.A. § 315 et seq.)", "responseTime": "3 business days (can be extended to 10)", "denialProcess": "You can appeal to the agency head, then file a lawsuit in superior court." },
+                        { "code": "VA", "name": "Virginia", "lawName": "Virginia Freedom of Information Act", "citation": "Va. Code § 2.2-3700 et seq.", "fullCitation": "the Virginia Freedom of Information Act (Va. Code § 2.2-3700 et seq.)", "responseTime": "5 working days (can be extended by 7)", "denialProcess": "You can file a petition for mandamus or injunction in the general district or circuit court." },
+                        { "code": "WA", "name": "Washington", "lawName": "Washington Public Records Act", "citation": "RCW 42.56", "fullCitation": "the Washington Public Records Act (RCW 42.56)", "responseTime": "5 business days to respond", "denialProcess": "You can seek judicial review in the superior court of the county where the record is maintained." },
+                        { "code": "WV", "name": "West Virginia", "lawName": "West Virginia Freedom of Information Act", "citation": "W. Va. Code § 29B-1-1 et seq.", "fullCitation": "the West Virginia Freedom of Information Act (W. Va. Code § 29B-1-1 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must be in writing. You can file for injunctive or declaratory relief in the circuit court." },
+                        { "code": "WI", "name": "Wisconsin", "lawName": "Wisconsin Open Records Law", "citation": "Wis. Stat. §§ 19.31-19.39", "fullCitation": "the Wisconsin Open Records Law (Wis. Stat. §§ 19.31-19.39)", "responseTime": "'as soon as practicable and without delay'", "denialProcess": "You can bring an action for mandamus in circuit court or request an opinion from the Attorney General." },
+                        { "code": "WY", "name": "Wyoming", "lawName": "Wyoming Public Records Act", "citation": "Wyo. Stat. § 16-4-201 et seq.", "fullCitation": "the Wyoming Public Records Act (Wyo. Stat. § 16-4-201 et seq.)", "responseTime": "Immediate inspection; if not possible, a date must be set within 7 days", "denialProcess": "Denials must be in writing. You can file a petition in district court." }
                     ];
                     this.templates = [
                       { "id": "police_report", "name": "Police Report", "subject": "Public Records Request - Police Report", "description": "I am requesting copies of all police reports, incident reports, and related documentation for incident number [INCIDENT_NUMBER] that occurred on [DATE] at approximately [TIME] at [LOCATION]. This request includes but is not limited to:\n\n• Initial incident report\n• Supplemental reports\n• Witness statements\n• Photographs taken at the scene\n• Audio or video recordings\n• Evidence logs\n• Officer notes or field reports\n• Any correspondence related to this incident", "expedited": false, "feeWaiver": false, "publicInterest": false },
@@ -304,7 +292,7 @@
                     ];
                 },
 
-                // --- LANGUAGE & THEME --- //
+                // --- LANGUAGE --- //
                 initLanguage() {
                     const savedLang = localStorage.getItem('appLanguage') || 'en';
                     this.setLang(savedLang);
@@ -317,12 +305,6 @@
                 t(key, fallback = '') {
                     return this.locales[this.currentLang]?.[key] || fallback || key;
                 },
-                initDarkMode() {
-                    const savedTheme = localStorage.getItem('darkMode');
-                    this.darkMode = savedTheme ? savedTheme === 'true' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-                     this.$watch('darkMode', val => localStorage.setItem('darkMode', val));
-                },
-                toggleDarkMode() { this.darkMode = !this.darkMode; },
 
                 // --- DYNAMIC PREVIEW --- //
                 updatePreview(){
@@ -343,13 +325,13 @@
                     html += h('div', `Dear ${this.form.agencyContact || 'Records Officer'},`, 'mb-4');
                     html += h('div', `I am writing to request access to public records under <span class="font-semibold">${this.getStateCitation()}</span>. ${this.form.requesterOrganization ? `I am making this request on behalf of ${this.form.requesterOrganization}.` : ''}`, 'mb-4');
                     html += h('div', '<strong>Specifically, I am requesting the following records:</strong>', 'mb-4');
-                    html += h('div', this.form.recordsDescription.replace(/\n/g, '<br>') || '[Please describe the records...]', 'mb-4 pl-4 border-l-2 border-gray-300 dark:border-gray-600');
+                    html += h('div', this.form.recordsDescription.replace(/\n/g, '<br>') || '[Please describe the records...]', 'mb-4 pl-4 border-l-2 border-gray-300');
                     if(this.getDateRangeText()) html += h('div', `<strong>Date Range:</strong> ${this.getDateRangeText()}`, 'mb-4');
                     if(this.form.preferredFormat) html += h('div', `I would prefer to receive these records in <strong>${this.form.preferredFormat}</strong> format.`, 'mb-4');
                     if(this.form.feeWaiverRequest) html += h('div', 'I request that any fees be waived as this information is sought in the public interest.', 'mb-4');
                     if(this.form.expeditedProcessing) html += h('div', 'I request expedited processing of this request.', 'mb-4');
                     if(this.form.additionalNotes) html += h('div', this.form.additionalNotes, 'mb-4');
-                    html += h('div', this.getLegalRequirements(), 'mb-4 text-sm text-gray-600 dark:text-gray-400');
+                    html += h('div', this.getLegalRequirements(), 'mb-4 text-sm text-gray-600');
                     html += h('div', `If you have any questions, please contact me at ${this.form.requesterEmail || '[email]'}${this.form.requesterPhone ? ` or ${this.form.requesterPhone}` : ''}.`, 'mb-4');
                     html += h('div', 'Thank you for your time and consideration.', 'mb-6');
                     html += h('div', 'Sincerely,', 'mb-4');
