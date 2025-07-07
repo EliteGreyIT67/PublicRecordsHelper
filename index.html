@@ -18,11 +18,20 @@
         .form-label { @apply block text-sm font-medium mb-1 text-gray-600; }
         .form-input, .form-select, .form-textarea { @apply w-full px-4 py-2 border rounded-lg bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-400 transition-all duration-200 shadow-sm; }
         .form-input:focus, .form-select:focus, .form-textarea:focus { @apply ring-2 ring-blue-500 border-transparent shadow-lg; }
-        .action-button { @apply px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2; }
+        .action-button { @apply px-5 py-2.5 rounded-lg text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2; }
         .letter-content { font-family: 'Tinos', 'Times New Roman', serif; line-height: 1.7; }
         .notification { animation: slideInRight 0.5s ease-out forwards, fadeOut 0.5s ease-in forwards 4.5s; }
         @keyframes slideInRight { from { opacity: 0; transform: translateX(100%); } to { opacity: 1; transform: translateX(0); } }
         @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+        .spinner {
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #3498db;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body x-cloak class="bg-gray-100 text-gray-900">
@@ -30,23 +39,23 @@
     <header class="bg-white shadow-lg border-b border-gray-200 sticky top-0 z-40">
         <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-file-invoice text-2xl sm:text-3xl text-blue-600"></i>
+                <div class="flex items-center gap-4">
+                    <i class="fas fa-file-invoice text-3xl text-blue-600"></i>
                     <div>
-                        <h1 class="text-lg sm:text-2xl font-bold" x-text="t('appTitle')"></h1>
-                        <p class="hidden sm:block text-sm text-gray-500" x-text="t('appSubtitle')"></p>
+                        <h1 class="text-2xl font-bold" x-text="t('appTitle')"></h1>
+                        <p class="text-sm text-gray-500" x-text="t('appSubtitle')"></p>
                     </div>
                 </div>
-                <div class="flex items-center gap-2 sm:gap-4">
+                <div class="flex items-center gap-4">
                     <div class="relative">
-                        <select x-model="currentLang" @change="setLang($event.target.value)" class="form-select !w-auto !py-2 !px-3 sm:!py-2.5 sm:!pl-10 sm:!pr-5 text-sm appearance-none">
-                            <option value="en">EN</option>
-                            <option value="es">ES</option>
+                        <select x-model="currentLang" @change="setLang($event.target.value)" class="form-select !w-auto !py-2.5 !pl-10 !pr-5 text-sm appearance-none">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
                         </select>
-                        <i class="hidden sm:block fas fa-globe absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <i class="fas fa-globe absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"></i>
                     </div>
                     <button @click="confirmStartOver()" class="action-button bg-red-600 hover:bg-red-700 focus:ring-red-500">
-                        <i class="fas fa-sync-alt sm:mr-2"></i><span class="hidden sm:inline" x-text="t('startOver')"></span>
+                        <i class="fas fa-sync-alt mr-2"></i><span x-text="t('startOver')"></span>
                     </button>
                 </div>
             </div>
@@ -54,11 +63,11 @@
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+    <main class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <!-- Form Section -->
-            <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 space-y-8">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 border-b-2 pb-4 sm:pb-5 border-gray-200" x-text="t('requestDetails')"></h2>
+            <div class="bg-white rounded-2xl shadow-xl p-8 space-y-10">
+                <h2 class="text-3xl font-bold text-gray-900 border-b-2 pb-5 border-gray-200" x-text="t('requestDetails')"></h2>
                 
                 <fieldset>
                     <legend class="form-legend"><i class="fas fa-landmark mr-3 text-blue-500"></i><span x-text="t('jurisdiction')"></span></legend>
@@ -71,9 +80,9 @@
 
                 <fieldset>
                     <legend class="form-legend"><i class="fas fa-file-lines mr-3 text-purple-500"></i><span x-text="t('requestTemplate')"></span></legend>
-                    <div class="flex flex-col sm:flex-row items-center justify-between mb-3 gap-3">
-                        <label for="template-select" class="form-label w-full sm:w-auto" x-text="t('quickStartTemplates')"></label>
-                        <button @click="openTemplateWizard()" class="w-full sm:w-auto action-button bg-purple-600 hover:bg-purple-700 text-sm focus:ring-purple-500">
+                    <div class="flex items-center justify-between mb-3">
+                        <label for="template-select" class="form-label" x-text="t('quickStartTemplates')"></label>
+                        <button @click="openTemplateWizard()" class="action-button bg-purple-600 hover:bg-purple-700 text-sm focus:ring-purple-500">
                             <i class="fas fa-wand-magic-sparkles mr-2"></i><span x-text="t('createCustom')"></span>
                         </button>
                     </div>
@@ -88,9 +97,27 @@
                             </optgroup>
                         </template>
                     </select>
+                     <div class="mt-3">
+                        <button @click="getRecordSuggestions()" :disabled="!selectedTemplate || isLoading" class="w-full action-button bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 disabled:bg-indigo-300 disabled:cursor-not-allowed flex items-center justify-center">
+                            <span x-show="!isLoading">✨ <span x-text="t('getAISuggestions')"></span></span>
+                            <span x-show="isLoading" class="flex items-center"><div class="spinner mr-2"></div> <span x-text="t('loading')"></span></span>
+                        </button>
+                    </div>
                 </fieldset>
                 
-                <fieldset class="pt-6 sm:pt-8 border-t-2 border-gray-200">
+                <fieldset class="pt-8 border-t-2 border-gray-200">
+                    <legend class="form-legend"><i class="fas fa-paragraph mr-3 text-orange-500"></i><span x-text="t('recordsDescription')"></span></legend>
+                    <label for="recordsDescription" class="form-label" x-text="t('describeRecords')"></label>
+                    <textarea id="recordsDescription" x-model="form.recordsDescription" :placeholder="t('describeRecordsPlaceholder')" rows="8" class="form-textarea"></textarea>
+                    <div class="mt-3">
+                        <button @click="refineRequestDescription()" :disabled="!form.recordsDescription.trim() || isLoading" class="w-full action-button bg-orange-500 hover:bg-orange-600 focus:ring-orange-400 disabled:bg-orange-300 disabled:cursor-not-allowed flex items-center justify-center">
+                            <span x-show="!isLoading">✨ <span x-text="t('refineWithAI')"></span></span>
+                            <span x-show="isLoading" class="flex items-center"><div class="spinner mr-2"></div> <span x-text="t('loading')"></span></span>
+                        </button>
+                    </div>
+                </fieldset>
+
+                <fieldset class="pt-8 border-t-2 border-gray-200">
                     <legend class="form-legend"><i class="fas fa-user-edit mr-3 text-green-500"></i><span x-text="t('yourInformation')"></span></legend>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div><label for="requesterName" class="form-label" x-text="t('fullName')"></label><input id="requesterName" type="text" x-model="form.requesterName" :placeholder="t('fullNamePlaceholder')" class="form-input" required></div>
@@ -103,19 +130,19 @@
             </div>
 
             <!-- Preview Section -->
-            <div class="lg:sticky top-28 h-fit">
-                <div class="rounded-2xl shadow-xl p-6 sm:p-8 bg-white">
+            <div class="sticky top-28 h-fit">
+                <div class="rounded-2xl shadow-xl p-8 bg-white">
                     <div class="flex items-center justify-between mb-6">
-                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900" x-text="t('previewExport')"></h2>
-                        <div class="flex gap-2 sm:gap-3">
+                        <h2 class="text-3xl font-bold text-gray-900" x-text="t('previewExport')"></h2>
+                        <div class="flex gap-3">
                             <button @click="copyToClipboard()" :title="t('copyAsText')" class="action-button bg-blue-600 hover:bg-blue-700 focus:ring-blue-500"><i class="fas fa-copy"></i></button>
                             <button @click="exportAsText()" :title="t('downloadAsTXT')" class="action-button bg-green-600 hover:bg-green-700 focus:ring-green-500"><i class="fas fa-file-alt"></i></button>
                             <button @click="exportAsPDF()" :title="t('exportAsPDF')" class="action-button bg-red-600 hover:bg-red-700 focus:ring-red-500"><i class="fas fa-file-pdf"></i></button>
                         </div>
                     </div>
                     
-                    <div id="letterPreviewContainer" class="border-2 rounded-lg h-[60vh] lg:h-[75vh] overflow-y-auto bg-gray-50 border-gray-200">
-                        <div id="letterPreview" class="p-6 sm:p-8 text-gray-800">
+                    <div id="letterPreviewContainer" class="border-2 rounded-lg h-[75vh] overflow-y-auto bg-gray-50 border-gray-200">
+                        <div id="letterPreview" class="p-8 text-gray-800">
                             <div class="letter-content" x-html="generateLetterHTML()">
                                 <!-- Letter content is dynamically generated here -->
                             </div>
@@ -196,6 +223,7 @@
                 customTemplate: {},
                 currentLang: 'en',
                 locales: {},
+                isLoading: false, // For Gemini API calls
 
                 // --- INITIALIZATION --- //
                 init() {
@@ -225,8 +253,8 @@
                 loadData() {
                     // Inlined data for simplicity
                     this.locales = {
-                        en: {"appTitle":"Public Records Request Generator","appSubtitle":"Craft professional requests with state-specific legal citations.","requestDetails":"Request Details","jurisdiction":"Jurisdiction","selectState":"Select Your State (Required)","chooseState":"Choose your state...","requestTemplate":"Request Template","quickStartTemplates":"Quick Start Templates","createCustom":"Create Custom","selectTemplate":"Select a template...","builtInTemplates":"Built-in Templates","myCustomTemplates":"My Custom Templates","yourInformation":"Your Information","fullName":"Full Name *","fullNamePlaceholder":"John Doe","emailAddress":"Email Address *","emailAddressPlaceholder":"john@example.com","phoneNumber":"Phone Number","phoneNumberPlaceholder":"(555) 123-4567","organization":"Organization (if applicable)","organizationPlaceholder":"News Organization","mailingAddress":"Mailing Address","mailingAddressPlaceholder":"123 Main St, City, State 12345","previewExport":"Preview & Export","copyAsText":"Copy as Text","downloadAsTXT":"Download as TXT","exportAsPDF":"Export as PDF","startOver":"Start Over","toggleDarkMode":"Toggle Dark Mode","police_report":"Police Report","animal_welfare":"Animal Welfare Records","government_contracts":"Government Contracts","financial_records":"Financial Records","meeting_records":"Meeting Records","employment_records":"Employment Records","property_records":"Property Records","permits_licenses":"Permits and Licenses"},
-                        es: {"appTitle":"Generador de Solicitudes de Registros Públicos","appSubtitle":"Cree solicitudes profesionales con citas legales específicas del estado.","requestDetails":"Detalles de la Solicitud","jurisdiction":"Jurisdicción","selectState":"Seleccione su Estado (Requerido)","chooseState":"Elija su estado...","requestTemplate":"Plantilla de Solicitud","quickStartTemplates":"Plantillas Rápidas","createCustom":"Crear Personalizada","selectTemplate":"Seleccione una plantilla...","builtInTemplates":"Plantillas Incorporadas","myCustomTemplates":"Mis Plantillas Personalizadas","yourInformation":"Su Información","fullName":"Nombre Completo *","fullNamePlaceholder":"Juan Pérez","emailAddress":"Correo Electrónico *","emailAddressPlaceholder":"juan@ejemplo.com","phoneNumber":"Número de Teléfono","phoneNumberPlaceholder":"(555) 123-4567","organization":"Organización (si aplica)","organizationPlaceholder":"Organización de Noticias","mailingAddress":"Dirección Postal","mailingAddressPlaceholder":"123 Calle Principal, Ciudad, Estado 12345","previewExport":"Vista Previa y Exportar","copyAsText":"Copiar como Texto","downloadAsTXT":"Descargar como TXT","exportAsPDF":"Exportar como PDF","startOver":"Empezar de Nuevo","toggleDarkMode":"Alternar Modo Oscuro","police_report":"Informe de Policía","animal_welfare":"Registros de Bienestar Animal","government_contracts":"Contratos Gubernamentales","financial_records":"Registros Financieros","meeting_records":"Actas de Reuniones","employment_records":"Registros de Empleo","property_records":"Registros de Propiedad","permits_licenses":"Permisos y Licencias"}
+                        en: {"appTitle":"Public Records Request Generator","appSubtitle":"Craft professional requests with state-specific legal citations.","requestDetails":"Request Details","jurisdiction":"Jurisdiction","selectState":"Select Your State (Required)","chooseState":"Choose your state...","requestTemplate":"Request Template","quickStartTemplates":"Quick Start Templates","createCustom":"Create Custom","selectTemplate":"Select a template...","builtInTemplates":"Built-in Templates","myCustomTemplates":"My Custom Templates","yourInformation":"Your Information","fullName":"Full Name *","fullNamePlaceholder":"John Doe","emailAddress":"Email Address *","emailAddressPlaceholder":"john@example.com","phoneNumber":"Phone Number","phoneNumberPlaceholder":"(555) 123-4567","organization":"Organization (if applicable)","organizationPlaceholder":"News Organization","mailingAddress":"Mailing Address","mailingAddressPlaceholder":"123 Main St, City, State 12345","previewExport":"Preview & Export","copyAsText":"Copy as Text","downloadAsTXT":"Download as TXT","exportAsPDF":"Export as PDF","startOver":"Start Over","police_report":"Police Report","animal_welfare":"Animal Welfare Records","government_contracts":"Government Contracts","financial_records":"Financial Records","meeting_records":"Meeting Records","employment_records":"Employment Records","property_records":"Property Records","permits_licenses":"Permits and Licenses", "recordsDescription": "Records Description", "describeRecords": "Describe the records you are requesting in detail.", "describeRecordsPlaceholder": "e.g., All emails between Mayor John Smith and City Manager Jane Doe from January 1, 2023, to March 31, 2023, regarding the downtown development project.", "refineWithAI": "Refine with AI", "getAISuggestions": "Get AI Suggestions", "loading": "Loading..."},
+                        es: {"appTitle":"Generador de Solicitudes de Registros Públicos","appSubtitle":"Cree solicitudes profesionales con citas legales específicas del estado.","requestDetails":"Detalles de la Solicitud","jurisdiction":"Jurisdicción","selectState":"Seleccione su Estado (Requerido)","chooseState":"Elija su estado...","requestTemplate":"Plantilla de Solicitud","quickStartTemplates":"Plantillas Rápidas","createCustom":"Crear Personalizada","selectTemplate":"Seleccione una plantilla...","builtInTemplates":"Plantillas Incorporadas","myCustomTemplates":"Mis Plantillas Personalizadas","yourInformation":"Su Información","fullName":"Nombre Completo *","fullNamePlaceholder":"Juan Pérez","emailAddress":"Correo Electrónico *","emailAddressPlaceholder":"juan@ejemplo.com","phoneNumber":"Número de Teléfono","phoneNumberPlaceholder":"(555) 123-4567","organization":"Organización (si aplica)","organizationPlaceholder":"Organización de Noticias","mailingAddress":"Dirección Postal","mailingAddressPlaceholder":"123 Calle Principal, Ciudad, Estado 12345","previewExport":"Vista Previa y Exportar","copyAsText":"Copiar como Texto","downloadAsTXT":"Descargar como TXT","exportAsPDF":"Exportar como PDF","startOver":"Empezar de Nuevo","police_report":"Informe de Policía","animal_welfare":"Registros de Bienestar Animal","government_contracts":"Contratos Gubernamentales","financial_records":"Registros Financieros","meeting_records":"Actas de Reuniones","employment_records":"Registros de Empleo","property_records":"Registros de Propiedad","permits_licenses":"Permisos y Licencias", "recordsDescription": "Descripción de los Registros", "describeRecords": "Describa los registros que solicita en detalle.", "describeRecordsPlaceholder": "Ej: Todos los correos electrónicos entre el alcalde John Smith y la administradora de la ciudad Jane Doe desde el 1 de enero de 2023 hasta el 31 de marzo de 2023, sobre el proyecto de desarrollo del centro.", "refineWithAI": "Refinar con IA", "getAISuggestions": "Obtener Sugerencias de IA", "loading": "Cargando..."}
                     };
                     this.laws = [
                         { "code": "AL", "name": "Alabama", "lawName": "Alabama Open Records Act", "citation": "Code of Alabama § 36-12-40 et seq.", "fullCitation": "the Alabama Open Records Act (Code of Alabama § 36-12-40 et seq.)", "responseTime": "a 'reasonable time'", "denialProcess": "If denied, the agency must provide the reason. You may file a lawsuit in the circuit court." },
@@ -341,6 +369,95 @@
                             </div>`;
                     return html;
                 },
+
+                // --- Gemini API Functions --- //
+                async callGemini(prompt) {
+                    this.isLoading = true;
+                    const apiKey = ""; // Leave empty, handled by environment
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                    
+                    let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                    const payload = { contents: chatHistory };
+
+                    try {
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (!response.ok) {
+                            throw new Error(`API error: ${response.statusText}`);
+                        }
+
+                        const result = await response.json();
+                        
+                        if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
+                            this.isLoading = false;
+                            return result.candidates[0].content.parts[0].text;
+                        } else {
+                            throw new Error("Invalid response structure from API.");
+                        }
+                    } catch (error) {
+                        this.isLoading = false;
+                        this.showNotification(`AI Error: ${error.message}`, 'error');
+                        return null;
+                    }
+                },
+
+                async refineRequestDescription() {
+                    if (!this.form.recordsDescription.trim()) return;
+                    
+                    const lawInfo = this.selectedLaw ? `The request is being made in ${this.selectedLaw.name} under ${this.selectedLaw.lawName}.` : '';
+                    const prompt = `
+                        You are an expert in public records requests. Refine the following user-provided description to be more professional, clear, and legally effective. 
+                        Ensure the refined text is a direct replacement for the original, without any introductory or concluding phrases.
+                        Make it specific and reference common types of documents if applicable.
+                        ${lawInfo}
+
+                        Original description:
+                        "${this.form.recordsDescription}"
+
+                        Refined description:
+                    `;
+
+                    const refinedText = await this.callGemini(prompt);
+                    if (refinedText) {
+                        this.form.recordsDescription = refinedText.trim();
+                        this.showNotification('Request description refined by AI.', 'success');
+                    }
+                },
+
+                async getRecordSuggestions() {
+                    if (!this.selectedTemplate) return;
+                    
+                    const isCustom = this.selectedTemplate.startsWith('custom_');
+                    const templateId = isCustom ? this.selectedTemplate.replace('custom_', '') : this.selectedTemplate;
+                    const source = isCustom ? this.customTemplates : this.templates;
+                    const template = source.find(t => t.id === templateId);
+
+                    if (!template) return;
+
+                    const prompt = `
+                        A user is making a public records request using the "${template.name}" template. 
+                        Based on this topic, suggest a bulleted list of 3-5 additional, related records they might also want to request to get a more complete picture.
+                        Do not repeat items already in the original template description.
+                        Provide only the bulleted list, without any introductory or concluding text.
+
+                        Original template description:
+                        "${template.description || template.recordsDescription}"
+
+                        Bulleted list of suggestions:
+                    `;
+
+                    const suggestions = await this.callGemini(prompt);
+                    if (suggestions) {
+                        const suggestionsText = `\n\nAdditionally, please provide the following suggested records:\n${suggestions.trim()}`;
+                        this.form.recordsDescription += suggestionsText;
+                        this.showNotification('AI-powered suggestions added.', 'success');
+                    }
+                },
+
 
                 // --- Event Handlers & Actions --- //
                 onStateChange() { this.selectedLaw = this.form.state ? this.laws.find(l => l.code === this.form.state) : null; },
