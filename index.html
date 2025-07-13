@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Public Records Request Generator</title>
+    <!-- External Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    
+    <!-- Fonts and Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom.css">
     <style>
         [x-cloak] { display: none !important; }
         body { font-family: 'Inter', sans-serif; }
@@ -45,8 +51,8 @@
                 <div class="flex items-center gap-3">
                     <i class="fas fa-file-invoice text-2xl sm:text-3xl text-blue-600"></i>
                     <div>
-                        <h1 class="text-lg sm:text-2xl font-bold" x-text="t('appTitle')"></h1>
-                        <p class="hidden sm:block text-sm text-gray-500" x-text="t('appSubtitle')"></p>
+                        <h1 class="text-lg sm:text-2xl font-bold" x-text="t('appTitle', 'Public Records Request Generator')"></h1>
+                        <p class="hidden sm:block text-sm text-gray-500" x-text="t('appSubtitle', 'Craft professional requests...')"></p>
                     </div>
                 </div>
                 <div class="flex items-center gap-2 sm:gap-4">
@@ -58,7 +64,7 @@
                         <i class="hidden sm:block fas fa-globe absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"></i>
                     </div>
                     <button @click="confirmStartOver()" class="action-button bg-red-600 hover:bg-red-700 focus:ring-red-500">
-                        <i class="fas fa-sync-alt sm:mr-2"></i><span class="hidden sm:inline" x-text="t('startOver')"></span>
+                        <i class="fas fa-sync-alt sm:mr-2"></i><span class="hidden sm:inline" x-text="t('startOver', 'Start Over')"></span>
                     </button>
                 </div>
             </div>
@@ -71,9 +77,9 @@
             <!-- Form Section -->
             <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 space-y-8">
                 <div class="flex justify-between items-center">
-                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900" x-text="t('requestDetails')"></h2>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900" x-text="t('requestDetails', 'Request Details')"></h2>
                     <div class="text-sm font-medium text-gray-600">
-                        <span x-text="t('progress')"></span>: <span x-text="`${progress}%`"></span>
+                        <span x-text="t('progress', 'Progress')"></span>: <span x-text="`${progress}%`"></span>
                     </div>
                 </div>
                 <div class="progress-bar-container">
@@ -81,10 +87,10 @@
                 </div>
 
                 <fieldset>
-                    <legend class="form-legend"><i class="fas fa-landmark mr-3 text-blue-500"></i><span x-text="t('jurisdiction')"></span></legend>
-                    <label for="state-select" class="form-label" x-text="t('selectState')"></label>
+                    <legend class="form-legend"><i class="fas fa-landmark mr-3 text-blue-500"></i><span x-text="t('jurisdiction', 'Jurisdiction')"></span></legend>
+                    <label for="state-select" class="form-label" x-text="t('selectState', 'Select Your State (Required)')"></label>
                     <select id="state-select" x-model="form.state" @change="onStateChange()" class="form-select">
-                        <option value="" x-text="t('chooseState')"></option>
+                        <option value="" x-text="t('chooseState', 'Choose your state...')"></option>
                         <template x-for="law in laws" :key="law.code"><option :value="law.code" x-text="`${law.name} (${law.code})`"></option></template>
                     </select>
                 </fieldset>
@@ -92,80 +98,80 @@
                 <!-- State Law Quick Guide -->
                 <div x-show="selectedLaw" x-collapse>
                     <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
-                        <h4 class="font-bold text-lg text-blue-800 flex items-center"><i class="fas fa-gavel mr-2"></i><span x-text="`${selectedLaw?.name} ${t('lawGuide')}`"></span></h4>
+                        <h4 class="font-bold text-lg text-blue-800 flex items-center"><i class="fas fa-gavel mr-2"></i><span x-text="`${selectedLaw?.name} ${t('lawGuide', 'Law Quick Guide')}`"></span></h4>
                         <div class="mt-2 space-y-2 text-sm text-blue-700">
-                            <p><strong><span x-text="t('citation')"></span>:</strong> <span x-text="selectedLaw?.citation"></span></p>
-                            <p><strong><span x-text="t('responseTime')"></span>:</strong> <span x-text="selectedLaw?.responseTime"></span></p>
-                            <p><strong><span x-text="t('denialProcess')"></span>:</strong> <span x-text="selectedLaw?.denialProcess"></span></p>
+                            <p><strong><span x-text="t('citation', 'Citation')"></span>:</strong> <span x-text="selectedLaw?.citation"></span></p>
+                            <p><strong><span x-text="t('responseTime', 'Response Time')"></span>:</strong> <span x-text="selectedLaw?.responseTime"></span></p>
+                            <p><strong><span x-text="t('denialProcess', 'Denial/Appeal Process')"></span>:</strong> <span x-text="selectedLaw?.denialProcess"></span></p>
                         </div>
                     </div>
                 </div>
 
                 <fieldset>
-                    <legend class="form-legend"><i class="fas fa-file-lines mr-3 text-purple-500"></i><span x-text="t('requestTemplate')"></span></legend>
+                    <legend class="form-legend"><i class="fas fa-file-lines mr-3 text-purple-500"></i><span x-text="t('requestTemplate', 'Request Template')"></span></legend>
                     <div class="flex flex-col sm:flex-row items-center justify-between mb-3 gap-3">
-                        <label for="template-select" class="form-label w-full sm:w-auto" x-text="t('quickStartTemplates')"></label>
+                        <label for="template-select" class="form-label w-full sm:w-auto" x-text="t('quickStartTemplates', 'Quick Start Templates')"></label>
                         <button @click="openTemplateWizard()" class="w-full sm:w-auto action-button bg-purple-600 hover:bg-purple-700 text-sm focus:ring-purple-500">
-                            <i class="fas fa-wand-magic-sparkles mr-2"></i><span x-text="t('createCustom')"></span>
+                            <i class="fas fa-wand-magic-sparkles mr-2"></i><span x-text="t('createCustom', 'Create Custom')"></span>
                         </button>
                     </div>
                     <select id="template-select" x-model="selectedTemplate" @change="applyTemplate()" class="form-select">
-                        <option value="" x-text="t('selectTemplate')"></option>
-                        <optgroup :label="t('builtInTemplates')">
+                        <option value="" x-text="t('selectTemplate', 'Select a template...')"></option>
+                        <optgroup :label="t('builtInTemplates', 'Built-in Templates')">
                             <template x-for="template in templates" :key="template.id"><option :value="template.id" x-text="t(template.id, template.name)"></option></template>
                         </optgroup>
                         <template x-if="customTemplates.length > 0">
-                            <optgroup :label="t('myCustomTemplates')">
+                            <optgroup :label="t('myCustomTemplates', 'My Custom Templates')">
                                 <template x-for="template in customTemplates" :key="template.id"><option :value="'custom_' + template.id" x-text="template.name"></option></template>
                             </optgroup>
                         </template>
                     </select>
                      <div class="mt-3">
                         <button @click="getRecordSuggestions()" :disabled="!selectedTemplate || isLoading" class="w-full action-button bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 disabled:bg-indigo-300 disabled:cursor-not-allowed flex items-center justify-center">
-                            <span x-show="!isLoading">✨ <span x-text="t('getAISuggestions')"></span></span>
-                            <span x-show="isLoading" class="flex items-center"><div class="spinner mr-2"></div> <span x-text="t('loading')"></span></span>
+                            <span x-show="!isLoading">✨ <span x-text="t('getAISuggestions', 'Get AI Suggestions')"></span></span>
+                            <span x-show="isLoading" class="flex items-center"><div class="spinner mr-2"></div> <span x-text="t('loading', 'Loading...')"></span></span>
                         </button>
                     </div>
                 </fieldset>
                 
                 <fieldset class="pt-6 sm:pt-8 border-t-2 border-gray-200">
-                    <legend class="form-legend"><i class="fas fa-paragraph mr-3 text-orange-500"></i><span x-text="t('recordsDescription')"></span></legend>
-                    <label for="recordsDescription" class="form-label" x-text="t('describeRecords')"></label>
-                    <textarea id="recordsDescription" x-model="form.recordsDescription" :placeholder="t('describeRecordsPlaceholder')" rows="8" class="form-textarea"></textarea>
+                    <legend class="form-legend"><i class="fas fa-paragraph mr-3 text-orange-500"></i><span x-text="t('recordsDescription', 'Records Description')"></span></legend>
+                    <label for="recordsDescription" class="form-label" x-text="t('describeRecords', 'Describe the records...')"></label>
+                    <textarea id="recordsDescription" x-model="form.recordsDescription" :placeholder="t('describeRecordsPlaceholder', 'e.g., All emails...')" rows="8" class="form-textarea"></textarea>
                     <div class="mt-3">
                         <button @click="refineRequestDescription()" :disabled="!form.recordsDescription.trim() || isLoading" class="w-full action-button bg-orange-500 hover:bg-orange-600 focus:ring-orange-400 disabled:bg-orange-300 disabled:cursor-not-allowed flex items-center justify-center">
-                            <span x-show="!isLoading">✨ <span x-text="t('refineWithAI')"></span></span>
-                            <span x-show="isLoading" class="flex items-center"><div class="spinner mr-2"></div> <span x-text="t('loading')"></span></span>
+                            <span x-show="!isLoading">✨ <span x-text="t('refineWithAI', 'Refine with AI')"></span></span>
+                            <span x-show="isLoading" class="flex items-center"><div class="spinner mr-2"></div> <span x-text="t('loading', 'Loading...')"></span></span>
                         </button>
                     </div>
                 </fieldset>
 
                 <fieldset class="pt-6 sm:pt-8 border-t-2 border-gray-200">
-                    <legend class="form-legend"><i class="fas fa-user-edit mr-3 text-green-500"></i><span x-text="t('yourInformation')"></span></legend>
+                    <legend class="form-legend"><i class="fas fa-user-edit mr-3 text-green-500"></i><span x-text="t('yourInformation', 'Your Information')"></span></legend>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div><label for="requesterName" class="form-label" x-text="t('fullName')"></label><input id="requesterName" type="text" x-model="form.requesterName" :placeholder="t('fullNamePlaceholder')" class="form-input" required></div>
-                        <div><label for="requesterEmail" class="form-label" x-text="t('emailAddress')"></label><input id="requesterEmail" type="email" x-model="form.requesterEmail" :placeholder="t('emailAddressPlaceholder')" class="form-input" required></div>
-                        <div><label for="requesterPhone" class="form-label" x-text="t('phoneNumber')"></label><input id="requesterPhone" type="tel" x-model="form.requesterPhone" :placeholder="t('phoneNumberPlaceholder')" class="form-input"></div>
-                        <div><label for="requesterOrganization" class="form-label" x-text="t('organization')"></label><input id="requesterOrganization" type="text" x-model="form.requesterOrganization" :placeholder="t('organizationPlaceholder')" class="form-input"></div>
+                        <div><label for="requesterName" class="form-label" x-text="t('fullName', 'Full Name *')"></label><input id="requesterName" type="text" x-model="form.requesterName" :placeholder="t('fullNamePlaceholder', 'John Doe')" class="form-input" required></div>
+                        <div><label for="requesterEmail" class="form-label" x-text="t('emailAddress', 'Email Address *')"></label><input id="requesterEmail" type="email" x-model="form.requesterEmail" :placeholder="t('emailAddressPlaceholder', 'john@example.com')" class="form-input" required></div>
+                        <div><label for="requesterPhone" class="form-label" x-text="t('phoneNumber', 'Phone Number')"></label><input id="requesterPhone" type="tel" x-model="form.requesterPhone" :placeholder="t('phoneNumberPlaceholder', '(555) 123-4567')" class="form-input"></div>
+                        <div><label for="requesterOrganization" class="form-label" x-text="t('organization', 'Organization')"></label><input id="requesterOrganization" type="text" x-model="form.requesterOrganization" :placeholder="t('organizationPlaceholder', 'News Organization')" class="form-input"></div>
                     </div>
-                    <div class="mt-6"><label for="requesterAddress" class="form-label" x-text="t('mailingAddress')"></label><textarea id="requesterAddress" x-model="form.requesterAddress" :placeholder="t('mailingAddressPlaceholder')" rows="3" class="form-textarea"></textarea></div>
+                    <div class="mt-6"><label for="requesterAddress" class="form-label" x-text="t('mailingAddress', 'Mailing Address')"></label><textarea id="requesterAddress" x-model="form.requesterAddress" :placeholder="t('mailingAddressPlaceholder', '123 Main St...')" rows="3" class="form-textarea"></textarea></div>
                 </fieldset>
 
                 <fieldset class="pt-6 sm:pt-8 border-t-2 border-gray-200">
-                    <legend class="form-legend"><i class="fas fa-cogs mr-3 text-gray-500"></i><span x-text="t('options')"></span></legend>
+                    <legend class="form-legend"><i class="fas fa-cogs mr-3 text-gray-500"></i><span x-text="t('options', 'Options')"></span></legend>
                     <div class="space-y-4">
                         <div class="flex items-start">
                             <div class="flex items-center h-5">
                                 <input id="feeWaiverRequest" type="checkbox" x-model="form.feeWaiverRequest" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
                             </div>
                             <div class="ml-3 text-sm">
-                                <label for="feeWaiverRequest" class="font-medium text-gray-700" x-text="t('requestFeeWaiver')"></label>
-                                <p class="text-gray-500" x-text="t('feeWaiverDescription')"></p>
+                                <label for="feeWaiverRequest" class="font-medium text-gray-700" x-text="t('requestFeeWaiver', 'Request a Fee Waiver')"></label>
+                                <p class="text-gray-500" x-text="t('feeWaiverDescription', 'Check this if...')"></p>
                             </div>
                         </div>
                         <button @click="generateFeeWaiverText()" :disabled="!form.feeWaiverRequest || isLoading" class="w-full sm:w-auto action-button bg-teal-600 hover:bg-teal-700 focus:ring-teal-500 disabled:bg-teal-300 disabled:cursor-not-allowed flex items-center justify-center text-xs">
-                            <span x-show="!isLoading">✨ <span x-text="t('generateWaiverText')"></span></span>
-                            <span x-show="isLoading" class="flex items-center"><div class="spinner mr-2"></div> <span x-text="t('loading')"></span></span>
+                            <span x-show="!isLoading">✨ <span x-text="t('generateWaiverText', 'Generate Waiver Text with AI')"></span></span>
+                            <span x-show="isLoading" class="flex items-center"><div class="spinner mr-2"></div> <span x-text="t('loading', 'Loading...')"></span></span>
                         </button>
                     </div>
                 </fieldset>
@@ -175,11 +181,11 @@
             <div class="lg:sticky top-28 h-fit">
                 <div class="rounded-2xl shadow-xl p-6 sm:p-8 bg-white">
                     <div class="flex items-center justify-between mb-6">
-                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900" x-text="t('previewExport')"></h2>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900" x-text="t('previewExport', 'Preview & Export')"></h2>
                         <div class="flex gap-2 sm:gap-3">
-                            <button @click="copyToClipboard()" :disabled="progress < 100" :title="t('copyAsText')" class="action-button bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 disabled:bg-blue-300"><i class="fas fa-copy"></i></button>
-                            <button @click="exportAsText()" :disabled="progress < 100" :title="t('downloadAsTXT')" class="action-button bg-green-600 hover:bg-green-700 focus:ring-green-500 disabled:bg-green-300"><i class="fas fa-file-alt"></i></button>
-                            <button @click="exportAsPDF()" :disabled="progress < 100" :title="t('exportAsPDF')" class="action-button bg-red-600 hover:bg-red-700 focus:ring-red-500 disabled:bg-red-300"><i class="fas fa-file-pdf"></i></button>
+                            <button @click="copyToClipboard()" :disabled="progress < 100" :title="t('copyAsText', 'Copy as Text')" class="action-button bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 disabled:bg-blue-300"><i class="fas fa-copy"></i></button>
+                            <button @click="exportAsText()" :disabled="progress < 100" :title="t('downloadAsTXT', 'Download as TXT')" class="action-button bg-green-600 hover:bg-green-700 focus:ring-green-500 disabled:bg-green-300"><i class="fas fa-file-alt"></i></button>
+                            <button @click="exportAsPDF()" :disabled="progress < 100" :title="t('exportAsPDF', 'Export as PDF')" class="action-button bg-red-600 hover:bg-red-700 focus:ring-red-500 disabled:bg-red-300"><i class="fas fa-file-pdf"></i></button>
                         </div>
                     </div>
                     
@@ -248,448 +254,7 @@
         </div>
     </div>
     
-    <script>
-        document.addEventListener('alpine:init', () => {
-            Alpine.data('publicRecordsApp', () => ({
-                // --- STATE PROPERTIES --- //
-                form: {},
-                laws: [],
-                templates: [],
-                customTemplates: [],
-                selectedTemplate: '',
-                selectedLaw: null,
-                notifications: [],
-                notificationCounter: 0,
-                confirmModal: { open: false, title: '', body: '', onConfirm: () => {}, confirmText: 'Confirm', confirmClass: 'bg-red-600 hover:bg-red-700' },
-                showTemplateWizard: false,
-                customTemplate: {},
-                currentLang: 'en',
-                locales: {},
-                isLoading: false, // For Gemini API calls
-                progress: 0,
-
-                // --- INITIALIZATION --- //
-                init() {
-                    this.resetForm();
-                    this.resetCustomTemplate();
-                    this.loadData();
-                    this.initLanguage();
-                    this.loadCustomTemplatesFromStorage();
-                    this.$watch('form', () => {
-                        this.updatePreview();
-                        this.updateProgress();
-                    }, { deep: true });
-                    this.updatePreview();
-                    this.updateProgress();
-                    console.log("Public Records Helper Initialized.");
-                },
-
-                resetForm() {
-                    this.form = {
-                        requesterName: '', requesterEmail: '', requesterPhone: '',
-                        requesterOrganization: '', requesterAddress: '', state: '',
-                        agencyName: '', agencyDepartment: '', agencyContact: '',
-                        agencyAddress: '', subject: '', recordsDescription: '',
-                        dateFrom: '', dateTo: '', preferredFormat: 'electronic',
-                        expeditedProcessing: false, feeWaiverRequest: false, additionalNotes: ''
-                    };
-                    this.selectedTemplate = '';
-                    this.selectedLaw = null;
-                },
-
-                loadData() {
-                    // Inlined data for simplicity
-                    this.locales = {
-                        en: {"appTitle":"Public Records Request Generator","appSubtitle":"Craft professional requests with state-specific legal citations.","requestDetails":"Request Details","jurisdiction":"Jurisdiction","selectState":"Select Your State (Required)","chooseState":"Choose your state...","requestTemplate":"Request Template","quickStartTemplates":"Quick Start Templates","createCustom":"Create Custom","selectTemplate":"Select a template...","builtInTemplates":"Built-in Templates","myCustomTemplates":"My Custom Templates","yourInformation":"Your Information","fullName":"Full Name *","fullNamePlaceholder":"John Doe","emailAddress":"Email Address *","emailAddressPlaceholder":"john@example.com","phoneNumber":"Phone Number","phoneNumberPlaceholder":"(555) 123-4567","organization":"Organization (if applicable)","organizationPlaceholder":"News Organization","mailingAddress":"Mailing Address","mailingAddressPlaceholder":"123 Main St, City, State 12345","previewExport":"Preview & Export","copyAsText":"Copy as Text","downloadAsTXT":"Download as TXT","exportAsPDF":"Export as PDF","startOver":"Start Over","police_report":"Police Report","animal_welfare":"Animal Welfare Records","government_contracts":"Government Contracts","financial_records":"Financial Records","meeting_records":"Meeting Records","employment_records":"Employment Records","property_records":"Property Records","permits_licenses":"Permits and Licenses", "recordsDescription": "Records Description", "describeRecords": "Describe the records you are requesting in detail.", "describeRecordsPlaceholder": "e.g., All emails between Mayor John Smith and City Manager Jane Doe from January 1, 2023, to March 31, 2023, regarding the downtown development project.", "refineWithAI": "Refine with AI", "getAISuggestions": "Get AI Suggestions", "loading": "Loading...", "progress": "Progress", "lawGuide": "Law Quick Guide", "citation": "Citation", "responseTime": "Response Time", "denialProcess": "Denial/Appeal Process", "options": "Options", "requestFeeWaiver": "Request a Fee Waiver", "feeWaiverDescription": "Check this if your request is in the public interest.", "generateWaiverText": "Generate Waiver Text with AI"},
-                        es: {"appTitle":"Generador de Solicitudes de Registros Públicos","appSubtitle":"Cree solicitudes profesionales con citas legales específicas del estado.","requestDetails":"Detalles de la Solicitud","jurisdiction":"Jurisdicción","selectState":"Seleccione su Estado (Requerido)","chooseState":"Elija su estado...","requestTemplate":"Plantilla de Solicitud","quickStartTemplates":"Plantillas Rápidas","createCustom":"Crear Personalizada","selectTemplate":"Seleccione una plantilla...","builtInTemplates":"Plantillas Incorporadas","myCustomTemplates":"Mis Plantillas Personalizadas","yourInformation":"Su Información","fullName":"Nombre Completo *","fullNamePlaceholder":"Juan Pérez","emailAddress":"Correo Electrónico *","emailAddressPlaceholder":"juan@ejemplo.com","phoneNumber":"Número de Teléfono","phoneNumberPlaceholder":"(555) 123-4567","organization":"Organización (si aplica)","organizationPlaceholder":"Organización de Noticias","mailingAddress":"Dirección Postal","mailingAddressPlaceholder":"123 Calle Principal, Ciudad, Estado 12345","previewExport":"Vista Previa y Exportar","copyAsText":"Copiar como Texto","downloadAsTXT":"Descargar como TXT","exportAsPDF":"Exportar como PDF","startOver":"Empezar de Nuevo","police_report":"Informe de Policía","animal_welfare":"Registros de Bienestar Animal","government_contracts":"Contratos Gubernamentales","financial_records":"Registros Financieros","meeting_records":"Actas de Reuniones","employment_records":"Registros de Empleo","property_records":"Registros de Propiedad","permits_licenses":"Permisos y Licencias", "recordsDescription": "Descripción de los Registros", "describeRecords": "Describa los registros que solicita en detalle.", "describeRecordsPlaceholder": "Ej: Todos los correos electrónicos entre el alcalde John Smith y la administradora de la ciudad Jane Doe desde el 1 de enero de 2023 hasta el 31 de marzo de 2023, sobre el proyecto de desarrollo del centro.", "refineWithAI": "Refinar con IA", "getAISuggestions": "Obtener Sugerencias de IA", "loading": "Cargando...", "progress": "Progreso", "lawGuide": "Guía Rápida de Leyes", "citation": "Citación", "responseTime": "Tiempo de Respuesta", "denialProcess": "Proceso de Apelación", "options": "Opciones", "requestFeeWaiver": "Solicitar Exención de Tarifas", "feeWaiverDescription": "Marque esto si su solicitud es de interés público.", "generateWaiverText": "Generar Texto de Exención con IA"}
-                    };
-                    this.laws = [
-                        { "code": "AL", "name": "Alabama", "lawName": "Alabama Open Records Act", "citation": "Code of Alabama § 36-12-40 et seq.", "fullCitation": "the Alabama Open Records Act (Code of Alabama § 36-12-40 et seq.)", "responseTime": "a 'reasonable time'", "denialProcess": "If denied, the agency must provide the reason. You may file a lawsuit in the circuit court." },
-                        { "code": "AK", "name": "Alaska", "lawName": "Alaska Public Records Act", "citation": "AS 40.25.110 et seq.", "fullCitation": "the Alaska Public Records Act (AS 40.25.110 et seq.)", "responseTime": "10 business days", "denialProcess": "Denials must be in writing and include the legal basis. You may appeal to the agency head, then to the superior court." },
-                        { "code": "AZ", "name": "Arizona", "lawName": "Arizona Public Records Law", "citation": "A.R.S. § 39-121 et seq.", "fullCitation": "the Arizona Public Records Law (A.R.S. § 39-121 et seq.)", "responseTime": "'promptly'", "denialProcess": "Denials must cite the specific statute supporting exemption. You may file a special action in the superior court." },
-                        { "code": "AR", "name": "Arkansas", "lawName": "Arkansas Freedom of Information Act", "citation": "Ark. Code Ann. § 25-19-101 et seq.", "fullCitation": "the Arkansas Freedom of Information Act (Ark. Code Ann. § 25-19-101 et seq.)", "responseTime": "3 business days", "denialProcess": "If access is denied, the custodian must provide a reason. You can appeal to the circuit court." },
-                        { "code": "CA", "name": "California", "lawName": "California Public Records Act", "citation": "Gov. Code § 7920.000 et seq.", "fullCitation": "the California Public Records Act (Gov. Code § 7920.000 et seq.)", "responseTime": "10 days", "denialProcess": "Denials must be in writing and cite a specific exemption. You can seek a court order from the superior court." },
-                        { "code": "CO", "name": "Colorado", "lawName": "Colorado Open Records Act", "citation": "C.R.S. § 24-72-200.1 et seq.", "fullCitation": "the Colorado Open Records Act (C.R.S. § 24-72-200.1 et seq.)", "responseTime": "3 business days (can be extended by 7 business days)", "denialProcess": "Denials must be in writing. You can file a lawsuit in the district court." },
-                        { "code": "CT", "name": "Connecticut", "lawName": "Connecticut Freedom of Information Act", "citation": "Conn. Gen. Stat. § 1-200 et seq.", "fullCitation": "the Connecticut Freedom of Information Act (Conn. Gen. Stat. § 1-200 et seq.)", "responseTime": "4 business days", "denialProcess": "Denials must be provided promptly. You can appeal to the state's Freedom of Information Commission." },
-                        { "code": "DE", "name": "Delaware", "lawName": "Delaware Freedom of Information Act", "citation": "29 Del. C. § 10001 et seq.", "fullCitation": "the Delaware Freedom of Information Act (29 Del. C. § 10001 et seq.)", "responseTime": "15 business days", "denialProcess": "Denials must be in writing with reasons. You can appeal to the Attorney General or file suit in the Superior Court." },
-                        { "code": "FL", "name": "Florida", "lawName": "Florida Public Records Act", "citation": "F.S. Chapter 119", "fullCitation": "the Florida Public Records Act (F.S. Chapter 119)", "responseTime": "a 'reasonable' amount of time", "denialProcess": "If denied, the agency must state the basis for the exemption in writing. You can file a civil action in circuit court." },
-                        { "code": "GA", "name": "Georgia", "lawName": "Georgia Open Records Act", "citation": "O.C.G.A. § 50-18-70 et seq.", "fullCitation": "the Georgia Open Records Act (O.C.G.A. § 50-18-70 et seq.)", "responseTime": "3 business days", "denialProcess": "Denials must cite the specific code section. You can sue in superior court." },
-                        { "code": "HI", "name": "Hawaii", "lawName": "Uniform Information Practices Act", "citation": "HRS § 92F-1 et seq.", "fullCitation": "the Uniform Information Practices Act (HRS § 92F-1 et seq.)", "responseTime": "10 business days", "denialProcess": "Denials must be in writing. You can appeal to the Office of Information Practices or file a lawsuit." },
-                        { "code": "ID", "name": "Idaho", "lawName": "Idaho Public Records Act", "citation": "Idaho Code § 74-101 et seq.", "fullCitation": "the Idaho Public Records Act (Idaho Code § 74-101 et seq.)", "responseTime": "3 business days (can be extended to 10)", "denialProcess": "Denials must be in writing. You can file a petition with the magistrate court." },
-                        { "code": "IL", "name": "Illinois", "lawName": "Illinois Freedom of Information Act", "citation": "5 ILCS 140/1 et seq.", "fullCitation": "the Illinois Freedom of Information Act (5 ILCS 140/1 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must be in writing. You can appeal to the Public Access Counselor (PAC) or file a lawsuit." },
-                        { "code": "IN", "name": "Indiana", "lawName": "Access to Public Records Act", "citation": "IC 5-14-3-1 et seq.", "fullCitation": "the Access to Public Records Act (IC 5-14-3-1 et seq.)", "responseTime": "within 24 hours (hand/email) or 7 days (mail/fax)", "denialProcess": "Denials must be in writing. You can file a complaint with the Public Access Counselor or file a lawsuit." },
-                        { "code": "IA", "name": "Iowa", "lawName": "Iowa Open Records Act", "citation": "Iowa Code Chapter 22", "fullCitation": "the Iowa Open Records Act (Iowa Code Chapter 22)", "responseTime": "'without delay' (typically within 20 business days)", "denialProcess": "Denials must provide a reason. You can file a complaint with the Iowa Public Information Board or sue in district court." },
-                        { "code": "KS", "name": "Kansas", "lawName": "Kansas Open Records Act", "citation": "K.S.A. 45-215 et seq.", "fullCitation": "the Kansas Open Records Act (K.S.A. 45-215 et seq.)", "responseTime": "3 business days", "denialProcess": "Denials must be in writing with the specific legal basis. You can file a lawsuit in district court." },
-                        { "code": "KY", "name": "Kentucky", "lawName": "Kentucky Open Records Act", "citation": "KRS 61.870 et seq.", "fullCitation": "the Kentucky Open Records Act (KRS 61.870 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must be in writing and cite the exemption. You can appeal to the Attorney General, then to circuit court." },
-                        { "code": "LA", "name": "Louisiana", "lawName": "Louisiana Public Records Act", "citation": "La. R.S. 44:1 et seq.", "fullCitation": "the Louisiana Public Records Act (La. R.S. 44:1 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must be in writing. You can file a suit for a writ of mandamus in district court. Note: A 2024 law exempts personal contact info of public employees." },
-                        { "code": "ME", "name": "Maine", "lawName": "Freedom of Access Act", "citation": "1 M.R.S. § 401 et seq.", "fullCitation": "the Freedom of Access Act (1 M.R.S. § 401 et seq.)", "responseTime": "5 business days to acknowledge receipt", "denialProcess": "Denials must be in writing. You can file an appeal in Superior Court." },
-                        { "code": "MD", "name": "Maryland", "lawName": "Public Information Act", "citation": "Md. Code, Gen. Prov. § 4-101 et seq.", "fullCitation": "the Public Information Act (Md. Code, Gen. Prov. § 4-101 et seq.)", "responseTime": "10 business days (extendable up to 30 days)", "denialProcess": "Denials must be in writing. You can seek review by the Public Information Act Compliance Board or file a lawsuit." },
-                        { "code": "MA", "name": "Massachusetts", "lawName": "Public Records Law", "citation": "M.G.L. c. 66, § 10", "fullCitation": "the Public Records Law (M.G.L. c. 66, § 10)", "responseTime": "10 business days", "denialProcess": "Denials must be in writing. You can appeal to the Supervisor of Public Records, and then to superior court." },
-                        { "code": "MI", "name": "Michigan", "lawName": "Michigan Freedom of Information Act", "citation": "MCL 15.231 et seq.", "fullCitation": "the Michigan Freedom of Information Act (MCL 15.231 et seq.)", "responseTime": "5 business days (can be extended by 10 days)", "denialProcess": "Denials must be in writing. You can appeal to the agency head, then file a civil action in circuit court." },
-                        { "code": "MN", "name": "Minnesota", "lawName": "Government Data Practices Act", "citation": "Minn. Stat. Chapter 13", "fullCitation": "the Minnesota Government Data Practices Act (Minn. Stat. Chapter 13)", "responseTime": "a 'reasonable' amount of time", "denialProcess": "You can bring a civil action in district court." },
-                        { "code": "MS", "name": "Mississippi", "lawName": "Mississippi Public Records Act", "citation": "Miss. Code Ann. § 25-61-1 et seq.", "fullCitation": "the Mississippi Public Records Act (Miss. Code Ann. § 25-61-1 et seq.)", "responseTime": "7 working days (can be extended to 14)", "denialProcess": "Denials must be in writing. You can petition the chancery court for a hearing." },
-                        { "code": "MO", "name": "Missouri", "lawName": "Missouri Sunshine Law", "citation": "R.S.Mo. § 610.010 et seq.", "fullCitation": "the Missouri Sunshine Law (R.S.Mo. § 610.010 et seq.)", "responseTime": "3 business days", "denialProcess": "Denials must be in writing. You can file a lawsuit in the circuit court." },
-                        { "code": "MT", "name": "Montana", "lawName": "Right to Know", "citation": "Montana Constitution, Art. II, Sec. 9; MCA § 2-6-1001 et seq.", "fullCitation": "the Right to Know provision (Montana Constitution, Art. II, Sec. 9; MCA § 2-6-1001 et seq.)", "responseTime": "a 'timely' manner", "denialProcess": "You can file a lawsuit in district court." },
-                        { "code": "NE", "name": "Nebraska", "lawName": "Nebraska Public Records Statutes", "citation": "Neb. Rev. Stat. § 84-712 et seq.", "fullCitation": "the Nebraska Public Records Statutes (Neb. Rev. Stat. § 84-712 et seq.)", "responseTime": "4 business days", "denialProcess": "Denials must be in writing. You can file a lawsuit in district court or a complaint with the Attorney General." },
-                        { "code": "NV", "name": "Nevada", "lawName": "Nevada Public Records Act", "citation": "NRS Chapter 239", "fullCitation": "the Nevada Public Records Act (NRS Chapter 239)", "responseTime": "5 business days", "denialProcess": "Denials must be in writing. You can file a petition in district court." },
-                        { "code": "NH", "name": "New Hampshire", "lawName": "Right-to-Know Law", "citation": "RSA Chapter 91-A", "fullCitation": "the Right-to-Know Law (RSA Chapter 91-A)", "responseTime": "5 business days", "denialProcess": "Denials must be in writing. You can file a petition in superior court or a complaint with the Right to Know Ombudsman." },
-                        { "code": "NJ", "name": "New Jersey", "lawName": "Open Public Records Act", "citation": "N.J.S.A. 47:1A-1 et seq.", "fullCitation": "the Open Public Records Act (N.J.S.A. 47:1A-1 et seq.)", "responseTime": "7 business days", "denialProcess": "Denials must be in writing. You can file a complaint with the Government Records Council (GRC) or file a lawsuit. Note: 2024 reforms may affect this process." },
-                        { "code": "NM", "name": "New Mexico", "lawName": "Inspection of Public Records Act", "citation": "NMSA 1978, § 14-2-1 et seq.", "fullCitation": "the Inspection of Public Records Act (NMSA 1978, § 14-2-1 et seq.)", "responseTime": "3 days to permit inspection; 15 days to provide copies", "denialProcess": "Denials must be in writing. You can file a lawsuit in district court or complain to the Attorney General." },
-                        { "code": "NY", "name": "New York", "lawName": "Freedom of Information Law", "citation": "Public Officers Law, Article 6", "fullCitation": "the Freedom of Information Law (Public Officers Law, Article 6)", "responseTime": "5 business days to acknowledge", "denialProcess": "You can appeal in writing to the agency head, then bring an Article 78 proceeding in state supreme court." },
-                        { "code": "NC", "name": "North Carolina", "lawName": "North Carolina Public Records Law", "citation": "N.C. Gen. Stat. Chapter 132", "fullCitation": "the North Carolina Public Records Law (N.C. Gen. Stat. Chapter 132)", "responseTime": "'as promptly as possible'", "denialProcess": "You can file a civil action in superior court." },
-                        { "code": "ND", "name": "North Dakota", "lawName": "North Dakota Open Records Statute", "citation": "N.D.C.C. § 44-04-18 et seq.", "fullCitation": "the North Dakota Open Records Statute (N.D.C.C. § 44-04-18 et seq.)", "responseTime": "a 'reasonable' amount of time", "denialProcess": "You can file a lawsuit in district court or request an opinion from the Attorney General." },
-                        { "code": "OH", "name": "Ohio", "lawName": "Ohio Public Records Act", "citation": "R.C. 149.43", "fullCitation": "the Ohio Public Records Act (R.C. 149.43)", "responseTime": "'promptly'", "denialProcess": "You can file a mandamus action in the court of common pleas, court of appeals, or the supreme court." },
-                        { "code": "OK", "name": "Oklahoma", "lawName": "Oklahoma Open Records Act", "citation": "51 O.S. § 24A.1 et seq.", "fullCitation": "the Oklahoma Open Records Act (51 O.S. § 24A.1 et seq.)", "responseTime": "'prompt, reasonable access'", "denialProcess": "You can file a lawsuit in district court." },
-                        { "code": "OR", "name": "Oregon", "lawName": "Oregon Public Records Law", "citation": "ORS 192.311 to 192.478", "fullCitation": "the Oregon Public Records Law (ORS 192.311 to 192.478)", "responseTime": "5 business days to acknowledge; 10 more to fulfill", "denialProcess": "You can petition the District Attorney or Attorney General for review, which can be appealed in circuit court." },
-                        { "code": "PA", "name": "Pennsylvania", "lawName": "Right-to-Know Law", "citation": "65 P.S. § 67.101 et seq.", "fullCitation": "the Pennsylvania Right-to-Know Law (65 P.S. § 67.101 et seq.)", "responseTime": "5 business days", "denialProcess": "You can appeal to the Pennsylvania Office of Open Records within 15 business days of a denial." },
-                        { "code": "RI", "name": "Rhode Island", "lawName": "Access to Public Records Act", "citation": "R.I. Gen. Laws § 38-2-1 et seq.", "fullCitation": "the Access to Public Records Act (R.I. Gen. Laws § 38-2-1 et seq.)", "responseTime": "10 business days (can be extended by 20)", "denialProcess": "You can complain to the agency head, then the Attorney General, or file suit in superior court." },
-                        { "code": "SC", "name": "South Carolina", "lawName": "Freedom of Information Act", "citation": "S.C. Code § 30-4-10 et seq.", "fullCitation": "the South Carolina Freedom of Information Act (S.C. Code § 30-4-10 et seq.)", "responseTime": "10 business days (records < 2 yrs old); 20 days (older)", "denialProcess": "Denials must be in writing. You can file a lawsuit in the circuit court." },
-                        { "code": "SD", "name": "South Dakota", "lawName": "South Dakota Open Records Law", "citation": "SDCL Chapter 1-27", "fullCitation": "the South Dakota Open Records Law (SDCL Chapter 1-27)", "responseTime": "'promptly'", "denialProcess": "You can file a lawsuit in circuit court or request assistance from the Open Meetings Commission." },
-                        { "code": "TN", "name": "Tennessee", "lawName": "Tennessee Public Records Act", "citation": "T.C.A. § 10-7-503 et seq.", "fullCitation": "the Tennessee Public Records Act (T.C.A. § 10-7-503 et seq.)", "responseTime": "7 business days", "denialProcess": "Denials must be in writing. You can file a petition in chancery or circuit court." },
-                        { "code": "TX", "name": "Texas", "lawName": "Texas Public Information Act", "citation": "Tex. Gov't Code Chapter 552", "fullCitation": "the Texas Public Information Act (Tex. Gov't Code Chapter 552)", "responseTime": "'promptly' (presumed 10 business days)", "denialProcess": "You can file a complaint with the Attorney General's Open Records Division or file a lawsuit." },
-                        { "code": "UT", "name": "Utah", "lawName": "Government Records Access and Management Act", "citation": "Utah Code § 63G-2", "fullCitation": "the Government Records Access and Management Act (GRAMA) (Utah Code § 63G-2)", "responseTime": "10 business days", "denialProcess": "You can appeal to the agency's chief executive, then to the State Records Committee or district court." },
-                        { "code": "VT", "name": "Vermont", "lawName": "Vermont Public Records Act", "citation": "1 V.S.A. § 315 et seq.", "fullCitation": "the Vermont Public Records Act (1 V.S.A. § 315 et seq.)", "responseTime": "3 business days (can be extended to 10)", "denialProcess": "You can appeal to the agency head, then file a lawsuit in superior court." },
-                        { "code": "VA", "name": "Virginia", "lawName": "Virginia Freedom of Information Act", "citation": "Va. Code § 2.2-3700 et seq.", "fullCitation": "the Virginia Freedom of Information Act (Va. Code § 2.2-3700 et seq.)", "responseTime": "5 working days (can be extended by 7)", "denialProcess": "You can file a petition for mandamus or injunction in the general district or circuit court." },
-                        { "code": "WA", "name": "Washington", "lawName": "Washington Public Records Act", "citation": "RCW 42.56", "fullCitation": "the Washington Public Records Act (RCW 42.56)", "responseTime": "5 business days to respond", "denialProcess": "You can seek judicial review in the superior court of the county where the record is maintained." },
-                        { "code": "WV", "name": "West Virginia", "lawName": "West Virginia Freedom of Information Act", "citation": "W. Va. Code § 29B-1-1 et seq.", "fullCitation": "the West Virginia Freedom of Information Act (W. Va. Code § 29B-1-1 et seq.)", "responseTime": "5 business days", "denialProcess": "Denials must be in writing. You can file for injunctive or declaratory relief in the circuit court." },
-                        { "code": "WI", "name": "Wisconsin", "lawName": "Wisconsin Open Records Law", "citation": "Wis. Stat. §§ 19.31-19.39", "fullCitation": "the Wisconsin Open Records Law (Wis. Stat. §§ 19.31-19.39)", "responseTime": "'as soon as practicable and without delay'", "denialProcess": "You can bring an action for mandamus in circuit court or request an opinion from the Attorney General." },
-                        { "code": "WY", "name": "Wyoming", "lawName": "Wyoming Public Records Act", "citation": "Wyo. Stat. § 16-4-201 et seq.", "fullCitation": "the Wyoming Public Records Act (Wyo. Stat. § 16-4-201 et seq.)", "responseTime": "Immediate inspection; if not possible, a date must be set within 7 days", "denialProcess": "Denials must be in writing. You can file a petition in district court." }
-                    ];
-                    this.templates = [
-                      { "id": "police_report", "name": "Police Report", "subject": "Public Records Request - Police Report", "description": "I am requesting copies of all police reports, incident reports, and related documentation for incident number [INCIDENT_NUMBER] that occurred on [DATE] at approximately [TIME] at [LOCATION]. This request includes but is not limited to:\n\n• Initial incident report\n• Supplemental reports\n• Witness statements\n• Photographs taken at the scene\n• Audio or video recordings\n• Evidence logs\n• Officer notes or field reports\n• Any correspondence related to this incident", "expedited": false, "feeWaiver": false, "publicInterest": false },
-                      { "id": "animal_welfare", "name": "Animal Welfare Records", "subject": "Public Records Request - Animal Control/Welfare Records", "description": "I am requesting records related to animal control activities and welfare investigations for the period from [START_DATE] to [END_DATE]. This request includes:\n\n• Animal control reports and incident logs\n• Investigation reports regarding animal welfare complaints\n• Citations issued for animal-related violations\n• Correspondence with animal welfare organizations\n• Adoption and euthanasia records\n• Licensing and registration data\n• Budget and expenditure records for animal control services\n• Policies and procedures for animal control operations", "expedited": false, "feeWaiver": true, "publicInterest": true },
-                      { "id": "government_contracts", "name": "Government Contracts", "subject": "Public Records Request - Government Contracts and Procurement", "description": "I am requesting records related to government contracts and procurement activities for the period from [START_DATE] to [END_DATE]. This request includes:\n\n• All contracts and agreements exceeding $[AMOUNT]\n• Bid documents and procurement records\n• Vendor correspondence and communications\n• Payment records and invoices\n• Contract modifications and amendments\n• Performance evaluations and compliance reports\n• Procurement policies and procedures\n• Conflict of interest disclosures\n• Emergency procurement justifications", "expedited": false, "feeWaiver": true, "publicInterest": true },
-                      { "id": "financial_records", "name": "Financial Records", "subject": "Public Records Request - Financial Records and Budget Documents", "description": "I am requesting financial records and budget-related documents for fiscal year [FISCAL_YEAR]. This request includes:\n\n• Annual budget documents and amendments\n• Financial statements and audit reports\n• Expenditure records by department/category\n• Revenue reports and tax collection data\n• Grant applications and awards\n• Investment portfolio statements\n• Debt service schedules\n• Employee compensation records\n• Vendor payment registers", "expedited": false, "feeWaiver": true, "publicInterest": true },
-                      { "id": "meeting_records", "name": "Meeting Records", "subject": "Public Records Request - Meeting Minutes and Records", "description": "I am requesting records related to public meetings and deliberations for the period from [START_DATE] to [END_DATE]. This request includes:\n\n• Meeting minutes and transcripts\n• Agendas and supporting materials\n• Audio or video recordings of meetings\n• Correspondence between officials regarding meeting topics\n• Voting records and roll call votes\n• Executive session documentation (if legally accessible)\n• Public comment submissions\n• Presentation materials and handouts", "expedited": false, "feeWaiver": true, "publicInterest": true },
-                      { "id": "employment_records", "name": "Employment Records", "subject": "Public Records Request - Employment and Personnel Records", "description": "I am requesting employment-related records for the period from [START_DATE] to [END_DATE]. This request includes:\n\n• Job descriptions and classifications\n• Salary schedules and compensation data\n• Organizational charts and staffing reports\n• Hiring and promotion records\n• Training and professional development records\n• Grievance and disciplinary records\n• Performance evaluation summaries\n• Overtime and leave records\n• Employment policies and procedures", "expedited": false, "feeWaiver": true, "publicInterest": true },
-                      { "id": "property_records", "name": "Property Records", "subject": "Public Records Request - Property and Real Estate Records", "description": "I am requesting records related to property and real estate transactions for the period from [START_DATE] to [END_DATE]. This request includes:\n\n• Property acquisition and disposal records\n• Appraisal and valuation reports\n• Lease agreements and rental records\n• Maintenance and repair records\n• Property tax assessments\n• Zoning and land use decisions\n• Environmental assessments\n• Construction and renovation contracts\n• Property insurance records", "expedited": false, "feeWaiver": true, "publicInterest": true },
-                      { "id": "permits_licenses", "name": "Permits and Licenses", "subject": "Public Records Request - Permits and Licensing Records", "description": "I am requesting records related to permits and licenses issued for the period from [START_DATE] to [END_DATE]. This request includes:\n\n• Building permits and construction records\n• Business licenses and registrations\n• Zoning permits and variances\n• Environmental permits and compliance records\n• Inspection reports and violations\n• Permit application documents\n• Fee schedules and payment records\n• Appeals and hearing records\n• Enforcement actions and penalties", "expedited": false, "feeWaiver": false, "publicInterest": false }
-                    ];
-                },
-
-                // --- LANGUAGE --- //
-                initLanguage() {
-                    const savedLang = localStorage.getItem('appLanguage') || 'en';
-                    this.setLang(savedLang);
-                },
-                setLang(lang) {
-                    this.currentLang = this.locales[lang] ? lang : 'en';
-                    localStorage.setItem('appLanguage', this.currentLang);
-                    document.documentElement.lang = this.currentLang;
-                },
-                t(key, fallback = '') {
-                    return this.locales[this.currentLang]?.[key] || fallback || key;
-                },
-
-                // --- DYNAMIC PREVIEW --- //
-                updatePreview(){
-                    // The preview is now handled reactively by x-html, so this method is a placeholder
-                },
-                
-                updateProgress() {
-                    let completed = 0;
-                    const total = 4; // Number of fields to track for progress
-                    if (this.form.state) completed++;
-                    if (this.form.requesterName.trim()) completed++;
-                    if (this.form.requesterEmail.trim()) completed++;
-                    if (this.form.recordsDescription.trim()) completed++;
-                    this.progress = Math.round((completed / total) * 100);
-                },
-
-                generateLetterHTML() {
-                    const h = (tag, content, classes = '') => `<${tag} class="${classes}">${content}</${tag}>`;
-                    let html = '';
-                    html += h('div', this.getCurrentDate(), 'mb-8 text-right');
-                    html += `<div class="mb-8">
-                                ${this.form.agencyContact ? h('div', this.form.agencyContact) : ''}
-                                ${this.form.agencyName ? h('div', this.form.agencyName) : ''}
-                                ${this.form.agencyDepartment ? h('div', this.form.agencyDepartment) : ''}
-                                ${this.form.agencyAddress ? this.form.agencyAddress.replace(/\n/g, '<br>') : ''}
-                            </div>`;
-                    html += h('div', `<strong>RE: ${this.form.subject || '[Subject Line]'}</strong>`, 'mb-6');
-                    html += h('div', `Dear ${this.form.agencyContact || 'Records Officer'},`, 'mb-4');
-                    html += h('div', `I am writing to request access to public records under <span class="font-semibold">${this.getStateCitation()}</span>. ${this.form.requesterOrganization ? `I am making this request on behalf of ${this.form.requesterOrganization}.` : ''}`, 'mb-4');
-                    html += h('div', '<strong>Specifically, I am requesting the following records:</strong>', 'mb-4');
-                    html += h('div', this.form.recordsDescription.replace(/\n/g, '<br>') || '[Please describe the records...]', 'mb-4 pl-4 border-l-2 border-gray-300');
-                    if(this.getDateRangeText()) html += h('div', `<strong>Date Range:</strong> ${this.getDateRangeText()}`, 'mb-4');
-                    if(this.form.preferredFormat) html += h('div', `I would prefer to receive these records in <strong>${this.form.preferredFormat}</strong> format.`, 'mb-4');
-                    if (this.form.feeWaiverRequest) {
-                        html += h('div', '<strong>Request for Fee Waiver:</strong>', 'mb-2 font-semibold');
-                    }
-                    if(this.form.additionalNotes) html += h('div', this.form.additionalNotes.replace(/\n/g, '<br>'), 'mb-4');
-                    html += h('div', this.getLegalRequirements(), 'mb-4 text-sm text-gray-600');
-                    html += h('div', `If you have any questions, please contact me at ${this.form.requesterEmail || '[email]'}${this.form.requesterPhone ? ` or ${this.form.requesterPhone}` : ''}.`, 'mb-4');
-                    html += h('div', 'Thank you for your time and consideration.', 'mb-6');
-                    html += h('div', 'Sincerely,', 'mb-4');
-                    html += `<div class="mt-12">
-                                <div>${this.form.requesterName || '[Your Name]'}</div>
-                                ${this.form.requesterOrganization ? `<div>${this.form.requesterOrganization}</div>` : ''}
-                            </div>`;
-                    return html;
-                },
-
-                // --- Gemini API Functions --- //
-                async callGemini(prompt) {
-                    this.isLoading = true;
-                    const apiKey = ""; // Leave empty, handled by environment
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                    
-                    let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-                    const payload = { contents: chatHistory };
-
-                    try {
-                        const response = await fetch(apiUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-
-                        if (!response.ok) {
-                            throw new Error(`API error: ${response.statusText}`);
-                        }
-
-                        const result = await response.json();
-                        
-                        if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
-                            this.isLoading = false;
-                            return result.candidates[0].content.parts[0].text;
-                        } else {
-                            throw new Error("Invalid response structure from API.");
-                        }
-                    } catch (error) {
-                        this.isLoading = false;
-                        this.showNotification(`AI Error: ${error.message}`, 'error');
-                        return null;
-                    }
-                },
-
-                async refineRequestDescription() {
-                    if (!this.form.recordsDescription.trim()) return;
-                    
-                    const lawInfo = this.selectedLaw ? `The request is being made in ${this.selectedLaw.name} under ${this.selectedLaw.lawName}.` : '';
-                    const prompt = `
-                        You are an expert in public records requests. Refine the following user-provided description to be more professional, clear, and legally effective. 
-                        Ensure the refined text is a direct replacement for the original, without any introductory or concluding phrases.
-                        Make it specific and reference common types of documents if applicable.
-                        ${lawInfo}
-
-                        Original description:
-                        "${this.form.recordsDescription}"
-
-                        Refined description:
-                    `;
-
-                    const refinedText = await this.callGemini(prompt);
-                    if (refinedText) {
-                        this.form.recordsDescription = refinedText.trim();
-                        this.showNotification('Request description refined by AI.', 'success');
-                    }
-                },
-
-                async getRecordSuggestions() {
-                    if (!this.selectedTemplate) return;
-                    
-                    const isCustom = this.selectedTemplate.startsWith('custom_');
-                    const templateId = isCustom ? this.selectedTemplate.replace('custom_', '') : this.selectedTemplate;
-                    const source = isCustom ? this.customTemplates : this.templates;
-                    const template = source.find(t => t.id === templateId);
-
-                    if (!template) return;
-
-                    const prompt = `
-                        A user is making a public records request using the "${template.name}" template. 
-                        Based on this topic, suggest a bulleted list of 3-5 additional, related records they might also want to request to get a more complete picture.
-                        Do not repeat items already in the original template description.
-                        Provide only the bulleted list, without any introductory or concluding text.
-
-                        Original template description:
-                        "${template.description || template.recordsDescription}"
-
-                        Bulleted list of suggestions:
-                    `;
-
-                    const suggestions = await this.callGemini(prompt);
-                    if (suggestions) {
-                        const suggestionsText = `\n\nAdditionally, please provide the following suggested records:\n${suggestions.trim()}`;
-                        this.form.recordsDescription += suggestionsText;
-                        this.showNotification('AI-powered suggestions added.', 'success');
-                    }
-                },
-                
-                async generateFeeWaiverText() {
-                    if (!this.form.recordsDescription.trim()) {
-                        this.showNotification('Please describe the records you are requesting first.', 'error');
-                        return;
-                    }
-                    
-                    const prompt = `
-                        You are an expert in public records law. Write a concise, professional paragraph arguing for a fee waiver for a public records request.
-                        Base the argument on the fact that the requested information is in the public interest and will contribute to public understanding of government operations and activities.
-                        The request is not for commercial use.
-                        The subject of the request is: "${this.form.subject}".
-                        The specific records being requested are: "${this.form.recordsDescription}".
-                        
-                        Generate only the paragraph for the fee waiver request, with no introductory or concluding text.
-                    `;
-                    
-                    const waiverText = await this.callGemini(prompt);
-                    if (waiverText) {
-                        this.form.additionalNotes = waiverText.trim();
-                        this.showNotification('AI-generated fee waiver text added to Additional Notes.', 'success');
-                    }
-                },
-
-
-                // --- Event Handlers & Actions --- //
-                onStateChange() { this.selectedLaw = this.form.state ? this.laws.find(l => l.code === this.form.state) : null; },
-                applyTemplate() {
-                    if (!this.selectedTemplate) return;
-                    const isCustom = this.selectedTemplate.startsWith('custom_');
-                    const templateId = isCustom ? this.selectedTemplate.replace('custom_', '') : this.selectedTemplate;
-                    const source = isCustom ? this.customTemplates : this.templates;
-                    const template = source.find(t => t.id === templateId);
-        
-                    if (template) {
-                        this.form.subject = template.subject;
-                        this.form.recordsDescription = template.recordsDescription || template.description;
-                        this.form.expeditedProcessing = template.expeditedProcessing || template.expedited || false;
-                        this.form.feeWaiverRequest = template.feeWaiverRequest || template.feeWaiver || false;
-                        this.form.additionalNotes = template.additionalNotes || '';
-                        if(template.preferredFormat) this.form.preferredFormat = template.preferredFormat;
-                        this.showNotification(`Applied template: ${this.t(template.id, template.name)}`, 'success');
-                    }
-                },
-                copyToClipboard() {
-                    const letterText = document.getElementById('letterPreviewContainer').innerText;
-                    navigator.clipboard.writeText(letterText).then(() => this.showNotification('Letter copied!', 'success'), () => this.showNotification('Copy failed.', 'error'));
-                },
-                exportAsText() {
-                    const letterText = document.getElementById('letterPreviewContainer').innerText;
-                    const blob = new Blob([letterText], { type: 'text/plain;charset=utf-8' });
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = `public-records-request-${this.getCurrentDateForFilename()}.txt`;
-                    a.click();
-                    URL.revokeObjectURL(url);
-                },
-                exportAsPDF() {
-                    const { jsPDF } = window.jspdf;
-                    const doc = new jsPDF({
-                        orientation: 'portrait',
-                        unit: 'pt',
-                        format: 'letter'
-                    });
-                    
-                    doc.setFont('Times-Roman');
-                    
-                    const content = document.getElementById('letterPreview');
-                    
-                    doc.html(content, {
-                        callback: function (doc) {
-                            doc.save(`public-records-request-${this.getCurrentDateForFilename()}.pdf`);
-                        }.bind(this),
-                        x: 10,
-                        y: 10,
-                        width: 595, // A4 width in points
-                        windowWidth: content.scrollWidth
-                    });
-                     this.showNotification('PDF generation started...', 'info');
-                },
-                confirmStartOver() {
-                    this.showConfirmation('Start Over?', 'Are you sure you want to clear all form data?', () => {
-                        this.resetForm();
-                        this.showNotification('Form has been cleared.', 'success');
-                    });
-                },
-
-                // --- Utility Functions --- //
-                getDateRangeText() {
-                    const { dateFrom, dateTo } = this.form;
-                    if (dateFrom && dateTo) return `${this.formatDate(dateFrom)} to ${this.formatDate(dateTo)}`;
-                    if (dateFrom) return `From ${this.formatDate(dateFrom)}`;
-                    if (dateTo) return `Through ${this.formatDate(dateTo)}`;
-                    return '';
-                },
-                getStateCitation() { return this.selectedLaw?.fullCitation || 'the applicable state public records law'; },
-                getLegalRequirements() {
-                    if (!this.selectedLaw) return 'Please respond to this request within the timeframe required by law. If any portion of this request is denied, please cite the specific legal authority for the denial.';
-                    return `Under ${this.selectedLaw.fullCitation}, you are required to respond within ${this.selectedLaw.responseTime}. ${this.selectedLaw.denialProcess}`;
-                },
-                showConfirmation(title, body, onConfirmAction, confirmType = 'danger') {
-                    this.confirmModal = {
-                        open: true, title, body, onConfirm: onConfirmAction,
-                        confirmText: confirmType === 'danger' ? 'Confirm' : 'OK',
-                        confirmClass: confirmType === 'danger' ? 'bg-red-600 hover:bg-red-700' : 'bg-blue-600 hover:bg-blue-700',
-                    };
-                },
-                showNotification(message, type = 'success') {
-                    const id = this.notificationCounter++;
-                    this.notifications.push({ id, message, type, visible: true });
-                    setTimeout(() => {
-                        const notification = this.notifications.find(n => n.id === id);
-                        if (notification) notification.visible = false;
-                        setTimeout(() => this.notifications = this.notifications.filter(n => n.id !== id), 500);
-                    }, 5000);
-                },
-                formatDate(dateString) {
-                    if (!dateString) return '';
-                    const date = new Date(dateString + 'T00:00:00');
-                    return date.toLocaleDateString(this.currentLang, { year: 'numeric', month: 'long', day: 'numeric' });
-                },
-                getCurrentDate() { return new Date().toLocaleDateString(this.currentLang, { year: 'numeric', month: 'long', day: 'numeric' }); },
-                getCurrentDateForFilename() { return new Date().toISOString().split('T')[0]; },
-                
-                // --- Custom Template Functions --- //
-                openTemplateWizard() { this.resetCustomTemplate(); this.showTemplateWizard = true; },
-                closeTemplateWizard() { this.showTemplateWizard = false; },
-                resetCustomTemplate() {
-                    this.customTemplate = {
-                        id: '', name: '', subject: '', recordsDescription: '',
-                        additionalNotes: '', expeditedProcessing: false, feeWaiverRequest: false
-                    };
-                },
-                saveCustomTemplate() {
-                    if (!this.customTemplate.name.trim() || !this.customTemplate.subject.trim() || !this.customTemplate.recordsDescription.trim()) {
-                        this.showNotification('Template Name, Subject, and Description are required.', 'error');
-                        return;
-                    }
-                    const isEditing = !!this.customTemplate.id;
-                    if (isEditing) {
-                        const index = this.customTemplates.findIndex(t => t.id === this.customTemplate.id);
-                        if (index > -1) this.customTemplates[index] = { ...this.customTemplate };
-                    } else {
-                        this.customTemplate.id = Date.now().toString();
-                        this.customTemplates.push({ ...this.customTemplate });
-                    }
-                    this.saveCustomTemplatesToStorage();
-                    this.showNotification(isEditing ? 'Template updated!' : 'Template saved!', 'success');
-                    this.closeTemplateWizard();
-                },
-                editCustomTemplate(id) {
-                    const template = this.customTemplates.find(t => t.id === id);
-                    if (template) {
-                        this.customTemplate = { ...template };
-                        this.showTemplateWizard = true;
-                    }
-                },
-                deleteCustomTemplate(id) {
-                    this.showConfirmation('Delete Template?', 'This cannot be undone.', () => {
-                        this.customTemplates = this.customTemplates.filter(t => t.id !== id);
-                        this.saveCustomTemplatesToStorage();
-                        if (this.selectedTemplate === `custom_${id}`) this.selectedTemplate = '';
-                        this.showNotification('Template deleted.', 'success');
-                    });
-                },
-                loadCustomTemplatesFromStorage() {
-                    const saved = localStorage.getItem('customTemplates');
-                    this.customTemplates = saved ? JSON.parse(saved) : [];
-                },
-                saveCustomTemplatesToStorage() {
-                    localStorage.setItem('customTemplates', JSON.stringify(this.customTemplates));
-                },
-            }));
-        });
-    </script>
+    <!-- Application Script -->
+    <script src="js/app.js" defer></script>
 </body>
 </html>
