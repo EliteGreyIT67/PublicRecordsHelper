@@ -48,7 +48,7 @@
         }
     </style>
 </head>
-<body x-cloak x-data="publicRecordsApp" @vue:mounted="init()" class="bg-gray-100 text-gray-900">
+<body x-cloak x-data="publicRecordsApp" x-init="init()" class="bg-gray-100 text-gray-900">
     <!-- Header -->
     <header class="bg-white shadow-lg border-b border-gray-200 sticky top-0 z-40">
         <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -264,7 +264,6 @@
     document.addEventListener('alpine:init', () => {
         Alpine.data('publicRecordsApp', () => ({
             // --- EMBEDDED DATA --- //
-            // This data is embedded directly to avoid file fetching.
             laws: [
               { "code": "AL", "name": "Alabama", "lawName": "Alabama Open Records Act", "citation": "Code of Alabama § 36-12-40 et seq.", "fullCitation": "the Alabama Open Records Act (Code of Alabama § 36-12-40 et seq.)", "responseTime": "2-5 business days for acknowledgment; 15-35 business days for response", "denialProcess": "If any portion of this request is denied, the agency must cite the specific legal authority for the denial and advise you of your appeal rights." },
               { "code": "AK", "name": "Alaska", "lawName": "Alaska Public Records Act", "citation": "AS 40.25.110 et seq.", "fullCitation": "the Alaska Public Records Act (AS 40.25.110 et seq.)", "responseTime": "10 business days", "denialProcess": "Denials must include the specific statutory basis and information about appeal rights." },
@@ -329,7 +328,7 @@
             ],
             locales: {
                 en: {"appTitle":"Public Records Request Generator","appSubtitle":"Craft professional requests with state-specific legal citations.","requestDetails":"Request Details","jurisdiction":"Jurisdiction","selectState":"Select Your State (Required)","chooseState":"Choose your state...","requestTemplate":"Request Template","quickStartTemplates":"Quick Start Templates","createCustom":"Create Custom","selectTemplate":"Select a template...","builtInTemplates":"Built-in Templates","myCustomTemplates":"My Custom Templates","yourInformation":"Your Information","fullName":"Full Name *","fullNamePlaceholder":"John Doe","emailAddress":"Email Address *","emailAddressPlaceholder":"john@example.com","phoneNumber":"Phone Number","phoneNumberPlaceholder":"(555) 123-4567","organization":"Organization (if applicable)","organizationPlaceholder":"News Organization","mailingAddress":"Mailing Address","mailingAddressPlaceholder":"123 Main St, City, State 12345","previewExport":"Preview & Export","copyAsText":"Copy as Text","downloadAsTXT":"Download as TXT","exportAsPDF":"Export as PDF","startOver":"Start Over","police_report":"Police Report","animal_welfare":"Animal Welfare Records","government_contracts":"Government Contracts","financial_records":"Financial Records","meeting_records":"Meeting Records","employment_records":"Employment Records","property_records":"Property Records","permits_licenses":"Permits and Licenses", "recordsDescription": "Records Description", "describeRecords": "Describe the records you are requesting in detail.", "describeRecordsPlaceholder": "e.g., All emails between Mayor John Smith and City Manager Jane Doe from January 1, 2023, to March 31, 2023, regarding the downtown development project.", "refineWithAI": "Refine with AI", "getAISuggestions": "Get AI Suggestions", "loading": "Loading...", "progress": "Progress", "lawGuide": "Law Quick Guide", "citation": "Citation", "responseTime": "Response Time", "denialProcess": "Denial/Appeal Process", "options": "Options", "requestFeeWaiver": "Request a Fee Waiver", "feeWaiverDescription": "Check this if your request is in the public interest.", "generateWaiverText": "Generate Waiver Text with AI"},
-                es: {"appTitle":"Generador de Solicitudes de Registros Públicos","appSubtitle":"Cree solicitudes profesionales con citas legales específicas del estado.","requestDetails":"Detalles de la Solicitud","jurisdiction":"Jurisdicción","selectState":"Seleccione su Estado (Requerido)","chooseState":"Elija su estado...","requestTemplate":"Plantilla de Solicitud","quickStartTemplates":"Plantillas Rápidas","createCustom":"Crear Personalizada","selectTemplate":"Seleccione una plantilla...","builtInTemplates":"Plantillas Incorporadas","myCustomTemplates":"Mis Plantillas Personalizadas","suInformation":"Su Información","fullName":"Nombre Completo *","fullNamePlaceholder":"Juan Pérez","emailAddress":"Correo Electrónico *","emailAddressPlaceholder":"juan@ejemplo.com","phoneNumber":"Número de Teléfono","phoneNumberPlaceholder":"(555) 123-4567","organization":"Organización (si aplica)","organizationPlaceholder":"Organización de Noticias","mailingAddress":"Dirección Postal","mailingAddressPlaceholder":"123 Calle Principal, Ciudad, Estado 12345","previewExport":"Vista Previa y Exportar","copyAsText":"Copiar como Texto","downloadAsTXT":"Descargar como TXT","exportAsPDF":"Exportar como PDF","startOver":"Empezar de Nuevo","police_report":"Informe de Policía","animal_welfare":"Registros de Bienestar Animal","government_contracts":"Contratos Gubernamentales","financial_records":"Registros Financieros","meeting_records":"Actas de Reuniones","employment_records":"Registros de Empleo","property_records":"Registros de Propiedad","permits_licenses":"Permisos y Licencias", "recordsDescription": "Descripción de los Registros", "describeRecords": "Describa los registros que solicita en detalle.", "describeRecordsPlaceholder": "Ej: Todos los correos electrónicos entre el alcalde John Smith y la administradora de la ciudad Jane Doe desde el 1 de enero de 2023 hasta el 31 de marzo de 2023, sobre el proyecto de desarrollo del centro.", "refineWithAI": "Refinar con IA", "getAISuggestions": "Obtener Sugerencias de IA", "loading": "Cargando...", "progress": "Progreso", "lawGuide": "Guía Rápida de Leyes", "citation": "Citación", "responseTime": "Tiempo de Respuesta", "denialProcess": "Proceso de Apelación", "options": "Opciones", "requestFeeWaiver": "Solicitar Exención de Tarifas", "feeWaiverDescription": "Marque esto si su solicitud es de interés público.", "generateWaiverText": "Generar Texto de Exención con IA"}
+                es: {"appTitle":"Generador de Solicitudes de Registros Públicos","appSubtitle":"Cree solicitudes profesionales con citas legales específicas del estado.","requestDetails":"Detalles de la Solicitud","jurisdiction":"Jurisdicción","selectState":"Seleccione su Estado (Requerido)","chooseState":"Elija su estado...","requestTemplate":"Plantilla de Solicitud","quickStartTemplates":"Plantillas Rápidas","createCustom":"Crear Personalizada","selectTemplate":"Seleccione una plantilla...","builtInTemplates":"Plantillas Incorporadas","myCustomTemplates":"Mis Plantillas Personalizadas","yourInformation":"Su Información","fullName":"Nombre Completo *","fullNamePlaceholder":"Juan Pérez","emailAddress":"Correo Electrónico *","emailAddressPlaceholder":"juan@ejemplo.com","phoneNumber":"Número de Teléfono","phoneNumberPlaceholder":"(555) 123-4567","organization":"Organización (si aplica)","organizationPlaceholder":"Organización de Noticias","mailingAddress":"Dirección Postal","mailingAddressPlaceholder":"123 Calle Principal, Ciudad, Estado 12345","previewExport":"Vista Previa y Exportar","copyAsText":"Copiar como Texto","downloadAsTXT":"Descargar como TXT","exportAsPDF":"Exportar como PDF","startOver":"Empezar de Nuevo","police_report":"Informe de Policía","animal_welfare":"Registros de Bienestar Animal","government_contracts":"Contratos Gubernamentales","financial_records":"Registros Financieros","meeting_records":"Actas de Reuniones","employment_records":"Registros de Empleo","property_records":"Registros de Propiedad","permits_licenses":"Permisos y Licencias", "recordsDescription": "Descripción de los Registros", "describeRecords": "Describa los registros que solicita en detalle.", "describeRecordsPlaceholder": "Ej: Todos los correos electrónicos entre el alcalde John Smith y la administradora de la ciudad Jane Doe desde el 1 de enero de 2023 hasta el 31 de marzo de 2023, sobre el proyecto de desarrollo del centro.", "refineWithAI": "Refinar con IA", "getAISuggestions": "Obtener Sugerencias de IA", "loading": "Cargando...", "progress": "Progreso", "lawGuide": "Guía Rápida de Leyes", "citation": "Citación", "responseTime": "Tiempo de Respuesta", "denialProcess": "Proceso de Apelación", "options": "Opciones", "requestFeeWaiver": "Solicitar Exención de Tarifas", "feeWaiverDescription": "Marque esto si su solicitud es de interés público.", "generateWaiverText": "Generar Texto de Exención con IA"}
             },
 
             // --- STATE PROPERTIES --- //
@@ -429,30 +428,27 @@
                 return html;
             },
 
-            // --- Gemini API Functions --- //
+            // --- Gemini API Functions (for Serverless) --- //
             async callGemini(prompt) {
                 this.isLoading = true;
-                // The API key is left empty as it will be handled by the execution environment.
-                const apiKey = ""; 
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                
-                const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
+                // This URL points to the serverless function that will securely handle the API key.
+                // It's a standard path for services like Netlify.
+                const serverlessUrl = '/.netlify/functions/gemini'; 
 
                 try {
-                    const response = await fetch(apiUrl, {
+                    const response = await fetch(serverlessUrl, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
+                        body: JSON.stringify({ prompt: prompt })
                     });
 
+                    const result = await response.json();
+
                     if (!response.ok) {
-                        const errorBody = await response.text();
-                        console.error("Gemini API Error:", response.status, errorBody);
-                        throw new Error(`AI service failed with status ${response.status}.`);
+                        const errorDetail = result.error?.message || JSON.stringify(result);
+                        throw new Error(`Server Error: ${errorDetail}`);
                     }
 
-                    const result = await response.json();
-                    
                     if (result.candidates && result.candidates[0]?.content?.parts?.[0]?.text) {
                         return result.candidates[0].content.parts[0].text;
                     } else {
