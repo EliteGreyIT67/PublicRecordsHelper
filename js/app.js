@@ -1,5 +1,5 @@
-function publicRecordsApp() {
-    return {
+document.addEventListener('alpine:init', () => {
+    Alpine.data('publicRecordsApp', () => ({
         // --- STATE PROPERTIES --- //
         form: {},
         laws: [],
@@ -59,7 +59,7 @@ function publicRecordsApp() {
                 const enLocale = await enLocaleResponse.json();
                 const esLocale = await esLocaleResponse.json();
 
-                // Combine fetched locales with hardcoded fallbacks
+                // Combine fetched locales with hardcoded fallbacks for completeness
                 this.locales = {
                     en: {...this.getHardcodedLocales().en, ...enLocale},
                     es: {...this.getHardcodedLocales().es, ...esLocale}
@@ -148,8 +148,9 @@ function publicRecordsApp() {
             const apiKey = ""; // Leave empty, handled by environment
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
             
-            let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-            const payload = { contents: chatHistory };
+            const payload = {
+                contents: [{ role: "user", parts: [{ text: prompt }] }]
+            };
 
             try {
                 const response = await fetch(apiUrl, {
@@ -158,24 +159,39 @@ function publicRecordsApp() {
                     body: JSON.stringify(payload)
                 });
 
+                const responseBodyText = await response.text();
+
                 if (!response.ok) {
-                    const errorBody = await response.text();
-                    throw new Error(`API error: ${response.status} ${response.statusText} - ${errorBody}`);
+                    console.error("Gemini API Error Response:", {
+                        status: response.status,
+                        statusText: response.statusText,
+                        body: responseBodyText
+                    });
+                    let errorDetail = responseBodyText;
+                    try {
+                        const errorJson = JSON.parse(responseBodyText);
+                        errorDetail = errorJson.error?.message || responseBodyText;
+                    } catch (e) {
+                        // Not a JSON response, use the raw text.
+                    }
+                    throw new Error(`API returned status ${response.status}. ${errorDetail}`);
                 }
 
-                const result = await response.json();
+                const result = JSON.parse(responseBodyText);
                 
-                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
-                    this.isLoading = false;
+                if (result.candidates && result.candidates[0]?.content?.parts?.[0]?.text) {
                     return result.candidates[0].content.parts[0].text;
                 } else {
-                    console.error("Invalid response structure from API:", result);
-                    throw new Error("Invalid response structure from API.");
+                    console.error("Invalid success response structure from API:", result);
+                    throw new Error("Received an unexpected response structure from the AI.");
                 }
             } catch (error) {
                 this.isLoading = false;
                 this.showNotification(`AI Error: ${error.message}`, 'error');
+                console.error("Full error in callGemini:", error);
                 return null;
+            } finally {
+                this.isLoading = false;
             }
         },
 
@@ -410,5 +426,5 @@ function publicRecordsApp() {
         saveCustomTemplatesToStorage() {
             localStorage.setItem('customTemplates', JSON.stringify(this.customTemplates));
         },
-    };
-}
+    }));
+});
