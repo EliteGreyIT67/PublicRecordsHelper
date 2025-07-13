@@ -1,3 +1,5 @@
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/af9bce15-8f3e-4fb0-b379-35f550a4157d/deploy-status)](https://app.netlify.com/projects/publicrecordshelper/deploys)
 # Public Records Request Generator
 
 A privacy-focused, client-side web application that helps users create professional public records requests with state-specific legal citations and personalized template customization.
