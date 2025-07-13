@@ -427,32 +427,23 @@
             // --- Gemini API Functions (for Serverless) --- //
             async callGemini(prompt) {
                 this.isLoading = true;
-                const apiKey = ""; // This will be handled by the execution environment.
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                
-                const payload = {
-                    contents: [{ role: "user", parts: [{ text: prompt }] }]
-                };
+                // Reverted to use the serverless function path.
+                const serverlessUrl = '/.netlify/functions/gemini'; 
 
                 try {
-                    const response = await fetch(apiUrl, {
+                    const response = await fetch(serverlessUrl, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
+                        body: JSON.stringify({ prompt: prompt })
                     });
 
+                    const result = await response.json();
+
                     if (!response.ok) {
-                        const errorBody = await response.text();
-                        console.error("Gemini API Error Response:", { status: response.status, body: errorBody });
-                        let errorDetail = errorBody;
-                        try {
-                            errorDetail = JSON.parse(errorBody).error.message || errorBody;
-                        } catch (e) { /* Ignore if body is not JSON */ }
-                        throw new Error(`API Error: ${errorDetail}`);
+                        const errorDetail = result.error?.message || JSON.stringify(result);
+                        throw new Error(`Server Error: ${errorDetail}`);
                     }
 
-                    const result = await response.json();
-                    
                     if (result.candidates && result.candidates[0]?.content?.parts?.[0]?.text) {
                         return result.candidates[0].content.parts[0].text;
                     } else {
